@@ -30,7 +30,7 @@ int64_t sptrd(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_ssptrd(
+    ssptrd_(
         &uplo_, &n_,
         AP,
         D,
@@ -59,7 +59,7 @@ int64_t sptrd(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_dsptrd(
+    dsptrd_(
         &uplo_, &n_,
         AP,
         D,

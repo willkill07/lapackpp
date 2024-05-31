@@ -38,7 +38,7 @@ int64_t gebak(
     lapack_int ldv_ = (lapack_int) ldv;
     lapack_int info_ = 0;
 
-    LAPACK_sgebak(
+    sgebak_(
         &balance_, &side_, &n_, &ilo_, &ihi_,
         scale, &m_,
         V, &ldv_, &info_
@@ -73,7 +73,7 @@ int64_t gebak(
     lapack_int ldv_ = (lapack_int) ldv;
     lapack_int info_ = 0;
 
-    LAPACK_dgebak(
+    dgebak_(
         &balance_, &side_, &n_, &ilo_, &ihi_,
         scale, &m_,
         V, &ldv_, &info_
@@ -108,7 +108,7 @@ int64_t gebak(
     lapack_int ldv_ = (lapack_int) ldv;
     lapack_int info_ = 0;
 
-    LAPACK_cgebak(
+    cgebak_(
         &balance_, &side_, &n_, &ilo_, &ihi_,
         scale, &m_,
         (lapack_complex_float*) V, &ldv_, &info_
@@ -192,7 +192,7 @@ int64_t gebak(
     lapack_int ldv_ = (lapack_int) ldv;
     lapack_int info_ = 0;
 
-    LAPACK_zgebak(
+    zgebak_(
         &balance_, &side_, &n_, &ilo_, &ihi_,
         scale, &m_,
         (lapack_complex_double*) V, &ldv_, &info_

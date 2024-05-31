@@ -47,7 +47,7 @@ int64_t hetrs_rk(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_chetrs_3(
+    chetrs_3_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) E,
@@ -179,7 +179,7 @@ int64_t hetrs_rk(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_zhetrs_3(
+    zhetrs_3_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) E,

@@ -34,7 +34,7 @@ int64_t gtsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_sgtsv(
+    sgtsv_(
         &n_, &nrhs_,
         DL,
         D,
@@ -66,7 +66,7 @@ int64_t gtsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_dgtsv(
+    dgtsv_(
         &n_, &nrhs_,
         DL,
         D,
@@ -98,7 +98,7 @@ int64_t gtsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_cgtsv(
+    cgtsv_(
         &n_, &nrhs_,
         (lapack_complex_float*) DL,
         (lapack_complex_float*) D,
@@ -181,7 +181,7 @@ int64_t gtsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_zgtsv(
+    zgtsv_(
         &n_, &nrhs_,
         (lapack_complex_double*) DL,
         (lapack_complex_double*) D,

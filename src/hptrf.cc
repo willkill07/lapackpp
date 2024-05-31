@@ -36,7 +36,7 @@ int64_t hptrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_chptrf(
+    chptrf_(
         &uplo_, &n_,
         (lapack_complex_float*) AP,
         ipiv_ptr, &info_
@@ -71,7 +71,7 @@ int64_t hptrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_zhptrf(
+    zhptrf_(
         &uplo_, &n_,
         (lapack_complex_double*) AP,
         ipiv_ptr, &info_

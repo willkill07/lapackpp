@@ -45,7 +45,7 @@ int64_t gtcon(
     lapack::vector< float > work( (2*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_sgtcon(
+    sgtcon_(
         &norm_, &n_,
         DL,
         D,
@@ -91,7 +91,7 @@ int64_t gtcon(
     lapack::vector< double > work( (2*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dgtcon(
+    dgtcon_(
         &norm_, &n_,
         DL,
         D,
@@ -136,7 +136,7 @@ int64_t gtcon(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (2*n) );
 
-    LAPACK_cgtcon(
+    cgtcon_(
         &norm_, &n_,
         (lapack_complex_float*) DL,
         (lapack_complex_float*) D,
@@ -236,7 +236,7 @@ int64_t gtcon(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (2*n) );
 
-    LAPACK_zgtcon(
+    zgtcon_(
         &norm_, &n_,
         (lapack_complex_double*) DL,
         (lapack_complex_double*) D,

@@ -34,7 +34,7 @@ int64_t sygst(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_ssygst(
+    ssygst_(
         &itype_, &uplo_, &n_,
         A, &lda_,
         B, &ldb_, &info_
@@ -65,7 +65,7 @@ int64_t sygst(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_dsygst(
+    dsygst_(
         &itype_, &uplo_, &n_,
         A, &lda_,
         B, &ldb_, &info_

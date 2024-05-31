@@ -46,7 +46,7 @@ int64_t hetrs_rook(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_chetrs_rook(
+    chetrs_rook_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         ipiv_ptr,
@@ -89,7 +89,7 @@ int64_t hetrs_rook(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_zhetrs_rook(
+    zhetrs_rook_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         ipiv_ptr,

@@ -32,7 +32,7 @@ int64_t laed4(
     lapack_int i_ = (lapack_int) i + 1;  // change to 1-based
     lapack_int info_ = 0;
 
-    LAPACK_slaed4(
+    slaed4_(
         &n_, &i_,
         d,
         z,
@@ -113,7 +113,7 @@ int64_t laed4(
     lapack_int i_ = (lapack_int) i + 1;  // change to 1-based
     lapack_int info_ = 0;
 
-    LAPACK_dlaed4(
+    dlaed4_(
         &n_, &i_,
         d,
         z,

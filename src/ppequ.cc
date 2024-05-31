@@ -31,7 +31,7 @@ int64_t ppequ(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_sppequ(
+    sppequ_(
         &uplo_, &n_,
         AP,
         S, scond, amax, &info_
@@ -59,7 +59,7 @@ int64_t ppequ(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_dppequ(
+    dppequ_(
         &uplo_, &n_,
         AP,
         S, scond, amax, &info_
@@ -87,7 +87,7 @@ int64_t ppequ(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_cppequ(
+    cppequ_(
         &uplo_, &n_,
         (lapack_complex_float*) AP,
         S, scond, amax, &info_
@@ -159,7 +159,7 @@ int64_t ppequ(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_zppequ(
+    zppequ_(
         &uplo_, &n_,
         (lapack_complex_double*) AP,
         S, scond, amax, &info_

@@ -37,7 +37,7 @@ int64_t syevd(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_ssyevd(
+    ssyevd_(
         &jobz_, &uplo_, &n_,
         A, &lda_,
         W,
@@ -54,7 +54,7 @@ int64_t syevd(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_ssyevd(
+    ssyevd_(
         &jobz_, &uplo_, &n_,
         A, &lda_,
         W,
@@ -90,7 +90,7 @@ int64_t syevd(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dsyevd(
+    dsyevd_(
         &jobz_, &uplo_, &n_,
         A, &lda_,
         W,
@@ -107,7 +107,7 @@ int64_t syevd(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_dsyevd(
+    dsyevd_(
         &jobz_, &uplo_, &n_,
         A, &lda_,
         W,

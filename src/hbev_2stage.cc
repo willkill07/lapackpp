@@ -43,7 +43,7 @@ int64_t hbev_2stage(
     std::complex<float> qry_work[1];
     float qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_chbev_2stage(
+    chbev_2stage_(
         &jobz_, &uplo_, &n_, &kd_,
         (lapack_complex_float*) AB, &ldab_,
         W,
@@ -60,7 +60,7 @@ int64_t hbev_2stage(
     lapack::vector< std::complex<float> > work( lwork_ );
     lapack::vector< float > rwork( (max( 1, 3*n-2 )) );
 
-    LAPACK_chbev_2stage(
+    chbev_2stage_(
         &jobz_, &uplo_, &n_, &kd_,
         (lapack_complex_float*) AB, &ldab_,
         W,
@@ -100,7 +100,7 @@ int64_t hbev_2stage(
     std::complex<double> qry_work[1];
     double qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zhbev_2stage(
+    zhbev_2stage_(
         &jobz_, &uplo_, &n_, &kd_,
         (lapack_complex_double*) AB, &ldab_,
         W,
@@ -117,7 +117,7 @@ int64_t hbev_2stage(
     lapack::vector< std::complex<double> > work( lwork_ );
     lapack::vector< double > rwork( (max( 1, 3*n-2 )) );
 
-    LAPACK_zhbev_2stage(
+    zhbev_2stage_(
         &jobz_, &uplo_, &n_, &kd_,
         (lapack_complex_double*) AB, &ldab_,
         W,

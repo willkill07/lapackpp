@@ -33,7 +33,7 @@ void sfrk(
     lapack_int k_ = (lapack_int) k;
     lapack_int lda_ = (lapack_int) lda;
 
-    LAPACK_ssfrk(
+    ssfrk_(
         &transr_, &uplo_, &trans_, &n_, &k_, &alpha,
         A, &lda_, &beta,
         C
@@ -59,7 +59,7 @@ void sfrk(
     lapack_int k_ = (lapack_int) k;
     lapack_int lda_ = (lapack_int) lda;
 
-    LAPACK_dsfrk(
+    dsfrk_(
         &transr_, &uplo_, &trans_, &n_, &k_, &alpha,
         A, &lda_, &beta,
         C

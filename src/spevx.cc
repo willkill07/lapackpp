@@ -52,7 +52,7 @@ int64_t spevx(
     lapack::vector< float > work( (8*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_sspevx(
+    sspevx_(
         &jobz_, &range_, &uplo_, &n_,
         AP, &vl, &vu, &il_, &iu_, &abstol, &m_,
         W,
@@ -110,7 +110,7 @@ int64_t spevx(
     lapack::vector< double > work( (8*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_dspevx(
+    dspevx_(
         &jobz_, &range_, &uplo_, &n_,
         AP, &vl, &vu, &il_, &iu_, &abstol, &m_,
         W,

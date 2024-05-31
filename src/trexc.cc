@@ -40,7 +40,7 @@ int64_t trexc(
     // allocate workspace
     lapack::vector< float > work( (n) );
 
-    LAPACK_strexc(
+    strexc_(
         &compq_, &n_,
         T, &ldt_,
         Q, &ldq_, &ifst_, &ilst_,
@@ -79,7 +79,7 @@ int64_t trexc(
     // allocate workspace
     lapack::vector< double > work( (n) );
 
-    LAPACK_dtrexc(
+    dtrexc_(
         &compq_, &n_,
         T, &ldt_,
         Q, &ldq_, &ifst_, &ilst_,
@@ -115,7 +115,7 @@ int64_t trexc(
     lapack_int ilst_ = (lapack_int) ilst;
     lapack_int info_ = 0;
 
-    LAPACK_ctrexc(
+    ctrexc_(
         &compq_, &n_,
         (lapack_complex_float*) T, &ldt_,
         (lapack_complex_float*) Q, &ldq_, &ifst_, &ilst_, &info_
@@ -148,7 +148,7 @@ int64_t trexc(
     lapack_int ilst_ = (lapack_int) ilst;
     lapack_int info_ = 0;
 
-    LAPACK_ztrexc(
+    ztrexc_(
         &compq_, &n_,
         (lapack_complex_double*) T, &ldt_,
         (lapack_complex_double*) Q, &ldq_, &ifst_, &ilst_, &info_

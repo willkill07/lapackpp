@@ -58,7 +58,7 @@ int64_t sysvx(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_ssysvx(
+    ssysvx_(
         &fact_, &uplo_, &n_, &nrhs_,
         A, &lda_,
         AF, &ldaf_,
@@ -79,7 +79,7 @@ int64_t sysvx(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_ssysvx(
+    ssysvx_(
         &fact_, &uplo_, &n_, &nrhs_,
         A, &lda_,
         AF, &ldaf_,
@@ -143,7 +143,7 @@ int64_t sysvx(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dsysvx(
+    dsysvx_(
         &fact_, &uplo_, &n_, &nrhs_,
         A, &lda_,
         AF, &ldaf_,
@@ -164,7 +164,7 @@ int64_t sysvx(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dsysvx(
+    dsysvx_(
         &fact_, &uplo_, &n_, &nrhs_,
         A, &lda_,
         AF, &ldaf_,
@@ -228,7 +228,7 @@ int64_t sysvx(
     std::complex<float> qry_work[1];
     float qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_csysvx(
+    csysvx_(
         &fact_, &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) AF, &ldaf_,
@@ -249,7 +249,7 @@ int64_t sysvx(
     lapack::vector< std::complex<float> > work( lwork_ );
     lapack::vector< float > rwork( (n) );
 
-    LAPACK_csysvx(
+    csysvx_(
         &fact_, &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) AF, &ldaf_,
@@ -448,7 +448,7 @@ int64_t sysvx(
     std::complex<double> qry_work[1];
     double qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zsysvx(
+    zsysvx_(
         &fact_, &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) AF, &ldaf_,
@@ -469,7 +469,7 @@ int64_t sysvx(
     lapack::vector< std::complex<double> > work( lwork_ );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_zsysvx(
+    zsysvx_(
         &fact_, &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) AF, &ldaf_,

@@ -50,7 +50,7 @@ int64_t sytrs_aa(
     // allocate workspace
     lapack::vector< float > work( (max(1,lwork_)) );
 
-    LAPACK_ssytrs_aa(
+    ssytrs_aa_(
         &uplo_, &n_, &nrhs_,
         A, &lda_,
         ipiv_ptr,
@@ -96,7 +96,7 @@ int64_t sytrs_aa(
     // allocate workspace
     lapack::vector< double > work( (max(1,lwork_)) );
 
-    LAPACK_dsytrs_aa(
+    dsytrs_aa_(
         &uplo_, &n_, &nrhs_,
         A, &lda_,
         ipiv_ptr,
@@ -142,7 +142,7 @@ int64_t sytrs_aa(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (max(1,lwork_)) );
 
-    LAPACK_csytrs_aa(
+    csytrs_aa_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         ipiv_ptr,
@@ -231,7 +231,7 @@ int64_t sytrs_aa(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (max(1,lwork_)) );
 
-    LAPACK_zsytrs_aa(
+    zsytrs_aa_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         ipiv_ptr,

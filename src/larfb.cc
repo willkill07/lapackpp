@@ -51,7 +51,7 @@ void larfb(
     // allocate workspace
     lapack::vector< float > work( ldwork_ * k );
 
-    LAPACK_slarfb(
+    slarfb_(
         &side_, &trans_, &direction_, &storev_, &m_, &n_, &k_,
         V, &ldv_,
         T, &ldt_,
@@ -95,7 +95,7 @@ void larfb(
     // allocate workspace
     lapack::vector< double > work( ldwork_ * k );
 
-    LAPACK_dlarfb(
+    dlarfb_(
         &side_, &trans_, &direction_, &storev_, &m_, &n_, &k_,
         V, &ldv_,
         T, &ldt_,
@@ -140,7 +140,7 @@ void larfb(
     // allocate workspace
     lapack::vector< std::complex<float> > work( ldwork_ * k );
 
-    LAPACK_clarfb(
+    clarfb_(
         &side_, &trans_, &direction_, &storev_, &m_, &n_, &k_,
         (lapack_complex_float*) V, &ldv_,
         (lapack_complex_float*) T, &ldt_,
@@ -281,7 +281,7 @@ void larfb(
     // allocate workspace
     lapack::vector< std::complex<double> > work( ldwork_ * k );
 
-    LAPACK_zlarfb(
+    zlarfb_(
         &side_, &trans_, &direction_, &storev_, &m_, &n_, &k_,
         (lapack_complex_double*) V, &ldv_,
         (lapack_complex_double*) T, &ldt_,

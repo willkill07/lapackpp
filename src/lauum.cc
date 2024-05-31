@@ -30,7 +30,7 @@ int64_t lauum(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_slauum(
+    slauum_(
         &uplo_, &n_,
         A, &lda_, &info_
     );
@@ -56,7 +56,7 @@ int64_t lauum(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_dlauum(
+    dlauum_(
         &uplo_, &n_,
         A, &lda_, &info_
     );
@@ -82,7 +82,7 @@ int64_t lauum(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_clauum(
+    clauum_(
         &uplo_, &n_,
         (lapack_complex_float*) A, &lda_, &info_
     );
@@ -146,7 +146,7 @@ int64_t lauum(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_zlauum(
+    zlauum_(
         &uplo_, &n_,
         (lapack_complex_double*) A, &lda_, &info_
     );

@@ -52,7 +52,7 @@ int64_t stevx(
     lapack::vector< float > work( (5*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_sstevx(
+    sstevx_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -111,7 +111,7 @@ int64_t stevx(
     lapack::vector< double > work( (5*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_dstevx(
+    dstevx_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &abstol, &m_,

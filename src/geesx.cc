@@ -49,7 +49,7 @@ int64_t geesx(
     lapack_int qry_iwork[1];
     lapack_int qry_bwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgeesx(
+    sgeesx_(
         &jobvs_, &sort_,
         select, &sense_, &n_,
         A, &lda_, &sdim_,
@@ -71,7 +71,7 @@ int64_t geesx(
     lapack::vector< lapack_int > iwork( liwork_ );
     lapack::vector< lapack_int > bwork( (n) );
 
-    LAPACK_sgeesx(
+    sgeesx_(
         &jobvs_, &sort_,
         select, &sense_, &n_,
         A, &lda_, &sdim_,
@@ -127,7 +127,7 @@ int64_t geesx(
     lapack_int qry_iwork[1];
     lapack_int qry_bwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgeesx(
+    dgeesx_(
         &jobvs_, &sort_,
         select, &sense_, &n_,
         A, &lda_, &sdim_,
@@ -149,7 +149,7 @@ int64_t geesx(
     lapack::vector< lapack_int > iwork( liwork_ );
     lapack::vector< lapack_int > bwork( (n) );
 
-    LAPACK_dgeesx(
+    dgeesx_(
         &jobvs_, &sort_,
         select, &sense_, &n_,
         A, &lda_, &sdim_,
@@ -201,7 +201,7 @@ int64_t geesx(
     float qry_rwork[1];
     lapack_int qry_bwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgeesx(
+    cgeesx_(
         &jobvs_, &sort_,
         (LAPACK_C_SELECT1) select, &sense_, &n_,
         (lapack_complex_float*) A, &lda_, &sdim_,
@@ -221,7 +221,7 @@ int64_t geesx(
     lapack::vector< float > rwork( (n) );
     lapack::vector< lapack_int > bwork( (n) );
 
-    LAPACK_cgeesx(
+    cgeesx_(
         &jobvs_, &sort_,
         (LAPACK_C_SELECT1) select, &sense_, &n_,
         (lapack_complex_float*) A, &lda_, &sdim_,
@@ -268,7 +268,7 @@ int64_t geesx(
     double qry_rwork[1];
     lapack_int qry_bwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgeesx(
+    zgeesx_(
         &jobvs_, &sort_,
         (LAPACK_Z_SELECT1) select, &sense_, &n_,
         (lapack_complex_double*) A, &lda_, &sdim_,
@@ -288,7 +288,7 @@ int64_t geesx(
     lapack::vector< double > rwork( (n) );
     lapack::vector< lapack_int > bwork( (n) );
 
-    LAPACK_zgeesx(
+    zgeesx_(
         &jobvs_, &sort_,
         (LAPACK_Z_SELECT1) select, &sense_, &n_,
         (lapack_complex_double*) A, &lda_, &sdim_,

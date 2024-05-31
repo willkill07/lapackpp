@@ -16,6 +16,25 @@
 #define LAPACK_FORTRAN_STRLEN_END
 #endif
 
+#ifdef ACCELERATE_NEW_LAPACK
+#include <Accelerate/Accelerate.h>
+
+
+
+typedef lapack_logical (*LAPACK_S_SELECT2) ( float*, float* );
+typedef lapack_logical (*LAPACK_S_SELECT3) ( float*, float*, float* );
+
+typedef lapack_logical (*LAPACK_D_SELECT2) ( double*, double* );
+typedef lapack_logical (*LAPACK_D_SELECT3) ( double*, double*, double* );
+
+typedef lapack_logical (*LAPACK_C_SELECT1) ( lapack_complex_float* );
+typedef lapack_logical (*LAPACK_C_SELECT2) ( lapack_complex_float*, lapack_complex_float* );
+
+typedef lapack_logical (*LAPACK_Z_SELECT1) ( lapack_complex_double* );
+typedef lapack_logical (*LAPACK_Z_SELECT2) ( lapack_complex_double*, lapack_complex_double* );
+
+#else
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -20384,6 +20403,8 @@ void LAPACK_zunhr_col(
 
 #ifdef __cplusplus
 }  // extern "C"
+#endif
+
 #endif
 
 #endif /* LAPACK_FORTRAN_H */

@@ -32,7 +32,7 @@ int64_t pbtrf(
     lapack_int ldab_ = (lapack_int) ldab;
     lapack_int info_ = 0;
 
-    LAPACK_spbtrf(
+    spbtrf_(
         &uplo_, &n_, &kd_,
         AB, &ldab_, &info_
     );
@@ -60,7 +60,7 @@ int64_t pbtrf(
     lapack_int ldab_ = (lapack_int) ldab;
     lapack_int info_ = 0;
 
-    LAPACK_dpbtrf(
+    dpbtrf_(
         &uplo_, &n_, &kd_,
         AB, &ldab_, &info_
     );
@@ -88,7 +88,7 @@ int64_t pbtrf(
     lapack_int ldab_ = (lapack_int) ldab;
     lapack_int info_ = 0;
 
-    LAPACK_cpbtrf(
+    cpbtrf_(
         &uplo_, &n_, &kd_,
         (lapack_complex_float*) AB, &ldab_, &info_
     );
@@ -182,7 +182,7 @@ int64_t pbtrf(
     lapack_int ldab_ = (lapack_int) ldab;
     lapack_int info_ = 0;
 
-    LAPACK_zpbtrf(
+    zpbtrf_(
         &uplo_, &n_, &kd_,
         (lapack_complex_double*) AB, &ldab_, &info_
     );

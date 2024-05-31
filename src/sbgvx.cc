@@ -64,7 +64,7 @@ int64_t sbgvx(
     lapack::vector< float > work( (7*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_ssbgvx(
+    ssbgvx_(
         &jobz_, &range_, &uplo_, &n_, &ka_, &kb_,
         AB, &ldab_,
         BB, &ldbb_,
@@ -136,7 +136,7 @@ int64_t sbgvx(
     lapack::vector< double > work( (7*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_dsbgvx(
+    dsbgvx_(
         &jobz_, &range_, &uplo_, &n_, &ka_, &kb_,
         AB, &ldab_,
         BB, &ldbb_,

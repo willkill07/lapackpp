@@ -34,7 +34,7 @@ int64_t ppcon(
     lapack::vector< float > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_sppcon(
+    sppcon_(
         &uplo_, &n_,
         AP, &anorm, rcond,
         &work[0],
@@ -65,7 +65,7 @@ int64_t ppcon(
     lapack::vector< double > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dppcon(
+    dppcon_(
         &uplo_, &n_,
         AP, &anorm, rcond,
         &work[0],
@@ -96,7 +96,7 @@ int64_t ppcon(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (n) );
 
-    LAPACK_cppcon(
+    cppcon_(
         &uplo_, &n_,
         (lapack_complex_float*) AP, &anorm, rcond,
         (lapack_complex_float*) &work[0],
@@ -164,7 +164,7 @@ int64_t ppcon(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_zppcon(
+    zppcon_(
         &uplo_, &n_,
         (lapack_complex_double*) AP, &anorm, rcond,
         (lapack_complex_double*) &work[0],

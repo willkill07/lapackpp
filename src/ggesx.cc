@@ -58,7 +58,7 @@ int64_t ggesx(
     lapack_int qry_iwork[1];
     lapack_int qry_bwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_sggesx(
+    sggesx_(
         &jobvsl_, &jobvsr_, &sort_,
         select, &sense_, &n_,
         A, &lda_,
@@ -85,7 +85,7 @@ int64_t ggesx(
     lapack::vector< lapack_int > iwork( liwork_ );
     lapack::vector< lapack_int > bwork( (n) );
 
-    LAPACK_sggesx(
+    sggesx_(
         &jobvsl_, &jobvsr_, &sort_,
         select, &sense_, &n_,
         A, &lda_,
@@ -155,7 +155,7 @@ int64_t ggesx(
     lapack_int qry_iwork[1];
     lapack_int qry_bwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dggesx(
+    dggesx_(
         &jobvsl_, &jobvsr_, &sort_,
         select, &sense_, &n_,
         A, &lda_,
@@ -182,7 +182,7 @@ int64_t ggesx(
     lapack::vector< lapack_int > iwork( liwork_ );
     lapack::vector< lapack_int > bwork( (n) );
 
-    LAPACK_dggesx(
+    dggesx_(
         &jobvsl_, &jobvsr_, &sort_,
         select, &sense_, &n_,
         A, &lda_,
@@ -249,7 +249,7 @@ int64_t ggesx(
     lapack_int qry_iwork[1];
     lapack_int qry_bwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cggesx(
+    cggesx_(
         &jobvsl_, &jobvsr_, &sort_,
         (LAPACK_C_SELECT2) select, &sense_, &n_,
         (lapack_complex_float*) A, &lda_,
@@ -277,7 +277,7 @@ int64_t ggesx(
     lapack::vector< lapack_int > iwork( liwork_ );
     lapack::vector< lapack_int > bwork( (n) );
 
-    LAPACK_cggesx(
+    cggesx_(
         &jobvsl_, &jobvsr_, &sort_,
         (LAPACK_C_SELECT2) select, &sense_, &n_,
         (lapack_complex_float*) A, &lda_,
@@ -340,7 +340,7 @@ int64_t ggesx(
     lapack_int qry_iwork[1];
     lapack_int qry_bwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zggesx(
+    zggesx_(
         &jobvsl_, &jobvsr_, &sort_,
         (LAPACK_Z_SELECT2) select, &sense_, &n_,
         (lapack_complex_double*) A, &lda_,
@@ -368,7 +368,7 @@ int64_t ggesx(
     lapack::vector< lapack_int > iwork( liwork_ );
     lapack::vector< lapack_int > bwork( (n) );
 
-    LAPACK_zggesx(
+    zggesx_(
         &jobvsl_, &jobvsr_, &sort_,
         (LAPACK_Z_SELECT2) select, &sense_, &n_,
         (lapack_complex_double*) A, &lda_,

@@ -56,7 +56,7 @@ int64_t stemr(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_sstemr(
+    sstemr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &m_,
@@ -76,7 +76,7 @@ int64_t stemr(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_sstemr(
+    sstemr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &m_,
@@ -138,7 +138,7 @@ int64_t stemr(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dstemr(
+    dstemr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &m_,
@@ -158,7 +158,7 @@ int64_t stemr(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_dstemr(
+    dstemr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &m_,
@@ -220,7 +220,7 @@ int64_t stemr(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cstemr(
+    cstemr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &m_,
@@ -240,7 +240,7 @@ int64_t stemr(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_cstemr(
+    cstemr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &m_,
@@ -302,7 +302,7 @@ int64_t stemr(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zstemr(
+    zstemr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &m_,
@@ -322,7 +322,7 @@ int64_t stemr(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_zstemr(
+    zstemr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &m_,

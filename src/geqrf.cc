@@ -36,7 +36,7 @@ int64_t geqrf(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgeqrf(
+    sgeqrf_(
         &m_, &n_,
         A, &lda_,
         tau,
@@ -49,7 +49,7 @@ int64_t geqrf(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_sgeqrf(
+    sgeqrf_(
         &m_, &n_,
         A, &lda_,
         tau,
@@ -81,7 +81,7 @@ int64_t geqrf(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgeqrf(
+    dgeqrf_(
         &m_, &n_,
         A, &lda_,
         tau,
@@ -94,7 +94,7 @@ int64_t geqrf(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dgeqrf(
+    dgeqrf_(
         &m_, &n_,
         A, &lda_,
         tau,
@@ -126,7 +126,7 @@ int64_t geqrf(
     // query for workspace size
     std::complex<float> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgeqrf(
+    cgeqrf_(
         &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) tau,
@@ -139,7 +139,7 @@ int64_t geqrf(
     // allocate workspace
     lapack::vector< std::complex<float> > work( lwork_ );
 
-    LAPACK_cgeqrf(
+    cgeqrf_(
         &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) tau,
@@ -222,7 +222,7 @@ int64_t geqrf(
     // query for workspace size
     std::complex<double> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgeqrf(
+    zgeqrf_(
         &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) tau,
@@ -235,7 +235,7 @@ int64_t geqrf(
     // allocate workspace
     lapack::vector< std::complex<double> > work( lwork_ );
 
-    LAPACK_zgeqrf(
+    zgeqrf_(
         &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) tau,

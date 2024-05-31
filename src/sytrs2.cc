@@ -49,7 +49,7 @@ int64_t sytrs2(
     // allocate workspace
     lapack::vector< float > work( (n) );
 
-    LAPACK_ssytrs2(
+    ssytrs2_(
         &uplo_, &n_, &nrhs_,
         A, &lda_,
         ipiv_ptr,
@@ -94,7 +94,7 @@ int64_t sytrs2(
     // allocate workspace
     lapack::vector< double > work( (n) );
 
-    LAPACK_dsytrs2(
+    dsytrs2_(
         &uplo_, &n_, &nrhs_,
         A, &lda_,
         ipiv_ptr,
@@ -139,7 +139,7 @@ int64_t sytrs2(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (n) );
 
-    LAPACK_csytrs2(
+    csytrs2_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         ipiv_ptr,
@@ -236,7 +236,7 @@ int64_t sytrs2(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (n) );
 
-    LAPACK_zsytrs2(
+    zsytrs2_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         ipiv_ptr,

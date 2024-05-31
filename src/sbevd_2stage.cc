@@ -43,7 +43,7 @@ int64_t sbevd_2stage(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_ssbevd_2stage(
+    ssbevd_2stage_(
         &jobz_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         W,
@@ -61,7 +61,7 @@ int64_t sbevd_2stage(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_ssbevd_2stage(
+    ssbevd_2stage_(
         &jobz_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         W,
@@ -101,7 +101,7 @@ int64_t sbevd_2stage(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dsbevd_2stage(
+    dsbevd_2stage_(
         &jobz_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         W,
@@ -119,7 +119,7 @@ int64_t sbevd_2stage(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_dsbevd_2stage(
+    dsbevd_2stage_(
         &jobz_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         W,

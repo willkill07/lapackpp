@@ -53,7 +53,7 @@ int64_t spsvx(
     lapack::vector< float > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_sspsvx(
+    sspsvx_(
         &fact_, &uplo_, &n_, &nrhs_,
         AP,
         AFP,
@@ -112,7 +112,7 @@ int64_t spsvx(
     lapack::vector< double > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dspsvx(
+    dspsvx_(
         &fact_, &uplo_, &n_, &nrhs_,
         AP,
         AFP,
@@ -171,7 +171,7 @@ int64_t spsvx(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (n) );
 
-    LAPACK_cspsvx(
+    cspsvx_(
         &fact_, &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) AP,
         (lapack_complex_float*) AFP,
@@ -230,7 +230,7 @@ int64_t spsvx(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_zspsvx(
+    zspsvx_(
         &fact_, &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) AP,
         (lapack_complex_double*) AFP,

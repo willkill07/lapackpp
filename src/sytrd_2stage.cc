@@ -43,7 +43,7 @@ int64_t sytrd_2stage(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_ssytrd_2stage(
+    ssytrd_2stage_(
         &jobz_, &uplo_, &n_,
         A, &lda_,
         D,
@@ -60,7 +60,7 @@ int64_t sytrd_2stage(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_ssytrd_2stage(
+    ssytrd_2stage_(
         &jobz_, &uplo_, &n_,
         A, &lda_,
         D,
@@ -102,7 +102,7 @@ int64_t sytrd_2stage(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dsytrd_2stage(
+    dsytrd_2stage_(
         &jobz_, &uplo_, &n_,
         A, &lda_,
         D,
@@ -119,7 +119,7 @@ int64_t sytrd_2stage(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dsytrd_2stage(
+    dsytrd_2stage_(
         &jobz_, &uplo_, &n_,
         A, &lda_,
         D,

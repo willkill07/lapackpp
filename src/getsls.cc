@@ -46,7 +46,7 @@ int64_t getsls(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgetsls(
+    sgetsls_(
         &trans_, &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -59,7 +59,7 @@ int64_t getsls(
 
     // LAPACK bug: min work can be > opt work for m < n, e.g. m = 2, n = 3.
     lapack_int ineg_two = -2;
-    LAPACK_sgetsls(
+    sgetsls_(
         &trans_, &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -73,7 +73,7 @@ int64_t getsls(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_sgetsls(
+    sgetsls_(
         &trans_, &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -114,7 +114,7 @@ int64_t getsls(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgetsls(
+    dgetsls_(
         &trans_, &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -127,7 +127,7 @@ int64_t getsls(
 
     // LAPACK bug: min work can be > opt work for m < n, e.g. m = 2, n = 3.
     lapack_int ineg_two = -2;
-    LAPACK_dgetsls(
+    dgetsls_(
         &trans_, &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -141,7 +141,7 @@ int64_t getsls(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dgetsls(
+    dgetsls_(
         &trans_, &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -178,7 +178,7 @@ int64_t getsls(
     // query for workspace size
     std::complex<float> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgetsls(
+    cgetsls_(
         &trans_, &m_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -191,7 +191,7 @@ int64_t getsls(
 
     // LAPACK bug: min work can be > opt work for m < n, e.g. m = 2, n = 3.
     lapack_int ineg_two = -2;
-    LAPACK_cgetsls(
+    cgetsls_(
         &trans_, &m_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -205,7 +205,7 @@ int64_t getsls(
     // allocate workspace
     lapack::vector< std::complex<float> > work( lwork_ );
 
-    LAPACK_cgetsls(
+    cgetsls_(
         &trans_, &m_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -242,7 +242,7 @@ int64_t getsls(
     // query for workspace size
     std::complex<double> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgetsls(
+    zgetsls_(
         &trans_, &m_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,
@@ -255,7 +255,7 @@ int64_t getsls(
 
     // LAPACK bug: min work can be > opt work for m < n, e.g. m = 2, n = 3.
     lapack_int ineg_two = -2;
-    LAPACK_zgetsls(
+    zgetsls_(
         &trans_, &m_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,
@@ -269,7 +269,7 @@ int64_t getsls(
     // allocate workspace
     lapack::vector< std::complex<double> > work( lwork_ );
 
-    LAPACK_zgetsls(
+    zgetsls_(
         &trans_, &m_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,

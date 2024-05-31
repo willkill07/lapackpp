@@ -35,7 +35,7 @@ int64_t gebal(
     lapack_int ihi_ = (lapack_int) *ihi;
     lapack_int info_ = 0;
 
-    LAPACK_sgebal(
+    sgebal_(
         &balance_, &n_,
         A, &lda_, &ilo_, &ihi_,
         scale, &info_
@@ -69,7 +69,7 @@ int64_t gebal(
     lapack_int ihi_ = (lapack_int) *ihi;
     lapack_int info_ = 0;
 
-    LAPACK_dgebal(
+    dgebal_(
         &balance_, &n_,
         A, &lda_, &ilo_, &ihi_,
         scale, &info_
@@ -103,7 +103,7 @@ int64_t gebal(
     lapack_int ihi_ = (lapack_int) *ihi;
     lapack_int info_ = 0;
 
-    LAPACK_cgebal(
+    cgebal_(
         &balance_, &n_,
         (lapack_complex_float*) A, &lda_, &ilo_, &ihi_,
         scale, &info_
@@ -226,7 +226,7 @@ int64_t gebal(
     lapack_int ihi_ = (lapack_int) *ihi;
     lapack_int info_ = 0;
 
-    LAPACK_zgebal(
+    zgebal_(
         &balance_, &n_,
         (lapack_complex_double*) A, &lda_, &ilo_, &ihi_,
         scale, &info_

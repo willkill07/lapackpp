@@ -45,7 +45,7 @@ int64_t sbgv(
     // allocate workspace
     lapack::vector< float > work( (3*n) );
 
-    LAPACK_ssbgv(
+    ssbgv_(
         &jobz_, &uplo_, &n_, &ka_, &kb_,
         AB, &ldab_,
         BB, &ldbb_,
@@ -89,7 +89,7 @@ int64_t sbgv(
     // allocate workspace
     lapack::vector< double > work( (3*n) );
 
-    LAPACK_dsbgv(
+    dsbgv_(
         &jobz_, &uplo_, &n_, &ka_, &kb_,
         AB, &ldab_,
         BB, &ldbb_,

@@ -57,7 +57,7 @@ void symv(
     }
 
     char uplo_ = to_char( uplo );
-    LAPACK_csymv( &uplo_, &n_,
+    csymv_( &uplo_, &n_,
                 (lapack_complex_float*) &alpha,
                 (lapack_complex_float*) A, &lda_,
                 (lapack_complex_float*) x, &incx_,
@@ -107,7 +107,7 @@ void symv(
     }
 
     char uplo_ = to_char( uplo );
-    LAPACK_zsymv( &uplo_, &n_,
+    zsymv_( &uplo_, &n_,
                 (lapack_complex_double*) &alpha,
                 (lapack_complex_double*) A, &lda_,
                 (lapack_complex_double*) x, &incx_,

@@ -30,7 +30,7 @@ int64_t trttp(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_strttp(
+    strttp_(
         &uplo_, &n_,
         A, &lda_,
         AP, &info_
@@ -57,7 +57,7 @@ int64_t trttp(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_dtrttp(
+    dtrttp_(
         &uplo_, &n_,
         A, &lda_,
         AP, &info_
@@ -84,7 +84,7 @@ int64_t trttp(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_ctrttp(
+    ctrttp_(
         &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) AP, &info_
@@ -111,7 +111,7 @@ int64_t trttp(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_ztrttp(
+    ztrttp_(
         &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) AP, &info_

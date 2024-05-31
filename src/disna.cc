@@ -30,7 +30,7 @@ int64_t disna(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_sdisna(
+    sdisna_(
         &jobcond_, &m_, &n_,
         D,
         SEP, &info_
@@ -57,7 +57,7 @@ int64_t disna(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_ddisna(
+    ddisna_(
         &jobcond_, &m_, &n_,
         D,
         SEP, &info_

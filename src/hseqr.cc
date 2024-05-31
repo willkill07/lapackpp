@@ -47,7 +47,7 @@ int64_t hseqr(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_shseqr(
+    shseqr_(
         &jobschur_, &compz_, &n_, &ilo_, &ihi_,
         H, &ldh_,
         &WR[0],
@@ -63,7 +63,7 @@ int64_t hseqr(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_shseqr(
+    shseqr_(
         &jobschur_, &compz_, &n_, &ilo_, &ihi_,
         H, &ldh_,
         &WR[0],
@@ -113,7 +113,7 @@ int64_t hseqr(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dhseqr(
+    dhseqr_(
         &jobschur_, &compz_, &n_, &ilo_, &ihi_,
         H, &ldh_,
         &WR[0],
@@ -129,7 +129,7 @@ int64_t hseqr(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dhseqr(
+    dhseqr_(
         &jobschur_, &compz_, &n_, &ilo_, &ihi_,
         H, &ldh_,
         &WR[0],
@@ -175,7 +175,7 @@ int64_t hseqr(
     // query for workspace size
     std::complex<float> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_chseqr(
+    chseqr_(
         &jobschur_, &compz_, &n_, &ilo_, &ihi_,
         (lapack_complex_float*) H, &ldh_,
         (lapack_complex_float*) W,
@@ -190,7 +190,7 @@ int64_t hseqr(
     // allocate workspace
     lapack::vector< std::complex<float> > work( lwork_ );
 
-    LAPACK_chseqr(
+    chseqr_(
         &jobschur_, &compz_, &n_, &ilo_, &ihi_,
         (lapack_complex_float*) H, &ldh_,
         (lapack_complex_float*) W,
@@ -358,7 +358,7 @@ int64_t hseqr(
     // query for workspace size
     std::complex<double> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_zhseqr(
+    zhseqr_(
         &jobschur_, &compz_, &n_, &ilo_, &ihi_,
         (lapack_complex_double*) H, &ldh_,
         (lapack_complex_double*) W,
@@ -373,7 +373,7 @@ int64_t hseqr(
     // allocate workspace
     lapack::vector< std::complex<double> > work( lwork_ );
 
-    LAPACK_zhseqr(
+    zhseqr_(
         &jobschur_, &compz_, &n_, &ilo_, &ihi_,
         (lapack_complex_double*) H, &ldh_,
         (lapack_complex_double*) W,

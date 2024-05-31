@@ -52,7 +52,7 @@ int64_t stegr(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_sstegr(
+    sstegr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -72,7 +72,7 @@ int64_t stegr(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_sstegr(
+    sstegr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -129,7 +129,7 @@ int64_t stegr(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dstegr(
+    dstegr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -149,7 +149,7 @@ int64_t stegr(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_dstegr(
+    dstegr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -206,7 +206,7 @@ int64_t stegr(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cstegr(
+    cstegr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -226,7 +226,7 @@ int64_t stegr(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_cstegr(
+    cstegr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -283,7 +283,7 @@ int64_t stegr(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zstegr(
+    zstegr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -303,7 +303,7 @@ int64_t stegr(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_zstegr(
+    zstegr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &abstol, &m_,

@@ -62,7 +62,7 @@ int64_t hbevx_2stage(
     float qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_chbevx_2stage(
+    chbevx_2stage_(
         &jobz_, &range_, &uplo_, &n_, &kd_,
         (lapack_complex_float*) AB, &ldab_,
         (lapack_complex_float*) Q, &ldq_, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -83,7 +83,7 @@ int64_t hbevx_2stage(
     lapack::vector< float > rwork( (7*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_chbevx_2stage(
+    chbevx_2stage_(
         &jobz_, &range_, &uplo_, &n_, &kd_,
         (lapack_complex_float*) AB, &ldab_,
         (lapack_complex_float*) Q, &ldq_, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -151,7 +151,7 @@ int64_t hbevx_2stage(
     double qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zhbevx_2stage(
+    zhbevx_2stage_(
         &jobz_, &range_, &uplo_, &n_, &kd_,
         (lapack_complex_double*) AB, &ldab_,
         (lapack_complex_double*) Q, &ldq_, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -172,7 +172,7 @@ int64_t hbevx_2stage(
     lapack::vector< double > rwork( (7*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_zhbevx_2stage(
+    zhbevx_2stage_(
         &jobz_, &range_, &uplo_, &n_, &kd_,
         (lapack_complex_double*) AB, &ldab_,
         (lapack_complex_double*) Q, &ldq_, &vl, &vu, &il_, &iu_, &abstol, &m_,

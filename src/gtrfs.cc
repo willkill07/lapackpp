@@ -57,7 +57,7 @@ int64_t gtrfs(
     lapack::vector< float > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_sgtrfs(
+    sgtrfs_(
         &trans_, &n_, &nrhs_,
         DL,
         D,
@@ -122,7 +122,7 @@ int64_t gtrfs(
     lapack::vector< double > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dgtrfs(
+    dgtrfs_(
         &trans_, &n_, &nrhs_,
         DL,
         D,
@@ -187,7 +187,7 @@ int64_t gtrfs(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (n) );
 
-    LAPACK_cgtrfs(
+    cgtrfs_(
         &trans_, &n_, &nrhs_,
         (lapack_complex_float*) DL,
         (lapack_complex_float*) D,
@@ -343,7 +343,7 @@ int64_t gtrfs(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_zgtrfs(
+    zgtrfs_(
         &trans_, &n_, &nrhs_,
         (lapack_complex_double*) DL,
         (lapack_complex_double*) D,

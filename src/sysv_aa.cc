@@ -52,7 +52,7 @@ int64_t sysv_aa(
     // MKL (seen in 2019-2021) has bug in sysv_aa query;
     // query sytrf_aa and sytrs_aa instead.
     #ifdef BLAS_HAVE_MKL
-        LAPACK_ssytrf_aa(
+        ssytrf_aa_(
             &uplo_, &n_,
             A, &lda_,
             ipiv_ptr,
@@ -62,7 +62,7 @@ int64_t sysv_aa(
             throw Error();
         }
         lapack_int lwork_ = real(qry_work[0]);
-        LAPACK_ssytrs_aa(
+        ssytrs_aa_(
             &uplo_, &n_, &nrhs_,
             A, &lda_,
             ipiv_ptr,
@@ -74,7 +74,7 @@ int64_t sysv_aa(
         }
         lwork_ = max( lwork_, real(qry_work[0]) );
     #else
-        LAPACK_ssysv_aa(
+        ssysv_aa_(
             &uplo_, &n_, &nrhs_,
             A, &lda_,
             ipiv_ptr,
@@ -90,7 +90,7 @@ int64_t sysv_aa(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_ssysv_aa(
+    ssysv_aa_(
         &uplo_, &n_, &nrhs_,
         A, &lda_,
         ipiv_ptr,
@@ -141,7 +141,7 @@ int64_t sysv_aa(
     // MKL (seen in 2019-2021) has bug in sysv_aa query;
     // query sytrf_aa and sytrs_aa instead.
     #ifdef BLAS_HAVE_MKL
-        LAPACK_dsytrf_aa(
+        dsytrf_aa_(
             &uplo_, &n_,
             A, &lda_,
             ipiv_ptr,
@@ -151,7 +151,7 @@ int64_t sysv_aa(
             throw Error();
         }
         lapack_int lwork_ = real(qry_work[0]);
-        LAPACK_dsytrs_aa(
+        dsytrs_aa_(
             &uplo_, &n_, &nrhs_,
             A, &lda_,
             ipiv_ptr,
@@ -163,7 +163,7 @@ int64_t sysv_aa(
         }
         lwork_ = max( lwork_, real(qry_work[0]) );
     #else
-        LAPACK_dsysv_aa(
+        dsysv_aa_(
             &uplo_, &n_, &nrhs_,
             A, &lda_,
             ipiv_ptr,
@@ -180,7 +180,7 @@ int64_t sysv_aa(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dsysv_aa(
+    dsysv_aa_(
         &uplo_, &n_, &nrhs_,
         A, &lda_,
         ipiv_ptr,
@@ -231,7 +231,7 @@ int64_t sysv_aa(
     // MKL (seen in 2019-2021) has bug in sysv_aa query;
     // query sytrf_aa and sytrs_aa instead.
     #ifdef BLAS_HAVE_MKL
-        LAPACK_csytrf_aa(
+        csytrf_aa_(
             &uplo_, &n_,
             (lapack_complex_float*) A, &lda_,
             ipiv_ptr,
@@ -241,7 +241,7 @@ int64_t sysv_aa(
             throw Error();
         }
         lapack_int lwork_ = real(qry_work[0]);
-        LAPACK_csytrs_aa(
+        csytrs_aa_(
             &uplo_, &n_, &nrhs_,
             (lapack_complex_float*) A, &lda_,
             ipiv_ptr,
@@ -253,7 +253,7 @@ int64_t sysv_aa(
         }
         lwork_ = max( lwork_, real(qry_work[0]) );
     #else
-        LAPACK_csysv_aa(
+        csysv_aa_(
             &uplo_, &n_, &nrhs_,
             (lapack_complex_float*) A, &lda_,
             ipiv_ptr,
@@ -269,7 +269,7 @@ int64_t sysv_aa(
     // allocate workspace
     lapack::vector< std::complex<float> > work( lwork_ );
 
-    LAPACK_csysv_aa(
+    csysv_aa_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         ipiv_ptr,
@@ -389,7 +389,7 @@ int64_t sysv_aa(
     // MKL (seen in 2019-2021) has bug in sysv_aa query;
     // query sytrf_aa and sytrs_aa instead.
     #ifdef BLAS_HAVE_MKL
-        LAPACK_zsytrf_aa(
+        zsytrf_aa_(
             &uplo_, &n_,
             (lapack_complex_double*) A, &lda_,
             ipiv_ptr,
@@ -399,7 +399,7 @@ int64_t sysv_aa(
             throw Error();
         }
         lapack_int lwork_ = real(qry_work[0]);
-        LAPACK_zsytrs_aa(
+        zsytrs_aa_(
             &uplo_, &n_, &nrhs_,
             (lapack_complex_double*) A, &lda_,
             ipiv_ptr,
@@ -411,7 +411,7 @@ int64_t sysv_aa(
         }
         lwork_ = max( lwork_, real(qry_work[0]) );
     #else
-        LAPACK_zsysv_aa(
+        zsysv_aa_(
             &uplo_, &n_, &nrhs_,
             (lapack_complex_double*) A, &lda_,
             ipiv_ptr,
@@ -427,7 +427,7 @@ int64_t sysv_aa(
     // allocate workspace
     lapack::vector< std::complex<double> > work( lwork_ );
 
-    LAPACK_zsysv_aa(
+    zsysv_aa_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         ipiv_ptr,

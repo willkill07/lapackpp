@@ -38,7 +38,7 @@ int64_t ggbak(
     lapack_int ldv_ = (lapack_int) ldv;
     lapack_int info_ = 0;
 
-    LAPACK_sggbak(
+    sggbak_(
         &balance_, &side_, &n_, &ilo_, &ihi_,
         lscale,
         rscale, &m_,
@@ -74,7 +74,7 @@ int64_t ggbak(
     lapack_int ldv_ = (lapack_int) ldv;
     lapack_int info_ = 0;
 
-    LAPACK_dggbak(
+    dggbak_(
         &balance_, &side_, &n_, &ilo_, &ihi_,
         lscale,
         rscale, &m_,
@@ -110,7 +110,7 @@ int64_t ggbak(
     lapack_int ldv_ = (lapack_int) ldv;
     lapack_int info_ = 0;
 
-    LAPACK_cggbak(
+    cggbak_(
         &balance_, &side_, &n_, &ilo_, &ihi_,
         lscale,
         rscale, &m_,
@@ -146,7 +146,7 @@ int64_t ggbak(
     lapack_int ldv_ = (lapack_int) ldv;
     lapack_int info_ = 0;
 
-    LAPACK_zggbak(
+    zggbak_(
         &balance_, &side_, &n_, &ilo_, &ihi_,
         lscale,
         rscale, &m_,

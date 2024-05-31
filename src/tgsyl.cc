@@ -55,7 +55,7 @@ int64_t tgsyl(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_stgsyl(
+    stgsyl_(
         &trans_, &ijob_, &m_, &n_,
         A, &lda_,
         B, &ldb_,
@@ -75,7 +75,7 @@ int64_t tgsyl(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( (m+n+6) );
 
-    LAPACK_stgsyl(
+    stgsyl_(
         &trans_, &ijob_, &m_, &n_,
         A, &lda_,
         B, &ldb_,
@@ -132,7 +132,7 @@ int64_t tgsyl(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dtgsyl(
+    dtgsyl_(
         &trans_, &ijob_, &m_, &n_,
         A, &lda_,
         B, &ldb_,
@@ -152,7 +152,7 @@ int64_t tgsyl(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( (m+n+6) );
 
-    LAPACK_dtgsyl(
+    dtgsyl_(
         &trans_, &ijob_, &m_, &n_,
         A, &lda_,
         B, &ldb_,
@@ -209,7 +209,7 @@ int64_t tgsyl(
     std::complex<float> qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_ctgsyl(
+    ctgsyl_(
         &trans_, &ijob_, &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -229,7 +229,7 @@ int64_t tgsyl(
     lapack::vector< std::complex<float> > work( lwork_ );
     lapack::vector< lapack_int > iwork( (m+n+2) );
 
-    LAPACK_ctgsyl(
+    ctgsyl_(
         &trans_, &ijob_, &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -286,7 +286,7 @@ int64_t tgsyl(
     std::complex<double> qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_ztgsyl(
+    ztgsyl_(
         &trans_, &ijob_, &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,
@@ -306,7 +306,7 @@ int64_t tgsyl(
     lapack::vector< std::complex<double> > work( lwork_ );
     lapack::vector< lapack_int > iwork( (m+n+2) );
 
-    LAPACK_ztgsyl(
+    ztgsyl_(
         &trans_, &ijob_, &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,

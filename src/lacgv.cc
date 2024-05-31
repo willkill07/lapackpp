@@ -28,7 +28,7 @@ void lacgv(
     lapack_int n_ = (lapack_int) n;
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_clacgv(
+    clacgv_(
         &n_,
         (lapack_complex_float*) x, &incx_ );
 }
@@ -65,7 +65,7 @@ void lacgv(
     lapack_int n_ = (lapack_int) n;
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_zlacgv(
+    zlacgv_(
         &n_,
         (lapack_complex_double*) x, &incx_ );
 }

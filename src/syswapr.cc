@@ -35,7 +35,7 @@ void syswapr(
     lapack_int i1_ = (lapack_int) i1;
     lapack_int i2_ = (lapack_int) i2;
 
-    LAPACK_ssyswapr(
+    ssyswapr_(
         &uplo_, &n_,
         A, &lda_, &i1_, &i2_
     );
@@ -60,7 +60,7 @@ void syswapr(
     lapack_int i1_ = (lapack_int) i1;
     lapack_int i2_ = (lapack_int) i2;
 
-    LAPACK_dsyswapr(
+    dsyswapr_(
         &uplo_, &n_,
         A, &lda_, &i1_, &i2_
     );
@@ -85,7 +85,7 @@ void syswapr(
     lapack_int i1_ = (lapack_int) i1;
     lapack_int i2_ = (lapack_int) i2;
 
-    LAPACK_csyswapr(
+    csyswapr_(
         &uplo_, &n_,
         (lapack_complex_float*) A, &lda_, &i1_, &i2_
     );
@@ -140,7 +140,7 @@ void syswapr(
     lapack_int i1_ = (lapack_int) i1;
     lapack_int i2_ = (lapack_int) i2;
 
-    LAPACK_zsyswapr(
+    zsyswapr_(
         &uplo_, &n_,
         (lapack_complex_double*) A, &lda_, &i1_, &i2_
     );

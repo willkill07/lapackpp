@@ -59,7 +59,7 @@ int64_t ggsvp3(
     lapack_int qry_iwork[1];
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_sggsvp3(
+    sggsvp3_(
         &jobu_, &jobv_, &jobq_, &m_, &p_, &n_,
         A, &lda_,
         B, &ldb_, &tola, &tolb, &k_, &l_,
@@ -79,7 +79,7 @@ int64_t ggsvp3(
     lapack::vector< lapack_int > iwork( (n) );
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_sggsvp3(
+    sggsvp3_(
         &jobu_, &jobv_, &jobq_, &m_, &p_, &n_,
         A, &lda_,
         B, &ldb_, &tola, &tolb, &k_, &l_,
@@ -140,7 +140,7 @@ int64_t ggsvp3(
     lapack_int qry_iwork[1];
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dggsvp3(
+    dggsvp3_(
         &jobu_, &jobv_, &jobq_, &m_, &p_, &n_,
         A, &lda_,
         B, &ldb_, &tola, &tolb, &k_, &l_,
@@ -160,7 +160,7 @@ int64_t ggsvp3(
     lapack::vector< lapack_int > iwork( (n) );
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dggsvp3(
+    dggsvp3_(
         &jobu_, &jobv_, &jobq_, &m_, &p_, &n_,
         A, &lda_,
         B, &ldb_, &tola, &tolb, &k_, &l_,
@@ -222,7 +222,7 @@ int64_t ggsvp3(
     float qry_rwork[1];
     std::complex<float> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_cggsvp3(
+    cggsvp3_(
         &jobu_, &jobv_, &jobq_, &m_, &p_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_, &tola, &tolb, &k_, &l_,
@@ -244,7 +244,7 @@ int64_t ggsvp3(
     lapack::vector< float > rwork( (2*n) );
     lapack::vector< std::complex<float> > work( lwork_ );
 
-    LAPACK_cggsvp3(
+    cggsvp3_(
         &jobu_, &jobv_, &jobq_, &m_, &p_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_, &tola, &tolb, &k_, &l_,
@@ -307,7 +307,7 @@ int64_t ggsvp3(
     double qry_rwork[1];
     std::complex<double> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_zggsvp3(
+    zggsvp3_(
         &jobu_, &jobv_, &jobq_, &m_, &p_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_, &tola, &tolb, &k_, &l_,
@@ -329,7 +329,7 @@ int64_t ggsvp3(
     lapack::vector< double > rwork( (2*n) );
     lapack::vector< std::complex<double> > work( lwork_ );
 
-    LAPACK_zggsvp3(
+    zggsvp3_(
         &jobu_, &jobv_, &jobq_, &m_, &p_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_, &tola, &tolb, &k_, &l_,

@@ -46,7 +46,7 @@ int64_t hbgv(
     lapack::vector< std::complex<float> > work( (n) );
     lapack::vector< float > rwork( (3*n) );
 
-    LAPACK_chbgv(
+    chbgv_(
         &jobz_, &uplo_, &n_, &ka_, &kb_,
         (lapack_complex_float*) AB, &ldab_,
         (lapack_complex_float*) BB, &ldbb_,
@@ -92,7 +92,7 @@ int64_t hbgv(
     lapack::vector< std::complex<double> > work( (n) );
     lapack::vector< double > rwork( (3*n) );
 
-    LAPACK_zhbgv(
+    zhbgv_(
         &jobz_, &uplo_, &n_, &ka_, &kb_,
         (lapack_complex_double*) AB, &ldab_,
         (lapack_complex_double*) BB, &ldbb_,

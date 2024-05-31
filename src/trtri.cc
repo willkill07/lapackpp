@@ -30,7 +30,7 @@ int64_t trtri(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_strtri(
+    strtri_(
         &uplo_, &diag_, &n_,
         A, &lda_, &info_
     );
@@ -56,7 +56,7 @@ int64_t trtri(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_dtrtri(
+    dtrtri_(
         &uplo_, &diag_, &n_,
         A, &lda_, &info_
     );
@@ -82,7 +82,7 @@ int64_t trtri(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_ctrtri(
+    ctrtri_(
         &uplo_, &diag_, &n_,
         (lapack_complex_float*) A, &lda_, &info_
     );
@@ -108,7 +108,7 @@ int64_t trtri(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_ztrtri(
+    ztrtri_(
         &uplo_, &diag_, &n_,
         (lapack_complex_double*) A, &lda_, &info_
     );

@@ -39,7 +39,7 @@ int64_t heev_2stage(
     std::complex<float> qry_work[1];
     float qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cheev_2stage(
+    cheev_2stage_(
         &jobz_, &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         W,
@@ -55,7 +55,7 @@ int64_t heev_2stage(
     lapack::vector< std::complex<float> > work( lwork_ );
     lapack::vector< float > rwork( (max( 1, 3*n-2 )) );
 
-    LAPACK_cheev_2stage(
+    cheev_2stage_(
         &jobz_, &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         W,
@@ -167,7 +167,7 @@ int64_t heev_2stage(
     std::complex<double> qry_work[1];
     double qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zheev_2stage(
+    zheev_2stage_(
         &jobz_, &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         W,
@@ -183,7 +183,7 @@ int64_t heev_2stage(
     lapack::vector< std::complex<double> > work( lwork_ );
     lapack::vector< double > rwork( (max( 1, 3*n-2 )) );
 
-    LAPACK_zheev_2stage(
+    zheev_2stage_(
         &jobz_, &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         W,

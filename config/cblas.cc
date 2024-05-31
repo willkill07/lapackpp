@@ -24,6 +24,7 @@
     #if defined(BLAS_HAVE_ACCELERATE_CBLAS_H) || defined(LAPACK_HAVE_ACCELERATE_CBLAS_H)
         #include <cblas.h>
     #else
+        #define ACCELERATE_NEW_LAPACK 1
         #include <Accelerate/Accelerate.h>
     #endif
 

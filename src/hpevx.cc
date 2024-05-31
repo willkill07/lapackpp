@@ -53,7 +53,7 @@ int64_t hpevx(
     lapack::vector< float > rwork( (7*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_chpevx(
+    chpevx_(
         &jobz_, &range_, &uplo_, &n_,
         (lapack_complex_float*) AP, &vl, &vu, &il_, &iu_, &abstol, &m_,
         W,
@@ -113,7 +113,7 @@ int64_t hpevx(
     lapack::vector< double > rwork( (7*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_zhpevx(
+    zhpevx_(
         &jobz_, &range_, &uplo_, &n_,
         (lapack_complex_double*) AP, &vl, &vu, &il_, &iu_, &abstol, &m_,
         W,

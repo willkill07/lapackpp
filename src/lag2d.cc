@@ -33,7 +33,7 @@ int64_t lag2d(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_slag2d(
+    slag2d_(
         &m_, &n_,
         SA, &ldsa_,
         A, &lda_, &info_ );

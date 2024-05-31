@@ -55,7 +55,7 @@ int64_t orcsd2by1(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_sorcsd2by1(
+    sorcsd2by1_(
         &jobu1_, &jobu2_, &jobv1t_, &m_, &p_, &q_,
         X11, &ldx11_,
         X21, &ldx21_,
@@ -75,7 +75,7 @@ int64_t orcsd2by1(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( (m - min( p, min( m-p, min( q, m-q )))) );
 
-    LAPACK_sorcsd2by1(
+    sorcsd2by1_(
         &jobu1_, &jobu2_, &jobv1t_, &m_, &p_, &q_,
         X11, &ldx11_,
         X21, &ldx21_,
@@ -130,7 +130,7 @@ int64_t orcsd2by1(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dorcsd2by1(
+    dorcsd2by1_(
         &jobu1_, &jobu2_, &jobv1t_, &m_, &p_, &q_,
         X11, &ldx11_,
         X21, &ldx21_,
@@ -150,7 +150,7 @@ int64_t orcsd2by1(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( (m - min( p, min( m-p, min( q, m-q )))) );
 
-    LAPACK_dorcsd2by1(
+    dorcsd2by1_(
         &jobu1_, &jobu2_, &jobv1t_, &m_, &p_, &q_,
         X11, &ldx11_,
         X21, &ldx21_,

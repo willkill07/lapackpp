@@ -55,7 +55,7 @@ int64_t pbsvx(
     lapack::vector< float > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_spbsvx(
+    spbsvx_(
         &fact_, &uplo_, &n_, &kd_, &nrhs_,
         AB, &ldab_,
         AFB, &ldafb_,
@@ -115,7 +115,7 @@ int64_t pbsvx(
     lapack::vector< double > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dpbsvx(
+    dpbsvx_(
         &fact_, &uplo_, &n_, &kd_, &nrhs_,
         AB, &ldab_,
         AFB, &ldafb_,
@@ -175,7 +175,7 @@ int64_t pbsvx(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (n) );
 
-    LAPACK_cpbsvx(
+    cpbsvx_(
         &fact_, &uplo_, &n_, &kd_, &nrhs_,
         (lapack_complex_float*) AB, &ldab_,
         (lapack_complex_float*) AFB, &ldafb_,
@@ -433,7 +433,7 @@ int64_t pbsvx(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_zpbsvx(
+    zpbsvx_(
         &fact_, &uplo_, &n_, &kd_, &nrhs_,
         (lapack_complex_double*) AB, &ldab_,
         (lapack_complex_double*) AFB, &ldafb_,

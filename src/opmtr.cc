@@ -46,9 +46,9 @@ int64_t opmtr(
     // allocate workspace
     lapack::vector< float > work( lwork );
 
-    LAPACK_sopmtr(
+    sopmtr_(
         &side_, &uplo_, &trans_, &m_, &n_,
-        AP,
+        (float*)AP,
         tau,
         C, &ldc_,
         &work[0], &info_
@@ -90,9 +90,9 @@ int64_t opmtr(
     // allocate workspace
     lapack::vector< double > work( lwork );
 
-    LAPACK_dopmtr(
+    dopmtr_(
         &side_, &uplo_, &trans_, &m_, &n_,
-        AP,
+        (double*)AP,
         tau,
         C, &ldc_,
         &work[0], &info_

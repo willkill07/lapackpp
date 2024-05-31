@@ -36,7 +36,7 @@ int64_t geqr2(
     // allocate workspace
     lapack::vector< float > work( (n) );
 
-    LAPACK_sgeqr2(
+    sgeqr2_(
         &m_, &n_,
         A, &lda_,
         tau,
@@ -68,7 +68,7 @@ int64_t geqr2(
     // allocate workspace
     lapack::vector< double > work( (n) );
 
-    LAPACK_dgeqr2(
+    dgeqr2_(
         &m_, &n_,
         A, &lda_,
         tau,
@@ -100,7 +100,7 @@ int64_t geqr2(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (n) );
 
-    LAPACK_cgeqr2(
+    cgeqr2_(
         &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) tau,
@@ -184,7 +184,7 @@ int64_t geqr2(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (n) );
 
-    LAPACK_zgeqr2(
+    zgeqr2_(
         &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) tau,

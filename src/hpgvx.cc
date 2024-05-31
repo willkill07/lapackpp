@@ -56,7 +56,7 @@ int64_t hpgvx(
     lapack::vector< float > rwork( (7*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_chpgvx(
+    chpgvx_(
         &itype_, &jobz_, &range_, &uplo_, &n_,
         (lapack_complex_float*) AP,
         (lapack_complex_float*) BP, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -120,7 +120,7 @@ int64_t hpgvx(
     lapack::vector< double > rwork( (7*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_zhpgvx(
+    zhpgvx_(
         &itype_, &jobz_, &range_, &uplo_, &n_,
         (lapack_complex_double*) AP,
         (lapack_complex_double*) BP, &vl, &vu, &il_, &iu_, &abstol, &m_,

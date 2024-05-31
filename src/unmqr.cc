@@ -43,7 +43,7 @@ int64_t unmqr(
     // query for workspace size
     std::complex<float> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_cunmqr(
+    cunmqr_(
         &side_, &trans_, &m_, &n_, &k_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) tau,
@@ -58,7 +58,7 @@ int64_t unmqr(
     // allocate workspace
     lapack::vector< std::complex<float> > work( lwork_ );
 
-    LAPACK_cunmqr(
+    cunmqr_(
         &side_, &trans_, &m_, &n_, &k_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) tau,
@@ -167,7 +167,7 @@ int64_t unmqr(
     // query for workspace size
     std::complex<double> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_zunmqr(
+    zunmqr_(
         &side_, &trans_, &m_, &n_, &k_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) tau,
@@ -182,7 +182,7 @@ int64_t unmqr(
     // allocate workspace
     lapack::vector< std::complex<double> > work( lwork_ );
 
-    LAPACK_zunmqr(
+    zunmqr_(
         &side_, &trans_, &m_, &n_, &k_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) tau,

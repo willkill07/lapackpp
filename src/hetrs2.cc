@@ -49,7 +49,7 @@ int64_t hetrs2(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (n) );
 
-    LAPACK_chetrs2(
+    chetrs2_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         ipiv_ptr,
@@ -141,7 +141,7 @@ int64_t hetrs2(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (n) );
 
-    LAPACK_zhetrs2(
+    zhetrs2_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         ipiv_ptr,

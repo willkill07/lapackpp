@@ -27,7 +27,7 @@ int64_t sterf(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_ssterf(
+    ssterf_(
         &n_,
         D,
         E, &info_ );
@@ -50,7 +50,7 @@ int64_t sterf(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_dsterf(
+    dsterf_(
         &n_,
         D,
         E, &info_ );

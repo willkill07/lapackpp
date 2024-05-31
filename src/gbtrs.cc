@@ -48,7 +48,7 @@ int64_t gbtrs(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_sgbtrs(
+    sgbtrs_(
         &trans_, &n_, &kl_, &ku_, &nrhs_,
         AB, &ldab_,
         ipiv_ptr,
@@ -93,7 +93,7 @@ int64_t gbtrs(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_dgbtrs(
+    dgbtrs_(
         &trans_, &n_, &kl_, &ku_, &nrhs_,
         AB, &ldab_,
         ipiv_ptr,
@@ -138,7 +138,7 @@ int64_t gbtrs(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_cgbtrs(
+    cgbtrs_(
         &trans_, &n_, &kl_, &ku_, &nrhs_,
         (lapack_complex_float*) AB, &ldab_,
         ipiv_ptr,
@@ -245,7 +245,7 @@ int64_t gbtrs(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_zgbtrs(
+    zgbtrs_(
         &trans_, &n_, &kl_, &ku_, &nrhs_,
         (lapack_complex_double*) AB, &ldab_,
         ipiv_ptr,

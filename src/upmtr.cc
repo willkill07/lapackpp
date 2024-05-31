@@ -43,7 +43,7 @@ int64_t upmtr(
     // allocate workspace
     lapack::vector< std::complex<float> > work( max(1,lwork) );
 
-    LAPACK_cupmtr(
+    cupmtr_(
         &side_, &uplo_, &trans_, &m_, &n_,
         (lapack_complex_float*) AP,
         (lapack_complex_float*) tau,
@@ -147,7 +147,7 @@ int64_t upmtr(
     // allocate workspace
     lapack::vector< std::complex<double> > work( max(1,lwork) );
 
-    LAPACK_zupmtr(
+    zupmtr_(
         &side_, &uplo_, &trans_, &m_, &n_,
         (lapack_complex_double*) AP,
         (lapack_complex_double*) tau,

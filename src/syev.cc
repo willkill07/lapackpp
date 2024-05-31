@@ -36,7 +36,7 @@ int64_t syev(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_ssyev(
+    ssyev_(
         &jobz_, &uplo_, &n_,
         A, &lda_,
         W,
@@ -50,7 +50,7 @@ int64_t syev(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_ssyev(
+    ssyev_(
         &jobz_, &uplo_, &n_,
         A, &lda_,
         W,
@@ -84,7 +84,7 @@ int64_t syev(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dsyev(
+    dsyev_(
         &jobz_, &uplo_, &n_,
         A, &lda_,
         W,
@@ -98,7 +98,7 @@ int64_t syev(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dsyev(
+    dsyev_(
         &jobz_, &uplo_, &n_,
         A, &lda_,
         W,

@@ -40,7 +40,7 @@ int64_t getrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_sgetrf(
+    sgetrf_(
         &m_, &n_,
         A, &lda_,
         ipiv_ptr, &info_ );
@@ -78,7 +78,7 @@ int64_t getrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_dgetrf(
+    dgetrf_(
         &m_, &n_,
         A, &lda_,
         ipiv_ptr, &info_ );
@@ -116,7 +116,7 @@ int64_t getrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_cgetrf(
+    cgetrf_(
         &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         ipiv_ptr, &info_ );
@@ -196,7 +196,7 @@ int64_t getrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_zgetrf(
+    zgetrf_(
         &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         ipiv_ptr, &info_ );

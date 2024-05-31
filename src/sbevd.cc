@@ -41,7 +41,7 @@ int64_t sbevd(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_ssbevd(
+    ssbevd_(
         &jobz_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         W,
@@ -59,7 +59,7 @@ int64_t sbevd(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_ssbevd(
+    ssbevd_(
         &jobz_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         W,
@@ -99,7 +99,7 @@ int64_t sbevd(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dsbevd(
+    dsbevd_(
         &jobz_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         W,
@@ -117,7 +117,7 @@ int64_t sbevd(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_dsbevd(
+    dsbevd_(
         &jobz_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         W,

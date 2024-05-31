@@ -37,7 +37,7 @@ int64_t sytrd(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_ssytrd(
+    ssytrd_(
         &uplo_, &n_,
         A, &lda_,
         D,
@@ -53,7 +53,7 @@ int64_t sytrd(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_ssytrd(
+    ssytrd_(
         &uplo_, &n_,
         A, &lda_,
         D,
@@ -90,7 +90,7 @@ int64_t sytrd(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dsytrd(
+    dsytrd_(
         &uplo_, &n_,
         A, &lda_,
         D,
@@ -106,7 +106,7 @@ int64_t sytrd(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dsytrd(
+    dsytrd_(
         &uplo_, &n_,
         A, &lda_,
         D,

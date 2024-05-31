@@ -60,7 +60,7 @@ int64_t hbevx(
     lapack::vector< float > rwork( (7*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_chbevx(
+    chbevx_(
         &jobz_, &range_, &uplo_, &n_, &kd_,
         (lapack_complex_float*) AB, &ldab_,
         (lapack_complex_float*) Q, &ldq_, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -128,7 +128,7 @@ int64_t hbevx(
     lapack::vector< double > rwork( (7*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_zhbevx(
+    zhbevx_(
         &jobz_, &range_, &uplo_, &n_, &kd_,
         (lapack_complex_double*) AB, &ldab_,
         (lapack_complex_double*) Q, &ldq_, &vl, &vu, &il_, &iu_, &abstol, &m_,

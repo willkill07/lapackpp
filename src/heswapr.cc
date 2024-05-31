@@ -35,7 +35,7 @@ void heswapr(
     lapack_int i1_ = (lapack_int) i1;
     lapack_int i2_ = (lapack_int) i2;
 
-    LAPACK_cheswapr(
+    cheswapr_(
         &uplo_, &n_,
         (lapack_complex_float*) A, &lda_, &i1_, &i2_
     );
@@ -90,7 +90,7 @@ void heswapr(
     lapack_int i1_ = (lapack_int) i1;
     lapack_int i2_ = (lapack_int) i2;
 
-    LAPACK_zheswapr(
+    zheswapr_(
         &uplo_, &n_,
         (lapack_complex_double*) A, &lda_, &i1_, &i2_
     );

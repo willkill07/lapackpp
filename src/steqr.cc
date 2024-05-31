@@ -35,7 +35,7 @@ int64_t steqr(
     // allocate workspace
     lapack::vector< float > work( (max( 1, 2*n-2 )) );
 
-    LAPACK_ssteqr(
+    ssteqr_(
         &compz_, &n_,
         D,
         E,
@@ -68,7 +68,7 @@ int64_t steqr(
     // allocate workspace
     lapack::vector< double > work( (max( 1, 2*n-2 )) );
 
-    LAPACK_dsteqr(
+    dsteqr_(
         &compz_, &n_,
         D,
         E,
@@ -101,7 +101,7 @@ int64_t steqr(
     // allocate workspace
     lapack::vector< float > work( (max( 1, 2*n-2 )) );
 
-    LAPACK_csteqr(
+    csteqr_(
         &compz_, &n_,
         D,
         E,
@@ -134,7 +134,7 @@ int64_t steqr(
     // allocate workspace
     lapack::vector< double > work( (max( 1, 2*n-2 )) );
 
-    LAPACK_zsteqr(
+    zsteqr_(
         &compz_, &n_,
         D,
         E,

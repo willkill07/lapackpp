@@ -35,7 +35,7 @@ int64_t opgtr(
     // allocate workspace
     lapack::vector< float > work( (n-1) );
 
-    LAPACK_sopgtr(
+    sopgtr_(
         &uplo_, &n_,
         AP,
         tau,
@@ -68,7 +68,7 @@ int64_t opgtr(
     // allocate workspace
     lapack::vector< double > work( (n-1) );
 
-    LAPACK_dopgtr(
+    dopgtr_(
         &uplo_, &n_,
         AP,
         tau,

@@ -35,7 +35,7 @@ void tfsm(
     lapack_int n_ = (lapack_int) n;
     lapack_int ldb_ = (lapack_int) ldb;
 
-    LAPACK_stfsm(
+    stfsm_(
         &transr_, &side_, &uplo_, &trans_, &diag_, &m_, &n_, &alpha,
         A,
         B, &ldb_
@@ -63,7 +63,7 @@ void tfsm(
     lapack_int n_ = (lapack_int) n;
     lapack_int ldb_ = (lapack_int) ldb;
 
-    LAPACK_dtfsm(
+    dtfsm_(
         &transr_, &side_, &uplo_, &trans_, &diag_, &m_, &n_, &alpha,
         A,
         B, &ldb_
@@ -91,7 +91,7 @@ void tfsm(
     lapack_int n_ = (lapack_int) n;
     lapack_int ldb_ = (lapack_int) ldb;
 
-    LAPACK_ctfsm(
+    ctfsm_(
         &transr_, &side_, &uplo_, &trans_, &diag_, &m_, &n_,
         (lapack_complex_float*) &alpha,
         (lapack_complex_float*) A,
@@ -120,7 +120,7 @@ void tfsm(
     lapack_int n_ = (lapack_int) n;
     lapack_int ldb_ = (lapack_int) ldb;
 
-    LAPACK_ztfsm(
+    ztfsm_(
         &transr_, &side_, &uplo_, &trans_, &diag_, &m_, &n_,
         (lapack_complex_double*) &alpha,
         (lapack_complex_double*) A,

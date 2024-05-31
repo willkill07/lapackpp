@@ -5,6 +5,10 @@
 
 #include <stdio.h>
 
+#ifdef ACCELERATE_NEW_LAPACK
+#include <Accelerate/Accelerate.h>
+#endif
+
 #include "config.h"
 
 #define LAPACK_ilaver FORTRAN_NAME( ilaver, ILAVER )

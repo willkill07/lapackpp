@@ -23,7 +23,7 @@ void lartgs(
     float* sn )
 {
 
-    LAPACK_slartgs(
+    slartgs_(
         &x, &y, &sigma, cs, sn );
 }
 
@@ -34,7 +34,7 @@ void lartgs(
     double* sn )
 {
 
-    LAPACK_dlartgs(
+    dlartgs_(
         &x, &y, &sigma, cs, sn );
 }
 

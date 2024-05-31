@@ -30,7 +30,7 @@ void larfg(
     lapack_int n_ = (lapack_int) n;
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_slarfg(
+    slarfg_(
         &n_, alpha,
         X, &incx_, tau );
 }
@@ -51,7 +51,7 @@ void larfg(
     lapack_int n_ = (lapack_int) n;
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_dlarfg(
+    dlarfg_(
         &n_, alpha,
         X, &incx_, tau );
 }
@@ -72,7 +72,7 @@ void larfg(
     lapack_int n_ = (lapack_int) n;
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_clarfg(
+    clarfg_(
         &n_, (lapack_complex_float*) alpha,
         (lapack_complex_float*) X, &incx_, (lapack_complex_float*) tau );
 }
@@ -149,7 +149,7 @@ void larfg(
     lapack_int n_ = (lapack_int) n;
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_zlarfg(
+    zlarfg_(
         &n_, (lapack_complex_double*) alpha,
         (lapack_complex_double*) X, &incx_, (lapack_complex_double*) tau );
 }

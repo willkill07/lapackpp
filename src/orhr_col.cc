@@ -43,7 +43,7 @@ int64_t orhr_col(
     // Work around bug in LAPACK <= 3.12. See https://github.com/Reference-LAPACK/lapack/pull/1018
     nb_ = min( nb_, n );
 
-    LAPACK_sorhr_col(
+    sorhr_col_(
         &m_, &n_, &nb_,
         A, &lda_,
         T, &ldt_,
@@ -165,7 +165,7 @@ int64_t orhr_col(
     // Work around bug in LAPACK <= 3.12. See https://github.com/Reference-LAPACK/lapack/pull/1018
     nb_ = min( nb_, n );
 
-    LAPACK_dorhr_col(
+    dorhr_col_(
         &m_, &n_, &nb_,
         A, &lda_,
         T, &ldt_,

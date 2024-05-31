@@ -43,7 +43,7 @@ int64_t hetrd_2stage(
     // query for workspace size
     std::complex<float> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_chetrd_2stage(
+    chetrd_2stage_(
         &jobz_, &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         D,
@@ -60,7 +60,7 @@ int64_t hetrd_2stage(
     // allocate workspace
     lapack::vector< std::complex<float> > work( lwork_ );
 
-    LAPACK_chetrd_2stage(
+    chetrd_2stage_(
         &jobz_, &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         D,
@@ -212,7 +212,7 @@ int64_t hetrd_2stage(
     // query for workspace size
     std::complex<double> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_zhetrd_2stage(
+    zhetrd_2stage_(
         &jobz_, &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         D,
@@ -229,7 +229,7 @@ int64_t hetrd_2stage(
     // allocate workspace
     lapack::vector< std::complex<double> > work( lwork_ );
 
-    LAPACK_zhetrd_2stage(
+    zhetrd_2stage_(
         &jobz_, &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         D,

@@ -57,7 +57,7 @@ int64_t syevr_2stage(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_ssyevr_2stage(
+    ssyevr_2stage_(
         &jobz_, &range_, &uplo_, &n_,
         A, &lda_, &vl, &vu, &il_, &iu_, &abstol, &nfound_,
         W,
@@ -76,7 +76,7 @@ int64_t syevr_2stage(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_ssyevr_2stage(
+    ssyevr_2stage_(
         &jobz_, &range_, &uplo_, &n_,
         A, &lda_, &vl, &vu, &il_, &iu_, &abstol, &nfound_,
         W,
@@ -136,7 +136,7 @@ int64_t syevr_2stage(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dsyevr_2stage(
+    dsyevr_2stage_(
         &jobz_, &range_, &uplo_, &n_,
         A, &lda_, &vl, &vu, &il_, &iu_, &abstol, &nfound_,
         W,
@@ -155,7 +155,7 @@ int64_t syevr_2stage(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_dsyevr_2stage(
+    dsyevr_2stage_(
         &jobz_, &range_, &uplo_, &n_,
         A, &lda_, &vl, &vu, &il_, &iu_, &abstol, &nfound_,
         W,

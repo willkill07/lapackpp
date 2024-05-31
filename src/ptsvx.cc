@@ -46,7 +46,7 @@ int64_t ptsvx(
     // allocate workspace
     lapack::vector< float > work( (2*n) );
 
-    LAPACK_sptsvx(
+    sptsvx_(
         &fact_, &n_, &nrhs_,
         D,
         E,
@@ -95,7 +95,7 @@ int64_t ptsvx(
     // allocate workspace
     lapack::vector< double > work( (2*n) );
 
-    LAPACK_dptsvx(
+    dptsvx_(
         &fact_, &n_, &nrhs_,
         D,
         E,
@@ -145,7 +145,7 @@ int64_t ptsvx(
     lapack::vector< std::complex<float> > work( (n) );
     lapack::vector< float > rwork( (n) );
 
-    LAPACK_cptsvx(
+    cptsvx_(
         &fact_, &n_, &nrhs_,
         D,
         (lapack_complex_float*) E,
@@ -299,7 +299,7 @@ int64_t ptsvx(
     lapack::vector< std::complex<double> > work( (n) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_zptsvx(
+    zptsvx_(
         &fact_, &n_, &nrhs_,
         D,
         (lapack_complex_double*) E,

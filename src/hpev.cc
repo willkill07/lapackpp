@@ -37,7 +37,7 @@ int64_t hpev(
     lapack::vector< std::complex<float> > work( (max( 1, 2*n-1 )) );
     lapack::vector< float > rwork( (max( 1, 3*n-2 )) );
 
-    LAPACK_chpev(
+    chpev_(
         &jobz_, &uplo_, &n_,
         (lapack_complex_float*) AP,
         W,
@@ -73,7 +73,7 @@ int64_t hpev(
     lapack::vector< std::complex<double> > work( (max( 1, 2*n-1 )) );
     lapack::vector< double > rwork( (max( 1, 3*n-2 )) );
 
-    LAPACK_zhpev(
+    zhpev_(
         &jobz_, &uplo_, &n_,
         (lapack_complex_double*) AP,
         W,

@@ -43,7 +43,7 @@ int64_t unhr_col(
     // Work around bug in LAPACK <= 3.12. See https://github.com/Reference-LAPACK/lapack/pull/1018
     nb_ = min( nb_, n );
 
-    LAPACK_cunhr_col(
+    cunhr_col_(
         &m_, &n_, &nb_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) T, &ldt_,
@@ -165,7 +165,7 @@ int64_t unhr_col(
     // Work around bug in LAPACK <= 3.12. See https://github.com/Reference-LAPACK/lapack/pull/1018
     nb_ = min( nb_, n );
 
-    LAPACK_zunhr_col(
+    zunhr_col_(
         &m_, &n_, &nb_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) T, &ldt_,

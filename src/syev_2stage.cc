@@ -38,7 +38,7 @@ int64_t syev_2stage(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_ssyev_2stage(
+    ssyev_2stage_(
         &jobz_, &uplo_, &n_,
         A, &lda_,
         W,
@@ -52,7 +52,7 @@ int64_t syev_2stage(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_ssyev_2stage(
+    ssyev_2stage_(
         &jobz_, &uplo_, &n_,
         A, &lda_,
         W,
@@ -86,7 +86,7 @@ int64_t syev_2stage(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dsyev_2stage(
+    dsyev_2stage_(
         &jobz_, &uplo_, &n_,
         A, &lda_,
         W,
@@ -100,7 +100,7 @@ int64_t syev_2stage(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dsyev_2stage(
+    dsyev_2stage_(
         &jobz_, &uplo_, &n_,
         A, &lda_,
         W,

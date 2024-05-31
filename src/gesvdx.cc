@@ -54,7 +54,7 @@ int64_t gesvdx(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgesvdx(
+    sgesvdx_(
         &jobu_, &jobvt_, &range_, &m_, &n_,
         A, &lda_, &vl, &vu, &il_, &iu_, &nfound_,
         S,
@@ -72,7 +72,7 @@ int64_t gesvdx(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( (12*min(m,n)) );
 
-    LAPACK_sgesvdx(
+    sgesvdx_(
         &jobu_, &jobvt_, &range_, &m_, &n_,
         A, &lda_, &vl, &vu, &il_, &iu_, &nfound_,
         S,
@@ -125,7 +125,7 @@ int64_t gesvdx(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgesvdx(
+    dgesvdx_(
         &jobu_, &jobvt_, &range_, &m_, &n_,
         A, &lda_, &vl, &vu, &il_, &iu_, &nfound_,
         S,
@@ -143,7 +143,7 @@ int64_t gesvdx(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( (12*min(m,n)) );
 
-    LAPACK_dgesvdx(
+    dgesvdx_(
         &jobu_, &jobvt_, &range_, &m_, &n_,
         A, &lda_, &vl, &vu, &il_, &iu_, &nfound_,
         S,
@@ -197,7 +197,7 @@ int64_t gesvdx(
     float qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgesvdx(
+    cgesvdx_(
         &jobu_, &jobvt_, &range_, &m_, &n_,
         (lapack_complex_float*) A, &lda_, &vl, &vu, &il_, &iu_, &nfound_,
         S,
@@ -220,7 +220,7 @@ int64_t gesvdx(
     lapack::vector< float > rwork( (max( 1, lrwork )) );
     lapack::vector< lapack_int > iwork( (12*min(m,n)) );
 
-    LAPACK_cgesvdx(
+    cgesvdx_(
         &jobu_, &jobvt_, &range_, &m_, &n_,
         (lapack_complex_float*) A, &lda_, &vl, &vu, &il_, &iu_, &nfound_,
         S,
@@ -402,7 +402,7 @@ int64_t gesvdx(
     double qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgesvdx(
+    zgesvdx_(
         &jobu_, &jobvt_, &range_, &m_, &n_,
         (lapack_complex_double*) A, &lda_, &vl, &vu, &il_, &iu_, &nfound_,
         S,
@@ -425,7 +425,7 @@ int64_t gesvdx(
     lapack::vector< double > rwork( (max( 1, lrwork )) );
     lapack::vector< lapack_int > iwork( (12*min(m,n)) );
 
-    LAPACK_zgesvdx(
+    zgesvdx_(
         &jobu_, &jobvt_, &range_, &m_, &n_,
         (lapack_complex_double*) A, &lda_, &vl, &vu, &il_, &iu_, &nfound_,
         S,

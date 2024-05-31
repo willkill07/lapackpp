@@ -27,6 +27,7 @@
     #ifdef BLAS_HAVE_ACCELERATE_CBLAS_H
         #include <cblas.h>
     #else
+        #define ACCELERATE_NEW_LAPACK 1
         #include <Accelerate/Accelerate.h>
     #endif
     typedef CBLAS_ORDER CBLAS_LAYOUT;

@@ -51,7 +51,7 @@ int64_t hprfs(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (n) );
 
-    LAPACK_chprfs(
+    chprfs_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) AP,
         (lapack_complex_float*) AFP,
@@ -105,7 +105,7 @@ int64_t hprfs(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_zhprfs(
+    zhprfs_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) AP,
         (lapack_complex_double*) AFP,

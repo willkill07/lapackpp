@@ -41,7 +41,7 @@ int64_t geqrt(
     // allocate workspace
     lapack::vector< float > work( (nb*n) );
 
-    LAPACK_sgeqrt(
+    sgeqrt_(
         &m_, &n_, &nb_,
         A, &lda_,
         T, &ldt_,
@@ -76,7 +76,7 @@ int64_t geqrt(
     // allocate workspace
     lapack::vector< double > work( (nb*n) );
 
-    LAPACK_dgeqrt(
+    dgeqrt_(
         &m_, &n_, &nb_,
         A, &lda_,
         T, &ldt_,
@@ -111,7 +111,7 @@ int64_t geqrt(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (nb*n) );
 
-    LAPACK_cgeqrt(
+    cgeqrt_(
         &m_, &n_, &nb_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) T, &ldt_,
@@ -146,7 +146,7 @@ int64_t geqrt(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (nb*n) );
 
-    LAPACK_zgeqrt(
+    zgeqrt_(
         &m_, &n_, &nb_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) T, &ldt_,

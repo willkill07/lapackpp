@@ -39,7 +39,7 @@ void lapmt(
         lapack_int* K_ptr = K;
     #endif
 
-    LAPACK_slapmt(
+    slapmt_(
         &forwrd_, &m_, &n_,
         X, &ldx_,
         K_ptr );
@@ -72,7 +72,7 @@ void lapmt(
         lapack_int* K_ptr = K;
     #endif
 
-    LAPACK_dlapmt(
+    dlapmt_(
         &forwrd_, &m_, &n_,
         X, &ldx_,
         K_ptr );
@@ -105,7 +105,7 @@ void lapmt(
         lapack_int* K_ptr = K;
     #endif
 
-    LAPACK_clapmt(
+    clapmt_(
         &forwrd_, &m_, &n_,
         (lapack_complex_float*) X, &ldx_,
         K_ptr );
@@ -138,7 +138,7 @@ void lapmt(
         lapack_int* K_ptr = K;
     #endif
 
-    LAPACK_zlapmt(
+    zlapmt_(
         &forwrd_, &m_, &n_,
         (lapack_complex_double*) X, &ldx_,
         K_ptr );

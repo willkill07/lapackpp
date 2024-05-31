@@ -60,7 +60,7 @@ int64_t gbrfs(
     lapack::vector< float > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_sgbrfs(
+    sgbrfs_(
         &trans_, &n_, &kl_, &ku_, &nrhs_,
         AB, &ldab_,
         AFB, &ldafb_,
@@ -123,7 +123,7 @@ int64_t gbrfs(
     lapack::vector< double > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dgbrfs(
+    dgbrfs_(
         &trans_, &n_, &kl_, &ku_, &nrhs_,
         AB, &ldab_,
         AFB, &ldafb_,
@@ -186,7 +186,7 @@ int64_t gbrfs(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (n) );
 
-    LAPACK_cgbrfs(
+    cgbrfs_(
         &trans_, &n_, &kl_, &ku_, &nrhs_,
         (lapack_complex_float*) AB, &ldab_,
         (lapack_complex_float*) AFB, &ldafb_,
@@ -335,7 +335,7 @@ int64_t gbrfs(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_zgbrfs(
+    zgbrfs_(
         &trans_, &n_, &kl_, &ku_, &nrhs_,
         (lapack_complex_double*) AB, &ldab_,
         (lapack_complex_double*) AFB, &ldafb_,

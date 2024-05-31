@@ -37,7 +37,7 @@ float lanhe(
     // allocate workspace
     lapack::vector< float > work( max( 1, lwork ) );
 
-    return LAPACK_clanhe(
+    return clanhe_(
         &norm_, &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         &work[0]
@@ -111,7 +111,7 @@ double lanhe(
     // allocate workspace
     lapack::vector< double > work( max( 1, lwork ) );
 
-    return LAPACK_zlanhe(
+    return zlanhe_(
         &norm_, &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         &work[0]

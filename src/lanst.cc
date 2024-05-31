@@ -28,7 +28,7 @@ float lanst(
     char norm_ = to_char( norm );
     lapack_int n_ = (lapack_int) n;
 
-    return LAPACK_slanst( &norm_, &n_, D, E
+    return slanst_( &norm_, &n_, D, E
     );
 }
 
@@ -74,7 +74,7 @@ double lanst(
     char norm_ = to_char( norm );
     lapack_int n_ = (lapack_int) n;
 
-    return LAPACK_dlanst( &norm_, &n_, D, E
+    return dlanst_( &norm_, &n_, D, E
     );
 }
 

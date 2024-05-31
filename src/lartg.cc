@@ -15,7 +15,7 @@ void lartg(
     float* r )
 {
 
-    LAPACK_slartg(
+    slartg_(
         &f, &g, cs, sn, r );
 }
 
@@ -27,7 +27,7 @@ void lartg(
     double* r )
 {
 
-    LAPACK_dlartg(
+    dlartg_(
         &f, &g, cs, sn, r );
 }
 
@@ -39,7 +39,7 @@ void lartg(
     std::complex<float>* r )
 {
 
-    LAPACK_clartg(
+    clartg_(
         (lapack_complex_float*) &f,
         (lapack_complex_float*) &g,
         cs,
@@ -55,7 +55,7 @@ void lartg(
     std::complex<double>* r )
 {
 
-    LAPACK_zlartg(
+    zlartg_(
         (lapack_complex_double*) &f,
         (lapack_complex_double*) &g,
         cs,

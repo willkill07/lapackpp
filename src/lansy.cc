@@ -37,7 +37,7 @@ float lansy(
     // allocate workspace
     lapack::vector< float > work( max( 1, lwork ) );
 
-    return LAPACK_slansy(
+    return slansy_(
         &norm_, &uplo_, &n_,
         A, &lda_,
         &work[0]
@@ -66,7 +66,7 @@ double lansy(
     // allocate workspace
     lapack::vector< double > work( max( 1, lwork ) );
 
-    return LAPACK_dlansy(
+    return dlansy_(
         &norm_, &uplo_, &n_,
         A, &lda_,
         &work[0]
@@ -95,7 +95,7 @@ float lansy(
     // allocate workspace
     lapack::vector< float > work( max( 1, lwork ) );
 
-    return LAPACK_clansy(
+    return clansy_(
         &norm_, &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         &work[0]
@@ -166,7 +166,7 @@ double lansy(
     // allocate workspace
     lapack::vector< double > work( max( 1, lwork ) );
 
-    return LAPACK_zlansy(
+    return zlansy_(
         &norm_, &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         &work[0]

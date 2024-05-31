@@ -41,7 +41,7 @@ int64_t sygvd(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_ssygvd(
+    ssygvd_(
         &itype_, &jobz_, &uplo_, &n_,
         A, &lda_,
         B, &ldb_,
@@ -59,7 +59,7 @@ int64_t sygvd(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_ssygvd(
+    ssygvd_(
         &itype_, &jobz_, &uplo_, &n_,
         A, &lda_,
         B, &ldb_,
@@ -99,7 +99,7 @@ int64_t sygvd(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dsygvd(
+    dsygvd_(
         &itype_, &jobz_, &uplo_, &n_,
         A, &lda_,
         B, &ldb_,
@@ -117,7 +117,7 @@ int64_t sygvd(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_dsygvd(
+    dsygvd_(
         &itype_, &jobz_, &uplo_, &n_,
         A, &lda_,
         B, &ldb_,

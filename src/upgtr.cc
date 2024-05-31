@@ -35,7 +35,7 @@ int64_t upgtr(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (n-1) );
 
-    LAPACK_cupgtr(
+    cupgtr_(
         &uplo_, &n_,
         (lapack_complex_float*) AP,
         (lapack_complex_float*) tau,
@@ -68,7 +68,7 @@ int64_t upgtr(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (n-1) );
 
-    LAPACK_zupgtr(
+    zupgtr_(
         &uplo_, &n_,
         (lapack_complex_double*) AP,
         (lapack_complex_double*) tau,

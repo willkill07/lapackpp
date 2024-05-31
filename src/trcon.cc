@@ -37,7 +37,7 @@ int64_t trcon(
     lapack::vector< float > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_strcon(
+    strcon_(
         &norm_, &uplo_, &diag_, &n_,
         A, &lda_, rcond,
         &work[0],
@@ -71,7 +71,7 @@ int64_t trcon(
     lapack::vector< double > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dtrcon(
+    dtrcon_(
         &norm_, &uplo_, &diag_, &n_,
         A, &lda_, rcond,
         &work[0],
@@ -105,7 +105,7 @@ int64_t trcon(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (n) );
 
-    LAPACK_ctrcon(
+    ctrcon_(
         &norm_, &uplo_, &diag_, &n_,
         (lapack_complex_float*) A, &lda_, rcond,
         (lapack_complex_float*) &work[0],
@@ -139,7 +139,7 @@ int64_t trcon(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_ztrcon(
+    ztrcon_(
         &norm_, &uplo_, &diag_, &n_,
         (lapack_complex_double*) A, &lda_, rcond,
         (lapack_complex_double*) &work[0],

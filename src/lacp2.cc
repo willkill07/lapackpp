@@ -33,7 +33,7 @@ void lacp2(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int ldb_ = (lapack_int) ldb;
 
-    LAPACK_clacp2(
+    clacp2_(
         &uplo_, &m_, &n_,
         A, &lda_,
         (lapack_complex_float*) B, &ldb_
@@ -59,7 +59,7 @@ void lacp2(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int ldb_ = (lapack_int) ldb;
 
-    LAPACK_zlacp2(
+    zlacp2_(
         &uplo_, &m_, &n_,
         A, &lda_,
         (lapack_complex_double*) B, &ldb_

@@ -32,7 +32,7 @@ int64_t poequb(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_spoequb(
+    spoequb_(
         &n_,
         A, &lda_,
         S, scond, amax, &info_ );
@@ -60,7 +60,7 @@ int64_t poequb(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_dpoequb(
+    dpoequb_(
         &n_,
         A, &lda_,
         S, scond, amax, &info_ );
@@ -88,7 +88,7 @@ int64_t poequb(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_cpoequb(
+    cpoequb_(
         &n_,
         (lapack_complex_float*) A, &lda_,
         S, scond, amax, &info_ );
@@ -163,7 +163,7 @@ int64_t poequb(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_zpoequb(
+    zpoequb_(
         &n_,
         (lapack_complex_double*) A, &lda_,
         S, scond, amax, &info_ );

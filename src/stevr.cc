@@ -52,7 +52,7 @@ int64_t stevr(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_sstevr(
+    sstevr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -72,7 +72,7 @@ int64_t stevr(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_sstevr(
+    sstevr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -129,7 +129,7 @@ int64_t stevr(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dstevr(
+    dstevr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -149,7 +149,7 @@ int64_t stevr(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_dstevr(
+    dstevr_(
         &jobz_, &range_, &n_,
         D,
         E, &vl, &vu, &il_, &iu_, &abstol, &m_,

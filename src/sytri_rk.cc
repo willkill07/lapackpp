@@ -45,7 +45,7 @@ int64_t sytri_rk(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_ssytri_3(
+    ssytri_3_(
         &uplo_, &n_,
         A, &lda_,
         E,
@@ -60,7 +60,7 @@ int64_t sytri_rk(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_ssytri_3(
+    ssytri_3_(
         &uplo_, &n_,
         A, &lda_,
         E,
@@ -101,7 +101,7 @@ int64_t sytri_rk(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dsytri_3(
+    dsytri_3_(
         &uplo_, &n_,
         A, &lda_,
         E,
@@ -116,7 +116,7 @@ int64_t sytri_rk(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dsytri_3(
+    dsytri_3_(
         &uplo_, &n_,
         A, &lda_,
         E,
@@ -157,7 +157,7 @@ int64_t sytri_rk(
     // query for workspace size
     std::complex<float> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_csytri_3(
+    csytri_3_(
         &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) E,
@@ -172,7 +172,7 @@ int64_t sytri_rk(
     // allocate workspace
     lapack::vector< std::complex<float> > work( lwork_ );
 
-    LAPACK_csytri_3(
+    csytri_3_(
         &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) E,
@@ -299,7 +299,7 @@ int64_t sytri_rk(
     // query for workspace size
     std::complex<double> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_zsytri_3(
+    zsytri_3_(
         &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) E,
@@ -314,7 +314,7 @@ int64_t sytri_rk(
     // allocate workspace
     lapack::vector< std::complex<double> > work( lwork_ );
 
-    LAPACK_zsytri_3(
+    zsytri_3_(
         &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) E,

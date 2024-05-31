@@ -54,7 +54,7 @@ int64_t trevc3(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_strevc3(
+    strevc3_(
         &sides_, &howmany_,
         select_ptr, &n_,
         T, &ldt_,
@@ -70,7 +70,7 @@ int64_t trevc3(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_strevc3(
+    strevc3_(
         &sides_, &howmany_,
         select_ptr, &n_,
         T, &ldt_,
@@ -123,7 +123,7 @@ int64_t trevc3(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dtrevc3(
+    dtrevc3_(
         &sides_, &howmany_,
         select_ptr, &n_,
         T, &ldt_,
@@ -139,7 +139,7 @@ int64_t trevc3(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dtrevc3(
+    dtrevc3_(
         &sides_, &howmany_,
         select_ptr, &n_,
         T, &ldt_,
@@ -193,7 +193,7 @@ int64_t trevc3(
     std::complex<float> qry_work[1];
     float qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_ctrevc3(
+    ctrevc3_(
         &sides_, &howmany_,
         select_ptr, &n_,
         (lapack_complex_float*) T, &ldt_,
@@ -212,7 +212,7 @@ int64_t trevc3(
     lapack::vector< std::complex<float> > work( lwork_ );
     lapack::vector< float > rwork( lrwork_ );
 
-    LAPACK_ctrevc3(
+    ctrevc3_(
         &sides_, &howmany_,
         select_ptr, &n_,
         (lapack_complex_float*) T, &ldt_,
@@ -389,7 +389,7 @@ int64_t trevc3(
     std::complex<double> qry_work[1];
     double qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_ztrevc3(
+    ztrevc3_(
         &sides_, &howmany_,
         select_ptr, &n_,
         (lapack_complex_double*) T, &ldt_,
@@ -408,7 +408,7 @@ int64_t trevc3(
     lapack::vector< std::complex<double> > work( lwork_ );
     lapack::vector< double > rwork( lrwork_ );
 
-    LAPACK_ztrevc3(
+    ztrevc3_(
         &sides_, &howmany_,
         select_ptr, &n_,
         (lapack_complex_double*) T, &ldt_,

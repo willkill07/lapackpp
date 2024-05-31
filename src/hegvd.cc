@@ -42,7 +42,7 @@ int64_t hegvd(
     float qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_chegvd(
+    chegvd_(
         &itype_, &jobz_, &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -63,7 +63,7 @@ int64_t hegvd(
     lapack::vector< float > rwork( lrwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_chegvd(
+    chegvd_(
         &itype_, &jobz_, &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -105,7 +105,7 @@ int64_t hegvd(
     double qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zhegvd(
+    zhegvd_(
         &itype_, &jobz_, &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,
@@ -126,7 +126,7 @@ int64_t hegvd(
     lapack::vector< double > rwork( lrwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_zhegvd(
+    zhegvd_(
         &itype_, &jobz_, &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,

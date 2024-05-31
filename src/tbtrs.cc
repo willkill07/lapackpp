@@ -38,7 +38,7 @@ int64_t tbtrs(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_stbtrs(
+    stbtrs_(
         &uplo_, &trans_, &diag_, &n_, &kd_, &nrhs_,
         AB, &ldab_,
         B, &ldb_, &info_
@@ -73,7 +73,7 @@ int64_t tbtrs(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_dtbtrs(
+    dtbtrs_(
         &uplo_, &trans_, &diag_, &n_, &kd_, &nrhs_,
         AB, &ldab_,
         B, &ldb_, &info_
@@ -108,7 +108,7 @@ int64_t tbtrs(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_ctbtrs(
+    ctbtrs_(
         &uplo_, &trans_, &diag_, &n_, &kd_, &nrhs_,
         (lapack_complex_float*) AB, &ldab_,
         (lapack_complex_float*) B, &ldb_, &info_
@@ -143,7 +143,7 @@ int64_t tbtrs(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_ztbtrs(
+    ztbtrs_(
         &uplo_, &trans_, &diag_, &n_, &kd_, &nrhs_,
         (lapack_complex_double*) AB, &ldab_,
         (lapack_complex_double*) B, &ldb_, &info_

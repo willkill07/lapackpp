@@ -41,7 +41,7 @@ int64_t hpgvd(
     float qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_chpgvd(
+    chpgvd_(
         &itype_, &jobz_, &uplo_, &n_,
         (lapack_complex_float*) AP,
         (lapack_complex_float*) BP,
@@ -63,7 +63,7 @@ int64_t hpgvd(
     lapack::vector< float > rwork( lrwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_chpgvd(
+    chpgvd_(
         &itype_, &jobz_, &uplo_, &n_,
         (lapack_complex_float*) AP,
         (lapack_complex_float*) BP,
@@ -105,7 +105,7 @@ int64_t hpgvd(
     double qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zhpgvd(
+    zhpgvd_(
         &itype_, &jobz_, &uplo_, &n_,
         (lapack_complex_double*) AP,
         (lapack_complex_double*) BP,
@@ -127,7 +127,7 @@ int64_t hpgvd(
     lapack::vector< double > rwork( lrwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_zhpgvd(
+    zhpgvd_(
         &itype_, &jobz_, &uplo_, &n_,
         (lapack_complex_double*) AP,
         (lapack_complex_double*) BP,

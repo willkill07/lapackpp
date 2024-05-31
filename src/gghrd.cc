@@ -43,7 +43,7 @@ int64_t gghrd(
     lapack_int ldz_ = (lapack_int) ldz;
     lapack_int info_ = 0;
 
-    LAPACK_sgghrd(
+    sgghrd_(
         &compq_, &compz_, &n_, &ilo_, &ihi_,
         A, &lda_,
         B, &ldb_,
@@ -85,7 +85,7 @@ int64_t gghrd(
     lapack_int ldz_ = (lapack_int) ldz;
     lapack_int info_ = 0;
 
-    LAPACK_dgghrd(
+    dgghrd_(
         &compq_, &compz_, &n_, &ilo_, &ihi_,
         A, &lda_,
         B, &ldb_,
@@ -127,7 +127,7 @@ int64_t gghrd(
     lapack_int ldz_ = (lapack_int) ldz;
     lapack_int info_ = 0;
 
-    LAPACK_cgghrd(
+    cgghrd_(
         &compq_, &compz_, &n_, &ilo_, &ihi_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -169,7 +169,7 @@ int64_t gghrd(
     lapack_int ldz_ = (lapack_int) ldz;
     lapack_int info_ = 0;
 
-    LAPACK_zgghrd(
+    zgghrd_(
         &compq_, &compz_, &n_, &ilo_, &ihi_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,

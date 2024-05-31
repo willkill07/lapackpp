@@ -42,7 +42,7 @@ int64_t sbev_2stage(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_ssbev_2stage(
+    ssbev_2stage_(
         &jobz_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         W,
@@ -57,7 +57,7 @@ int64_t sbev_2stage(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_ssbev_2stage(
+    ssbev_2stage_(
         &jobz_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         W,
@@ -95,7 +95,7 @@ int64_t sbev_2stage(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dsbev_2stage(
+    dsbev_2stage_(
         &jobz_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         W,
@@ -110,7 +110,7 @@ int64_t sbev_2stage(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dsbev_2stage(
+    dsbev_2stage_(
         &jobz_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         W,

@@ -51,7 +51,7 @@ int64_t sprfs(
     lapack::vector< float > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_ssprfs(
+    ssprfs_(
         &uplo_, &n_, &nrhs_,
         AP,
         AFP,
@@ -105,7 +105,7 @@ int64_t sprfs(
     lapack::vector< double > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dsprfs(
+    dsprfs_(
         &uplo_, &n_, &nrhs_,
         AP,
         AFP,
@@ -159,7 +159,7 @@ int64_t sprfs(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (n) );
 
-    LAPACK_csprfs(
+    csprfs_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) AP,
         (lapack_complex_float*) AFP,
@@ -213,7 +213,7 @@ int64_t sprfs(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_zsprfs(
+    zsprfs_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) AP,
         (lapack_complex_double*) AFP,

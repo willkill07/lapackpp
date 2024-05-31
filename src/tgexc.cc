@@ -30,7 +30,7 @@ inline void tgexc(
     lapack_int* ifst, lapack_int* ilst,
     float* work, lapack_int lwork, lapack_int* info )
 {
-    LAPACK_stgexc(
+    stgexc_(
         &wantq, &wantz, &n,
         A, &lda,
         B, &ldb,
@@ -50,7 +50,7 @@ inline void tgexc(
     lapack_int* ifst, lapack_int* ilst,
     double* work, lapack_int lwork, lapack_int* info )
 {
-    LAPACK_dtgexc(
+    dtgexc_(
         &wantq, &wantz, &n,
         A, &lda,
         B, &ldb,
@@ -70,7 +70,7 @@ inline void tgexc(
     lapack_int* ifst, lapack_int* ilst, lapack_int* info )
 {
     // No workspace for complex.
-    LAPACK_ctgexc(
+    ctgexc_(
         &wantq, &wantz, &n,
         (lapack_complex_float*) A, &lda,
         (lapack_complex_float*) B, &ldb,
@@ -90,7 +90,7 @@ inline void tgexc(
     lapack_int* ifst, lapack_int* ilst, lapack_int* info )
 {
     // No workspace for complex.
-    LAPACK_ztgexc(
+    ztgexc_(
         &wantq, &wantz, &n,
         (lapack_complex_double*) A, &lda,
         (lapack_complex_double*) B, &ldb,

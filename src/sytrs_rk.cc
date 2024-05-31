@@ -47,7 +47,7 @@ int64_t sytrs_rk(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_ssytrs_3(
+    ssytrs_3_(
         &uplo_, &n_, &nrhs_,
         A, &lda_,
         E,
@@ -90,7 +90,7 @@ int64_t sytrs_rk(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_dsytrs_3(
+    dsytrs_3_(
         &uplo_, &n_, &nrhs_,
         A, &lda_,
         E,
@@ -133,7 +133,7 @@ int64_t sytrs_rk(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_csytrs_3(
+    csytrs_3_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) E,
@@ -260,7 +260,7 @@ int64_t sytrs_rk(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_zsytrs_3(
+    zsytrs_3_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) E,

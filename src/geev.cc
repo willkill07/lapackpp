@@ -46,7 +46,7 @@ int64_t geev(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgeev(
+    sgeev_(
         &jobvl_, &jobvr_, &n_,
         A, &lda_,
         &WR[0], &WI[0],
@@ -62,7 +62,7 @@ int64_t geev(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_sgeev(
+    sgeev_(
         &jobvl_, &jobvr_, &n_,
         A, &lda_,
         &WR[0], &WI[0],
@@ -111,7 +111,7 @@ int64_t geev(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgeev(
+    dgeev_(
         &jobvl_, &jobvr_, &n_,
         A, &lda_,
         &WR[0], &WI[0],
@@ -127,7 +127,7 @@ int64_t geev(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dgeev(
+    dgeev_(
         &jobvl_, &jobvr_, &n_,
         A, &lda_,
         &WR[0], &WI[0],
@@ -173,7 +173,7 @@ int64_t geev(
     std::complex<float> qry_work[1];
     float qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgeev(
+    cgeev_(
         &jobvl_, &jobvr_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) W,
@@ -191,7 +191,7 @@ int64_t geev(
     lapack::vector< std::complex<float> > work( lwork_ );
     lapack::vector< float > rwork( (2*n) );
 
-    LAPACK_cgeev(
+    cgeev_(
         &jobvl_, &jobvr_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) W,
@@ -334,7 +334,7 @@ int64_t geev(
     std::complex<double> qry_work[1];
     double qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgeev(
+    zgeev_(
         &jobvl_, &jobvr_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) W,
@@ -352,7 +352,7 @@ int64_t geev(
     lapack::vector< std::complex<double> > work( lwork_ );
     lapack::vector< double > rwork( (2*n) );
 
-    LAPACK_zgeev(
+    zgeev_(
         &jobvl_, &jobvr_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) W,

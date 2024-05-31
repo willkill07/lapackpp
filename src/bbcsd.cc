@@ -63,7 +63,7 @@ int64_t bbcsd(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_sbbcsd(
+    sbbcsd_(
         &jobu1_, &jobu2_, &jobv1t_, &jobv2t_, &trans_, &m_, &p_, &q_,
         theta,
         phi,
@@ -89,7 +89,7 @@ int64_t bbcsd(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_sbbcsd(
+    sbbcsd_(
         &jobu1_, &jobu2_, &jobv1t_, &jobv2t_, &trans_, &m_, &p_, &q_,
         theta,
         phi,
@@ -159,7 +159,7 @@ int64_t bbcsd(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dbbcsd(
+    dbbcsd_(
         &jobu1_, &jobu2_, &jobv1t_, &jobv2t_, &trans_, &m_, &p_, &q_,
         theta,
         phi,
@@ -185,7 +185,7 @@ int64_t bbcsd(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dbbcsd(
+    dbbcsd_(
         &jobu1_, &jobu2_, &jobv1t_, &jobv2t_, &trans_, &m_, &p_, &q_,
         theta,
         phi,
@@ -255,7 +255,7 @@ int64_t bbcsd(
     // query for workspace size
     float qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cbbcsd(
+    cbbcsd_(
         &jobu1_, &jobu2_, &jobv1t_, &jobv2t_, &trans_, &m_, &p_, &q_,
         theta,
         phi,
@@ -281,7 +281,7 @@ int64_t bbcsd(
     // allocate workspace
     lapack::vector< float > rwork( lrwork_ );
 
-    LAPACK_cbbcsd(
+    cbbcsd_(
         &jobu1_, &jobu2_, &jobv1t_, &jobv2t_, &trans_, &m_, &p_, &q_,
         theta,
         phi,
@@ -536,7 +536,7 @@ int64_t bbcsd(
     // query for workspace size
     double qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zbbcsd(
+    zbbcsd_(
         &jobu1_, &jobu2_, &jobv1t_, &jobv2t_, &trans_, &m_, &p_, &q_,
         theta,
         phi,
@@ -562,7 +562,7 @@ int64_t bbcsd(
     // allocate workspace
     lapack::vector< double > rwork( lrwork_ );
 
-    LAPACK_zbbcsd(
+    zbbcsd_(
         &jobu1_, &jobu2_, &jobv1t_, &jobv2t_, &trans_, &m_, &p_, &q_,
         theta,
         phi,

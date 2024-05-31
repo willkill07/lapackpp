@@ -32,7 +32,7 @@ int64_t pbstf(
     lapack_int ldab_ = (lapack_int) ldab;
     lapack_int info_ = 0;
 
-    LAPACK_spbstf(
+    spbstf_(
         &uplo_, &n_, &kd_,
         AB, &ldab_, &info_
     );
@@ -60,7 +60,7 @@ int64_t pbstf(
     lapack_int ldab_ = (lapack_int) ldab;
     lapack_int info_ = 0;
 
-    LAPACK_dpbstf(
+    dpbstf_(
         &uplo_, &n_, &kd_,
         AB, &ldab_, &info_
     );
@@ -88,7 +88,7 @@ int64_t pbstf(
     lapack_int ldab_ = (lapack_int) ldab;
     lapack_int info_ = 0;
 
-    LAPACK_cpbstf(
+    cpbstf_(
         &uplo_, &n_, &kd_,
         (lapack_complex_float*) AB, &ldab_, &info_
     );
@@ -212,7 +212,7 @@ int64_t pbstf(
     lapack_int ldab_ = (lapack_int) ldab;
     lapack_int info_ = 0;
 
-    LAPACK_zpbstf(
+    zpbstf_(
         &uplo_, &n_, &kd_,
         (lapack_complex_double*) AB, &ldab_, &info_
     );

@@ -35,7 +35,7 @@ int64_t potrs(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_spotrs(
+    spotrs_(
         &uplo_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_, &info_
@@ -67,7 +67,7 @@ int64_t potrs(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_dpotrs(
+    dpotrs_(
         &uplo_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_, &info_
@@ -99,7 +99,7 @@ int64_t potrs(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_cpotrs(
+    cpotrs_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_, &info_
@@ -167,7 +167,7 @@ int64_t potrs(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_zpotrs(
+    zpotrs_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_, &info_

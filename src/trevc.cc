@@ -51,7 +51,7 @@ int64_t trevc(
     // allocate workspace
     lapack::vector< float > work( (3*n) );
 
-    LAPACK_strevc(
+    strevc_(
         &sides_, &howmany_,
         select_ptr, &n_,
         T, &ldt_,
@@ -104,7 +104,7 @@ int64_t trevc(
     // allocate workspace
     lapack::vector< double > work( (3*n) );
 
-    LAPACK_dtrevc(
+    dtrevc_(
         &sides_, &howmany_,
         select_ptr, &n_,
         T, &ldt_,
@@ -158,7 +158,7 @@ int64_t trevc(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (n) );
 
-    LAPACK_ctrevc(
+    ctrevc_(
         &sides_, &howmany_,
         select_ptr, &n_,
         (lapack_complex_float*) T, &ldt_,
@@ -333,7 +333,7 @@ int64_t trevc(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_ztrevc(
+    ztrevc_(
         &sides_, &howmany_,
         select_ptr, &n_,
         (lapack_complex_double*) T, &ldt_,

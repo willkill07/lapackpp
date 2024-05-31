@@ -41,7 +41,7 @@ void lapmr(
         lapack_int* K_ptr = K;
     #endif
 
-    LAPACK_slapmr(
+    slapmr_(
         &forwrd_, &m_, &n_,
         X, &ldx_,
         K_ptr );
@@ -74,7 +74,7 @@ void lapmr(
         lapack_int* K_ptr = K;
     #endif
 
-    LAPACK_dlapmr(
+    dlapmr_(
         &forwrd_, &m_, &n_,
         X, &ldx_,
         K_ptr );
@@ -107,7 +107,7 @@ void lapmr(
         lapack_int* K_ptr = K;
     #endif
 
-    LAPACK_clapmr(
+    clapmr_(
         &forwrd_, &m_, &n_,
         (lapack_complex_float*) X, &ldx_,
         K_ptr );
@@ -140,7 +140,7 @@ void lapmr(
         lapack_int* K_ptr = K;
     #endif
 
-    LAPACK_zlapmr(
+    zlapmr_(
         &forwrd_, &m_, &n_,
         (lapack_complex_double*) X, &ldx_,
         K_ptr );

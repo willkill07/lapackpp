@@ -36,7 +36,7 @@ int64_t lascl(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_slascl(
+    slascl_(
         &matrixtype_, &kl_, &ku_, &cfrom, &cto, &m_, &n_,
         A, &lda_, &info_
     );
@@ -68,7 +68,7 @@ int64_t lascl(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_dlascl(
+    dlascl_(
         &matrixtype_, &kl_, &ku_, &cfrom, &cto, &m_, &n_,
         A, &lda_, &info_
     );
@@ -100,7 +100,7 @@ int64_t lascl(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_clascl(
+    clascl_(
         &matrixtype_, &kl_, &ku_, &cfrom, &cto, &m_, &n_,
         (lapack_complex_float*) A, &lda_, &info_
     );
@@ -205,7 +205,7 @@ int64_t lascl(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_zlascl(
+    zlascl_(
         &matrixtype_, &kl_, &ku_, &cfrom, &cto, &m_, &n_,
         (lapack_complex_double*) A, &lda_, &info_
     );

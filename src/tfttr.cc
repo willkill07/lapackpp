@@ -31,7 +31,7 @@ int64_t tfttr(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_stfttr(
+    stfttr_(
         &transr_, &uplo_, &n_,
         ARF,
         A, &lda_, &info_
@@ -59,7 +59,7 @@ int64_t tfttr(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_dtfttr(
+    dtfttr_(
         &transr_, &uplo_, &n_,
         ARF,
         A, &lda_, &info_
@@ -87,7 +87,7 @@ int64_t tfttr(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_ctfttr(
+    ctfttr_(
         &transr_, &uplo_, &n_,
         (lapack_complex_float*) ARF,
         (lapack_complex_float*) A, &lda_, &info_
@@ -115,7 +115,7 @@ int64_t tfttr(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_ztfttr(
+    ztfttr_(
         &transr_, &uplo_, &n_,
         (lapack_complex_double*) ARF,
         (lapack_complex_double*) A, &lda_, &info_

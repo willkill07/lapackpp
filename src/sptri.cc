@@ -39,7 +39,7 @@ int64_t sptri(
     // allocate workspace
     lapack::vector< float > work( (n) );
 
-    LAPACK_ssptri(
+    ssptri_(
         &uplo_, &n_,
         AP,
         ipiv_ptr,
@@ -75,7 +75,7 @@ int64_t sptri(
     // allocate workspace
     lapack::vector< double > work( (n) );
 
-    LAPACK_dsptri(
+    dsptri_(
         &uplo_, &n_,
         AP,
         ipiv_ptr,
@@ -111,7 +111,7 @@ int64_t sptri(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (n) );
 
-    LAPACK_csptri(
+    csptri_(
         &uplo_, &n_,
         (lapack_complex_float*) AP,
         ipiv_ptr,
@@ -147,7 +147,7 @@ int64_t sptri(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (n) );
 
-    LAPACK_zsptri(
+    zsptri_(
         &uplo_, &n_,
         (lapack_complex_double*) AP,
         ipiv_ptr,

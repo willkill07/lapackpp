@@ -41,7 +41,7 @@ int64_t hbtrd(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (n) );
 
-    LAPACK_chbtrd(
+    chbtrd_(
         &jobz_, &uplo_, &n_, &kd_,
         (lapack_complex_float*) AB, &ldab_,
         D,
@@ -81,7 +81,7 @@ int64_t hbtrd(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (n) );
 
-    LAPACK_zhbtrd(
+    zhbtrd_(
         &jobz_, &uplo_, &n_, &kd_,
         (lapack_complex_double*) AB, &ldab_,
         D,

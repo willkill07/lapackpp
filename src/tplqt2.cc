@@ -41,7 +41,7 @@ int64_t tplqt2(
     lapack_int ldt_ = (lapack_int) ldt;
     lapack_int info_ = 0;
 
-    LAPACK_stplqt2(
+    stplqt2_(
         &m_, &n_, &l_,
         A, &lda_,
         B, &ldb_,
@@ -77,7 +77,7 @@ int64_t tplqt2(
     lapack_int ldt_ = (lapack_int) ldt;
     lapack_int info_ = 0;
 
-    LAPACK_dtplqt2(
+    dtplqt2_(
         &m_, &n_, &l_,
         A, &lda_,
         B, &ldb_,
@@ -113,7 +113,7 @@ int64_t tplqt2(
     lapack_int ldt_ = (lapack_int) ldt;
     lapack_int info_ = 0;
 
-    LAPACK_ctplqt2(
+    ctplqt2_(
         &m_, &n_, &l_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -238,7 +238,7 @@ int64_t tplqt2(
     lapack_int ldt_ = (lapack_int) ldt;
     lapack_int info_ = 0;
 
-    LAPACK_ztplqt2(
+    ztplqt2_(
         &m_, &n_, &l_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,

@@ -59,7 +59,7 @@ int64_t tpmqrt(
     int64_t lwork = (side == Side::Left ? n*nb : m*nb);
     lapack::vector< float > work( lwork );
 
-    LAPACK_stpmqrt(
+    stpmqrt_(
         &side_, &trans_, &m_, &n_, &k_, &l_, &nb_,
         V, &ldv_,
         T, &ldt_,
@@ -115,7 +115,7 @@ int64_t tpmqrt(
     int64_t lwork = (side == Side::Left ? n*nb : m*nb);
     lapack::vector< double > work( lwork );
 
-    LAPACK_dtpmqrt(
+    dtpmqrt_(
         &side_, &trans_, &m_, &n_, &k_, &l_, &nb_,
         V, &ldv_,
         T, &ldt_,
@@ -167,7 +167,7 @@ int64_t tpmqrt(
     int64_t lwork = (side == Side::Left ? n*nb : m*nb);
     lapack::vector< std::complex<float> > work( lwork );
 
-    LAPACK_ctpmqrt(
+    ctpmqrt_(
         &side_, &trans_, &m_, &n_, &k_, &l_, &nb_,
         (lapack_complex_float*) V, &ldv_,
         (lapack_complex_float*) T, &ldt_,
@@ -337,7 +337,7 @@ int64_t tpmqrt(
     int64_t lwork = (side == Side::Left ? n*nb : m*nb);
     lapack::vector< std::complex<double> > work( lwork );
 
-    LAPACK_ztpmqrt(
+    ztpmqrt_(
         &side_, &trans_, &m_, &n_, &k_, &l_, &nb_,
         (lapack_complex_double*) V, &ldv_,
         (lapack_complex_double*) T, &ldt_,

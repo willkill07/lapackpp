@@ -46,9 +46,9 @@ int64_t ormtr(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_sormtr(
+    sormtr_(
         &side_, &uplo_, &trans_, &m_, &n_,
-        A, &lda_,
+        (float*)A, &lda_,
         tau,
         C, &ldc_,
         qry_work, &ineg_one, &info_
@@ -61,9 +61,9 @@ int64_t ormtr(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_sormtr(
+    sormtr_(
         &side_, &uplo_, &trans_, &m_, &n_,
-        A, &lda_,
+        (float*)A, &lda_,
         tau,
         C, &ldc_,
         &work[0], &lwork_, &info_
@@ -106,9 +106,9 @@ int64_t ormtr(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dormtr(
+    dormtr_(
         &side_, &uplo_, &trans_, &m_, &n_,
-        A, &lda_,
+        (double*)A, &lda_,
         tau,
         C, &ldc_,
         qry_work, &ineg_one, &info_
@@ -121,9 +121,9 @@ int64_t ormtr(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dormtr(
+    dormtr_(
         &side_, &uplo_, &trans_, &m_, &n_,
-        A, &lda_,
+        (double*)A, &lda_,
         tau,
         C, &ldc_,
         &work[0], &lwork_, &info_

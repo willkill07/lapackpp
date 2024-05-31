@@ -39,7 +39,7 @@ float lanhb(
     // allocate workspace
     lapack::vector< float > work( max(1,lwork) );
 
-    return LAPACK_clanhb(
+    return clanhb_(
         &norm_, &uplo_, &n_, &kd_,
         (lapack_complex_float*) AB, &ldab_,
         &work[0]
@@ -113,7 +113,7 @@ double lanhb(
     // allocate workspace
     lapack::vector< double > work( max(1,lwork) );
 
-    return LAPACK_zlanhb(
+    return zlanhb_(
         &norm_, &uplo_, &n_, &kd_,
         (lapack_complex_double*) AB, &ldab_,
         &work[0]

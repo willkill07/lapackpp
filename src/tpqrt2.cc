@@ -41,7 +41,7 @@ int64_t tpqrt2(
     lapack_int ldt_ = (lapack_int) ldt;
     lapack_int info_ = 0;
 
-    LAPACK_stpqrt2(
+    stpqrt2_(
         &m_, &n_, &l_,
         A, &lda_,
         B, &ldb_,
@@ -77,7 +77,7 @@ int64_t tpqrt2(
     lapack_int ldt_ = (lapack_int) ldt;
     lapack_int info_ = 0;
 
-    LAPACK_dtpqrt2(
+    dtpqrt2_(
         &m_, &n_, &l_,
         A, &lda_,
         B, &ldb_,
@@ -113,7 +113,7 @@ int64_t tpqrt2(
     lapack_int ldt_ = (lapack_int) ldt;
     lapack_int info_ = 0;
 
-    LAPACK_ctpqrt2(
+    ctpqrt2_(
         &m_, &n_, &l_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -149,7 +149,7 @@ int64_t tpqrt2(
     lapack_int ldt_ = (lapack_int) ldt;
     lapack_int info_ = 0;
 
-    LAPACK_ztpqrt2(
+    ztpqrt2_(
         &m_, &n_, &l_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,

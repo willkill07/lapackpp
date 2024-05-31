@@ -29,7 +29,7 @@ int64_t tftri(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_stftri(
+    stftri_(
         &transr_, &uplo_, &diag_, &n_,
         A, &info_
     );
@@ -54,7 +54,7 @@ int64_t tftri(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_dtftri(
+    dtftri_(
         &transr_, &uplo_, &diag_, &n_,
         A, &info_
     );
@@ -79,7 +79,7 @@ int64_t tftri(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_ctftri(
+    ctftri_(
         &transr_, &uplo_, &diag_, &n_,
         (lapack_complex_float*) A, &info_
     );
@@ -104,7 +104,7 @@ int64_t tftri(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_ztftri(
+    ztftri_(
         &transr_, &uplo_, &diag_, &n_,
         (lapack_complex_double*) A, &info_
     );

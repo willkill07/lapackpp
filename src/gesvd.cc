@@ -44,7 +44,7 @@ int64_t gesvd(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgesvd(
+    sgesvd_(
         &jobu_, &jobvt_, &m_, &n_,
         A, &lda_,
         S,
@@ -60,7 +60,7 @@ int64_t gesvd(
     // allocate workspace
     std::vector< float > work( lwork_ );
 
-    LAPACK_sgesvd(
+    sgesvd_(
         &jobu_, &jobvt_, &m_, &n_,
         A, &lda_,
         S,
@@ -103,7 +103,7 @@ int64_t gesvd(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgesvd(
+    dgesvd_(
         &jobu_, &jobvt_, &m_, &n_,
         A, &lda_,
         S,
@@ -119,7 +119,7 @@ int64_t gesvd(
     // allocate workspace
     std::vector< double > work( lwork_ );
 
-    LAPACK_dgesvd(
+    dgesvd_(
         &jobu_, &jobvt_, &m_, &n_,
         A, &lda_,
         S,
@@ -163,7 +163,7 @@ int64_t gesvd(
     std::complex<float> qry_work[1];
     float qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgesvd(
+    cgesvd_(
         &jobu_, &jobvt_, &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         S,
@@ -181,7 +181,7 @@ int64_t gesvd(
     std::vector< std::complex<float> > work( lwork_ );
     std::vector< float > rwork( (5*min(m,n)) );
 
-    LAPACK_cgesvd(
+    cgesvd_(
         &jobu_, &jobvt_, &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         S,
@@ -335,7 +335,7 @@ int64_t gesvd(
     std::complex<double> qry_work[1];
     double qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgesvd(
+    zgesvd_(
         &jobu_, &jobvt_, &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         S,
@@ -353,7 +353,7 @@ int64_t gesvd(
     std::vector< std::complex<double> > work( lwork_ );
     std::vector< double > rwork( (5*min(m,n)) );
 
-    LAPACK_zgesvd(
+    zgesvd_(
         &jobu_, &jobvt_, &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         S,

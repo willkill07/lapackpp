@@ -30,7 +30,7 @@ cblas_symv(
     if (layout == CblasRowMajor) {
         uplo_ = (uplo == CblasUpper ? 'l' : 'u');  // switch upper <=> lower
     }
-    LAPACK_csymv(
+    csymv_(
         &uplo_, &n_,
         (lapack_complex_float*) &alpha,
         (lapack_complex_float*) A, &lda_,
@@ -60,7 +60,7 @@ cblas_symv(
     if (layout == CblasRowMajor) {
         uplo_ = (uplo == CblasUpper ? 'l' : 'u');  // switch upper <=> lower
     }
-    LAPACK_zsymv(
+    zsymv_(
         &uplo_, &n_,
         (lapack_complex_double*) &alpha,
         (lapack_complex_double*) A, &lda_,
@@ -85,7 +85,7 @@ cblas_syr(
     if (layout == CblasRowMajor) {
         uplo_ = (uplo == CblasUpper ? 'l' : 'u');  // switch upper <=> lower
     }
-    LAPACK_csyr(
+    csyr_(
         &uplo_, &n_,
         (lapack_complex_float*) &alpha,
         (lapack_complex_float*) x, &incx_,
@@ -108,7 +108,7 @@ cblas_syr(
     if (layout == CblasRowMajor) {
         uplo_ = (uplo == CblasUpper ? 'l' : 'u');  // switch upper <=> lower
     }
-    LAPACK_zsyr(
+    zsyr_(
         &uplo_, &n_,
         (lapack_complex_double*) &alpha,
         (lapack_complex_double*) x, &incx_,

@@ -65,7 +65,7 @@ int64_t hbgvx(
     lapack::vector< float > rwork( (7*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_chbgvx(
+    chbgvx_(
         &jobz_, &range_, &uplo_, &n_, &ka_, &kb_,
         (lapack_complex_float*) AB, &ldab_,
         (lapack_complex_float*) BB, &ldbb_,
@@ -139,7 +139,7 @@ int64_t hbgvx(
     lapack::vector< double > rwork( (7*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_zhbgvx(
+    zhbgvx_(
         &jobz_, &range_, &uplo_, &n_, &ka_, &kb_,
         (lapack_complex_double*) AB, &ldab_,
         (lapack_complex_double*) BB, &ldbb_,

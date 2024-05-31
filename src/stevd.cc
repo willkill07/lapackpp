@@ -36,7 +36,7 @@ int64_t stevd(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_sstevd(
+    sstevd_(
         &jobz_, &n_,
         D,
         E,
@@ -54,7 +54,7 @@ int64_t stevd(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_sstevd(
+    sstevd_(
         &jobz_, &n_,
         D,
         E,
@@ -89,7 +89,7 @@ int64_t stevd(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dstevd(
+    dstevd_(
         &jobz_, &n_,
         D,
         E,
@@ -107,7 +107,7 @@ int64_t stevd(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_dstevd(
+    dstevd_(
         &jobz_, &n_,
         D,
         E,

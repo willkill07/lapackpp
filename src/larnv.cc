@@ -36,7 +36,7 @@ void larnv(
     #endif
     lapack_int n_ = (lapack_int) n;
 
-    LAPACK_slarnv(
+    slarnv_(
         &idist_,
         iseed_ptr, &n_,
         X );
@@ -67,7 +67,7 @@ void larnv(
     #endif
     lapack_int n_ = (lapack_int) n;
 
-    LAPACK_dlarnv(
+    dlarnv_(
         &idist_,
         iseed_ptr, &n_,
         X );
@@ -98,7 +98,7 @@ void larnv(
     #endif
     lapack_int n_ = (lapack_int) n;
 
-    LAPACK_clarnv(
+    clarnv_(
         &idist_,
         iseed_ptr, &n_,
         (lapack_complex_float*) X );
@@ -165,7 +165,7 @@ void larnv(
     #endif
     lapack_int n_ = (lapack_int) n;
 
-    LAPACK_zlarnv(
+    zlarnv_(
         &idist_,
         iseed_ptr, &n_,
         (lapack_complex_double*) X );

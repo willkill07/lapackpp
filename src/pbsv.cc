@@ -37,7 +37,7 @@ int64_t pbsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_spbsv(
+    spbsv_(
         &uplo_, &n_, &kd_, &nrhs_,
         AB, &ldab_,
         B, &ldb_, &info_
@@ -71,7 +71,7 @@ int64_t pbsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_dpbsv(
+    dpbsv_(
         &uplo_, &n_, &kd_, &nrhs_,
         AB, &ldab_,
         B, &ldb_, &info_
@@ -105,7 +105,7 @@ int64_t pbsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_cpbsv(
+    cpbsv_(
         &uplo_, &n_, &kd_, &nrhs_,
         (lapack_complex_float*) AB, &ldab_,
         (lapack_complex_float*) B, &ldb_, &info_
@@ -227,7 +227,7 @@ int64_t pbsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_zpbsv(
+    zpbsv_(
         &uplo_, &n_, &kd_, &nrhs_,
         (lapack_complex_double*) AB, &ldab_,
         (lapack_complex_double*) B, &ldb_, &info_

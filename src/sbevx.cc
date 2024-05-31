@@ -59,7 +59,7 @@ int64_t sbevx(
     lapack::vector< float > work( (7*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_ssbevx(
+    ssbevx_(
         &jobz_, &range_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         Q, &ldq_, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -125,7 +125,7 @@ int64_t sbevx(
     lapack::vector< double > work( (7*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_dsbevx(
+    dsbevx_(
         &jobz_, &range_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         Q, &ldq_, &vl, &vu, &il_, &iu_, &abstol, &m_,

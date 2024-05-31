@@ -67,7 +67,7 @@ int64_t herfsx(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (2*n) );
 
-    LAPACK_cherfsx(
+    cherfsx_(
         &uplo_, &equed_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) AF, &ldaf_,
@@ -410,7 +410,7 @@ int64_t herfsx(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (2*n) );
 
-    LAPACK_zherfsx(
+    zherfsx_(
         &uplo_, &equed_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) AF, &ldaf_,

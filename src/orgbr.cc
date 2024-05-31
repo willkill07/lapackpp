@@ -39,7 +39,7 @@ int64_t orgbr(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_sorgbr(
+    sorgbr_(
         &vect_, &m_, &n_, &k_,
         A, &lda_,
         tau,
@@ -53,7 +53,7 @@ int64_t orgbr(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_sorgbr(
+    sorgbr_(
         &vect_, &m_, &n_, &k_,
         A, &lda_,
         tau,
@@ -90,7 +90,7 @@ int64_t orgbr(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dorgbr(
+    dorgbr_(
         &vect_, &m_, &n_, &k_,
         A, &lda_,
         tau,
@@ -104,7 +104,7 @@ int64_t orgbr(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dorgbr(
+    dorgbr_(
         &vect_, &m_, &n_, &k_,
         A, &lda_,
         tau,

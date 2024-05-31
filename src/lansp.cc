@@ -35,7 +35,7 @@ float lansp(
     // allocate workspace
     lapack::vector< float > work( max(1,lwork) );
 
-    return LAPACK_slansp(
+    return slansp_(
         &norm_, &uplo_, &n_,
         AP,
         &work[0]
@@ -62,7 +62,7 @@ double lansp(
     // allocate workspace
     lapack::vector< double > work( max(1,lwork) );
 
-    return LAPACK_dlansp(
+    return dlansp_(
         &norm_, &uplo_, &n_,
         AP,
         &work[0]
@@ -89,7 +89,7 @@ float lansp(
     // allocate workspace
     lapack::vector< float > work( max(1,lwork) );
 
-    return LAPACK_clansp(
+    return clansp_(
         &norm_, &uplo_, &n_,
         (lapack_complex_float*) AP,
         &work[0]
@@ -150,7 +150,7 @@ double lansp(
     // allocate workspace
     lapack::vector< double > work( max(1,lwork) );
 
-    return LAPACK_zlansp(
+    return zlansp_(
         &norm_, &uplo_, &n_,
         (lapack_complex_double*) AP,
         &work[0]

@@ -30,7 +30,7 @@ int64_t hpgst(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_chpgst(
+    chpgst_(
         &itype_, &uplo_, &n_,
         (lapack_complex_float*) AP,
         (lapack_complex_float*) BP, &info_
@@ -57,7 +57,7 @@ int64_t hpgst(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_zhpgst(
+    zhpgst_(
         &itype_, &uplo_, &n_,
         (lapack_complex_double*) AP,
         (lapack_complex_double*) BP, &info_

@@ -35,7 +35,7 @@ int64_t pbequ(
     lapack_int ldab_ = (lapack_int) ldab;
     lapack_int info_ = 0;
 
-    LAPACK_spbequ(
+    spbequ_(
         &uplo_, &n_, &kd_,
         AB, &ldab_,
         S, scond, amax, &info_
@@ -67,7 +67,7 @@ int64_t pbequ(
     lapack_int ldab_ = (lapack_int) ldab;
     lapack_int info_ = 0;
 
-    LAPACK_dpbequ(
+    dpbequ_(
         &uplo_, &n_, &kd_,
         AB, &ldab_,
         S, scond, amax, &info_
@@ -99,7 +99,7 @@ int64_t pbequ(
     lapack_int ldab_ = (lapack_int) ldab;
     lapack_int info_ = 0;
 
-    LAPACK_cpbequ(
+    cpbequ_(
         &uplo_, &n_, &kd_,
         (lapack_complex_float*) AB, &ldab_,
         S, scond, amax, &info_
@@ -183,7 +183,7 @@ int64_t pbequ(
     lapack_int ldab_ = (lapack_int) ldab;
     lapack_int info_ = 0;
 
-    LAPACK_zpbequ(
+    zpbequ_(
         &uplo_, &n_, &kd_,
         (lapack_complex_double*) AB, &ldab_,
         S, scond, amax, &info_

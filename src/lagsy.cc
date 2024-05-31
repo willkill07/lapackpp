@@ -45,7 +45,7 @@ int64_t lagsy(
     // allocate workspace
     lapack::vector< float > work( (2*n) );
 
-    LAPACK_slagsy(
+    slagsy_(
         &n_, &k_,
         D,
         A, &lda_,
@@ -88,7 +88,7 @@ int64_t lagsy(
     // allocate workspace
     lapack::vector< double > work( (2*n) );
 
-    LAPACK_dlagsy(
+    dlagsy_(
         &n_, &k_,
         D,
         A, &lda_,
@@ -131,7 +131,7 @@ int64_t lagsy(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (2*n) );
 
-    LAPACK_clagsy(
+    clagsy_(
         &n_, &k_,
         D,
         (lapack_complex_float*) A, &lda_,
@@ -174,7 +174,7 @@ int64_t lagsy(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (2*n) );
 
-    LAPACK_zlagsy(
+    zlagsy_(
         &n_, &k_,
         D,
         (lapack_complex_double*) A, &lda_,

@@ -30,7 +30,7 @@ int64_t potri(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_spotri(
+    spotri_(
         &uplo_, &n_,
         A, &lda_, &info_
     );
@@ -56,7 +56,7 @@ int64_t potri(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_dpotri(
+    dpotri_(
         &uplo_, &n_,
         A, &lda_, &info_
     );
@@ -82,7 +82,7 @@ int64_t potri(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_cpotri(
+    cpotri_(
         &uplo_, &n_,
         (lapack_complex_float*) A, &lda_, &info_
     );
@@ -137,7 +137,7 @@ int64_t potri(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_zpotri(
+    zpotri_(
         &uplo_, &n_,
         (lapack_complex_double*) A, &lda_, &info_
     );

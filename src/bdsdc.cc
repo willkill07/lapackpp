@@ -58,7 +58,7 @@ int64_t bdsdc(
     lapack::vector< float > work( (max( 1, lwork )) );
     lapack::vector< lapack_int > iwork( (8*n) );
 
-    LAPACK_sbdsdc(
+    sbdsdc_(
         &uplo_, &compq_, &n_,
         D,
         E,
@@ -224,7 +224,7 @@ int64_t bdsdc(
     lapack::vector< double > work( (max( 1, lwork )) );
     lapack::vector< lapack_int > iwork( (8*n) );
 
-    LAPACK_dbdsdc(
+    dbdsdc_(
         &uplo_, &compq_, &n_,
         D,
         E,

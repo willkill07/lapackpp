@@ -33,7 +33,7 @@ int64_t pptrs(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_spptrs(
+    spptrs_(
         &uplo_, &n_, &nrhs_,
         AP,
         B, &ldb_, &info_
@@ -63,7 +63,7 @@ int64_t pptrs(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_dpptrs(
+    dpptrs_(
         &uplo_, &n_, &nrhs_,
         AP,
         B, &ldb_, &info_
@@ -93,7 +93,7 @@ int64_t pptrs(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_cpptrs(
+    cpptrs_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) AP,
         (lapack_complex_float*) B, &ldb_, &info_
@@ -160,7 +160,7 @@ int64_t pptrs(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_zpptrs(
+    zpptrs_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) AP,
         (lapack_complex_double*) B, &ldb_, &info_

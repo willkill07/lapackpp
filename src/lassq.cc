@@ -30,7 +30,7 @@ void lassq(
     lapack_int n_ = (lapack_int) n;
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_slassq(
+    slassq_(
         &n_,
         x, &incx_, scale, sumsq );
 }
@@ -51,7 +51,7 @@ void lassq(
     lapack_int n_ = (lapack_int) n;
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_dlassq(
+    dlassq_(
         &n_,
         x, &incx_, scale, sumsq );
 }
@@ -72,7 +72,7 @@ void lassq(
     lapack_int n_ = (lapack_int) n;
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_classq(
+    classq_(
         &n_,
         (lapack_complex_float*) x, &incx_, scale, sumsq );
 }
@@ -134,7 +134,7 @@ void lassq(
     lapack_int n_ = (lapack_int) n;
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_zlassq(
+    zlassq_(
         &n_,
         (lapack_complex_double*) x, &incx_, scale, sumsq );
 }

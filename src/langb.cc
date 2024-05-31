@@ -40,7 +40,7 @@ float langb(
     // allocate workspace
     lapack::vector< float > work( max(1,lwork) );
 
-    return LAPACK_slangb(
+    return slangb_(
         &norm_, &n_, &kl_, &ku_,
         AB, &ldab_,
         &work[0]
@@ -72,7 +72,7 @@ double langb(
     // allocate workspace
     lapack::vector< double > work( max(1,lwork) );
 
-    return LAPACK_dlangb(
+    return dlangb_(
         &norm_, &n_, &kl_, &ku_,
         AB, &ldab_,
         &work[0]
@@ -104,7 +104,7 @@ float langb(
     // allocate workspace
     lapack::vector< float > work( max(1,lwork) );
 
-    return LAPACK_clangb(
+    return clangb_(
         &norm_, &n_, &kl_, &ku_,
         (lapack_complex_float*) AB, &ldab_,
         &work[0]
@@ -170,7 +170,7 @@ double langb(
     // allocate workspace
     lapack::vector< double > work( max(1,lwork) );
 
-    return LAPACK_zlangb(
+    return zlangb_(
         &norm_, &n_, &kl_, &ku_,
         (lapack_complex_double*) AB, &ldab_,
         &work[0]

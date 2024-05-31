@@ -42,7 +42,7 @@ int64_t hbevd(
     float qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_chbevd(
+    chbevd_(
         &jobz_, &uplo_, &n_, &kd_,
         (lapack_complex_float*) AB, &ldab_,
         W,
@@ -63,7 +63,7 @@ int64_t hbevd(
     lapack::vector< float > rwork( lrwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_chbevd(
+    chbevd_(
         &jobz_, &uplo_, &n_, &kd_,
         (lapack_complex_float*) AB, &ldab_,
         W,
@@ -105,7 +105,7 @@ int64_t hbevd(
     double qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zhbevd(
+    zhbevd_(
         &jobz_, &uplo_, &n_, &kd_,
         (lapack_complex_double*) AB, &ldab_,
         W,
@@ -126,7 +126,7 @@ int64_t hbevd(
     lapack::vector< double > rwork( lrwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_zhbevd(
+    zhbevd_(
         &jobz_, &uplo_, &n_, &kd_,
         (lapack_complex_double*) AB, &ldab_,
         W,

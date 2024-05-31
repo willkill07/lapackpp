@@ -43,7 +43,7 @@ int64_t gglse(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgglse(
+    sgglse_(
         &m_, &n_, &p_,
         A, &lda_,
         B, &ldb_,
@@ -59,7 +59,7 @@ int64_t gglse(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_sgglse(
+    sgglse_(
         &m_, &n_, &p_,
         A, &lda_,
         B, &ldb_,
@@ -101,7 +101,7 @@ int64_t gglse(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgglse(
+    dgglse_(
         &m_, &n_, &p_,
         A, &lda_,
         B, &ldb_,
@@ -117,7 +117,7 @@ int64_t gglse(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dgglse(
+    dgglse_(
         &m_, &n_, &p_,
         A, &lda_,
         B, &ldb_,
@@ -159,7 +159,7 @@ int64_t gglse(
     // query for workspace size
     std::complex<float> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgglse(
+    cgglse_(
         &m_, &n_, &p_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -175,7 +175,7 @@ int64_t gglse(
     // allocate workspace
     lapack::vector< std::complex<float> > work( lwork_ );
 
-    LAPACK_cgglse(
+    cgglse_(
         &m_, &n_, &p_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -308,7 +308,7 @@ int64_t gglse(
     // query for workspace size
     std::complex<double> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgglse(
+    zgglse_(
         &m_, &n_, &p_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,
@@ -324,7 +324,7 @@ int64_t gglse(
     // allocate workspace
     lapack::vector< std::complex<double> > work( lwork_ );
 
-    LAPACK_zgglse(
+    zgglse_(
         &m_, &n_, &p_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,

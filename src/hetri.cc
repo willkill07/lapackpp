@@ -42,7 +42,7 @@ int64_t hetri(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (n) );
 
-    LAPACK_chetri(
+    chetri_(
         &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         ipiv_ptr,
@@ -126,7 +126,7 @@ int64_t hetri(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (n) );
 
-    LAPACK_zhetri(
+    zhetri_(
         &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         ipiv_ptr,

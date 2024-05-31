@@ -35,7 +35,7 @@ int64_t pteqr(
     // allocate workspace
     lapack::vector< float > work( (4*n) );
 
-    LAPACK_spteqr(
+    spteqr_(
         &compz_, &n_,
         D,
         E,
@@ -68,7 +68,7 @@ int64_t pteqr(
     // allocate workspace
     lapack::vector< double > work( (4*n) );
 
-    LAPACK_dpteqr(
+    dpteqr_(
         &compz_, &n_,
         D,
         E,
@@ -101,7 +101,7 @@ int64_t pteqr(
     // allocate workspace
     lapack::vector< float > work( (4*n) );
 
-    LAPACK_cpteqr(
+    cpteqr_(
         &compz_, &n_,
         D,
         E,
@@ -134,7 +134,7 @@ int64_t pteqr(
     // allocate workspace
     lapack::vector< double > work( (4*n) );
 
-    LAPACK_zpteqr(
+    zpteqr_(
         &compz_, &n_,
         D,
         E,

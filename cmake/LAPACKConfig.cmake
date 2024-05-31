@@ -21,10 +21,10 @@ try_run(
     run_result compile_result ${CMAKE_CURRENT_BINARY_DIR}
     SOURCES
         "${CMAKE_CURRENT_SOURCE_DIR}/config/lapack_version.cc"
-    LINK_LIBRARIES
-        ${LAPACK_LIBRARIES} ${blaspp_libraries}
     COMPILE_DEFINITIONS
         ${blaspp_defines}
+    LINK_LIBRARIES
+        ${LAPACK_LIBRARIES} ${blaspp_libraries}
     COMPILE_OUTPUT_VARIABLE
         compile_output
     RUN_OUTPUT_VARIABLE
@@ -32,6 +32,10 @@ try_run(
 )
 debug_try_run( "lapack_version.cc" "${compile_result}" "${compile_output}"
                                    "${run_result}" "${run_output}" )
+
+message("${blaspp_defines}")
+message("${LAPACK_LIBRARIES} ${blaspp_libraries}")
+# list( APPEND lapackpp_defs_ "-DLAPACK_VERSION=30901" )
 
 if (compile_result
     AND "${run_output}" MATCHES "LAPACK_VERSION=(([0-9]+)\\.([0-9]+)\\.([0-9]+))")

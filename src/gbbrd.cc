@@ -53,7 +53,7 @@ int64_t gbbrd(
     // allocate workspace
     lapack::vector< float > work( (2*max(m,n)) );
 
-    LAPACK_sgbbrd(
+    sgbbrd_(
         &vect_, &m_, &n_, &ncc_, &kl_, &ku_,
         AB, &ldab_,
         D,
@@ -107,7 +107,7 @@ int64_t gbbrd(
     // allocate workspace
     lapack::vector< double > work( (2*max(m,n)) );
 
-    LAPACK_dgbbrd(
+    dgbbrd_(
         &vect_, &m_, &n_, &ncc_, &kl_, &ku_,
         AB, &ldab_,
         D,
@@ -162,7 +162,7 @@ int64_t gbbrd(
     lapack::vector< std::complex<float> > work( (max(m,n)) );
     lapack::vector< float > rwork( (max(m,n)) );
 
-    LAPACK_cgbbrd(
+    cgbbrd_(
         &vect_, &m_, &n_, &ncc_, &kl_, &ku_,
         (lapack_complex_float*) AB, &ldab_,
         D,
@@ -303,7 +303,7 @@ int64_t gbbrd(
     lapack::vector< std::complex<double> > work( (max(m,n)) );
     lapack::vector< double > rwork( (max(m,n)) );
 
-    LAPACK_zgbbrd(
+    zgbbrd_(
         &vect_, &m_, &n_, &ncc_, &kl_, &ku_,
         (lapack_complex_double*) AB, &ldab_,
         D,

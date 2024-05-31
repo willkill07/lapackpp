@@ -36,7 +36,7 @@ int64_t stedc(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_sstedc(
+    sstedc_(
         &compz_, &n_,
         D,
         E,
@@ -54,7 +54,7 @@ int64_t stedc(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_sstedc(
+    sstedc_(
         &compz_, &n_,
         D,
         E,
@@ -89,7 +89,7 @@ int64_t stedc(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dstedc(
+    dstedc_(
         &compz_, &n_,
         D,
         E,
@@ -107,7 +107,7 @@ int64_t stedc(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_dstedc(
+    dstedc_(
         &compz_, &n_,
         D,
         E,
@@ -143,7 +143,7 @@ int64_t stedc(
     float qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cstedc(
+    cstedc_(
         &compz_, &n_,
         D,
         E,
@@ -164,7 +164,7 @@ int64_t stedc(
     lapack::vector< float > rwork( lrwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_cstedc(
+    cstedc_(
         &compz_, &n_,
         D,
         E,
@@ -201,7 +201,7 @@ int64_t stedc(
     double qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zstedc(
+    zstedc_(
         &compz_, &n_,
         D,
         E,
@@ -222,7 +222,7 @@ int64_t stedc(
     lapack::vector< double > rwork( lrwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_zstedc(
+    zstedc_(
         &compz_, &n_,
         D,
         E,

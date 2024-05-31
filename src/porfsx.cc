@@ -59,7 +59,7 @@ int64_t porfsx(
     lapack::vector< float > work( (4*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_sporfsx(
+    sporfsx_(
         &uplo_, &equed_, &n_, &nrhs_,
         A, &lda_,
         AF, &ldaf_,
@@ -121,7 +121,7 @@ int64_t porfsx(
     lapack::vector< double > work( (4*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dporfsx(
+    dporfsx_(
         &uplo_, &equed_, &n_, &nrhs_,
         A, &lda_,
         AF, &ldaf_,
@@ -183,7 +183,7 @@ int64_t porfsx(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (2*n) );
 
-    LAPACK_cporfsx(
+    cporfsx_(
         &uplo_, &equed_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) AF, &ldaf_,
@@ -505,7 +505,7 @@ int64_t porfsx(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (2*n) );
 
-    LAPACK_zporfsx(
+    zporfsx_(
         &uplo_, &equed_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) AF, &ldaf_,

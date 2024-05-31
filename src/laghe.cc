@@ -45,7 +45,7 @@ int64_t laghe(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (2*n) );
 
-    LAPACK_claghe(
+    claghe_(
         &n_, &k_,
         D,
         (lapack_complex_float*) A, &lda_,
@@ -88,7 +88,7 @@ int64_t laghe(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (2*n) );
 
-    LAPACK_zlaghe(
+    zlaghe_(
         &n_, &k_,
         D,
         (lapack_complex_double*) A, &lda_,

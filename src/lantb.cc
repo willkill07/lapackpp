@@ -40,7 +40,7 @@ float lantb(
     // allocate workspace
     lapack::vector< float > work( max(1,lwork) );
 
-    return LAPACK_slantb(
+    return slantb_(
         &norm_, &uplo_, &diag_, &n_, &k_,
         AB, &ldab_,
         &work[0]
@@ -72,7 +72,7 @@ double lantb(
     // allocate workspace
     lapack::vector< double > work( max(1,lwork) );
 
-    return LAPACK_dlantb(
+    return dlantb_(
         &norm_, &uplo_, &diag_, &n_, &k_,
         AB, &ldab_,
         &work[0]
@@ -104,7 +104,7 @@ float lantb(
     // allocate workspace
     lapack::vector< float > work( max(1,lwork) );
 
-    return LAPACK_clantb(
+    return clantb_(
         &norm_, &uplo_, &diag_, &n_, &k_,
         (lapack_complex_float*) AB, &ldab_,
         &work[0]
@@ -183,7 +183,7 @@ double lantb(
     // allocate workspace
     lapack::vector< double > work( max(1,lwork) );
 
-    return LAPACK_zlantb(
+    return zlantb_(
         &norm_, &uplo_, &diag_, &n_, &k_,
         (lapack_complex_double*) AB, &ldab_,
         &work[0]

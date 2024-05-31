@@ -36,7 +36,7 @@ int64_t sptrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_ssptrf(
+    ssptrf_(
         &uplo_, &n_,
         AP,
         ipiv_ptr, &info_
@@ -71,7 +71,7 @@ int64_t sptrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_dsptrf(
+    dsptrf_(
         &uplo_, &n_,
         AP,
         ipiv_ptr, &info_
@@ -106,7 +106,7 @@ int64_t sptrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_csptrf(
+    csptrf_(
         &uplo_, &n_,
         (lapack_complex_float*) AP,
         ipiv_ptr, &info_
@@ -141,7 +141,7 @@ int64_t sptrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_zsptrf(
+    zsptrf_(
         &uplo_, &n_,
         (lapack_complex_double*) AP,
         ipiv_ptr, &info_

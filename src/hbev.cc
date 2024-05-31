@@ -41,7 +41,7 @@ int64_t hbev(
     lapack::vector< std::complex<float> > work( (n) );
     lapack::vector< float > rwork( (max( 1, 3*n-2 )) );
 
-    LAPACK_chbev(
+    chbev_(
         &jobz_, &uplo_, &n_, &kd_,
         (lapack_complex_float*) AB, &ldab_,
         W,
@@ -81,7 +81,7 @@ int64_t hbev(
     lapack::vector< std::complex<double> > work( (n) );
     lapack::vector< double > rwork( (max( 1, 3*n-2 )) );
 
-    LAPACK_zhbev(
+    zhbev_(
         &jobz_, &uplo_, &n_, &kd_,
         (lapack_complex_double*) AB, &ldab_,
         W,

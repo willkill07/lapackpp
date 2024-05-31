@@ -60,7 +60,7 @@ int64_t ggsvd3(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_sggsvd3(
+    sggsvd3_(
         &jobu_, &jobv_, &jobq_, &m_, &n_, &p_, &k_, &l_,
         A, &lda_,
         B, &ldb_,
@@ -81,7 +81,7 @@ int64_t ggsvd3(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_sggsvd3(
+    sggsvd3_(
         &jobu_, &jobv_, &jobq_, &m_, &n_, &p_, &k_, &l_,
         A, &lda_,
         B, &ldb_,
@@ -144,7 +144,7 @@ int64_t ggsvd3(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dggsvd3(
+    dggsvd3_(
         &jobu_, &jobv_, &jobq_, &m_, &n_, &p_, &k_, &l_,
         A, &lda_,
         B, &ldb_,
@@ -165,7 +165,7 @@ int64_t ggsvd3(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dggsvd3(
+    dggsvd3_(
         &jobu_, &jobv_, &jobq_, &m_, &n_, &p_, &k_, &l_,
         A, &lda_,
         B, &ldb_,
@@ -229,7 +229,7 @@ int64_t ggsvd3(
     float qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cggsvd3(
+    cggsvd3_(
         &jobu_, &jobv_, &jobq_, &m_, &n_, &p_, &k_, &l_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -252,7 +252,7 @@ int64_t ggsvd3(
     lapack::vector< float > rwork( (2*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_cggsvd3(
+    cggsvd3_(
         &jobu_, &jobv_, &jobq_, &m_, &n_, &p_, &k_, &l_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -317,7 +317,7 @@ int64_t ggsvd3(
     double qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zggsvd3(
+    zggsvd3_(
         &jobu_, &jobv_, &jobq_, &m_, &n_, &p_, &k_, &l_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,
@@ -340,7 +340,7 @@ int64_t ggsvd3(
     lapack::vector< double > rwork( (2*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_zggsvd3(
+    zggsvd3_(
         &jobu_, &jobv_, &jobq_, &m_, &n_, &p_, &k_, &l_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,

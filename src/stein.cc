@@ -62,7 +62,7 @@ int64_t stein(
     lapack::vector< float > work( (5*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_sstein(
+    sstein_(
         &n_,
         D,
         E, &m_,
@@ -129,7 +129,7 @@ int64_t stein(
     lapack::vector< double > work( (5*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dstein(
+    dstein_(
         &n_,
         D,
         E, &m_,
@@ -196,7 +196,7 @@ int64_t stein(
     lapack::vector< float > work( (5*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_cstein(
+    cstein_(
         &n_,
         D,
         E, &m_,
@@ -263,7 +263,7 @@ int64_t stein(
     lapack::vector< double > work( (5*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_zstein(
+    zstein_(
         &n_,
         D,
         E, &m_,

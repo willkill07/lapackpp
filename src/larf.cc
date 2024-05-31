@@ -41,7 +41,7 @@ void larf(
     // allocate workspace
     lapack::vector< float > work( lwork );
 
-    LAPACK_slarf(
+    slarf_(
         &side_, &m_, &n_,
         v, &incv_, &tau,
         C, &ldc_,
@@ -75,7 +75,7 @@ void larf(
     // allocate workspace
     lapack::vector< double > work( lwork );
 
-    LAPACK_dlarf(
+    dlarf_(
         &side_, &m_, &n_,
         v, &incv_, &tau,
         C, &ldc_,
@@ -109,7 +109,7 @@ void larf(
     // allocate workspace
     lapack::vector< std::complex<float> > work( lwork );
 
-    LAPACK_clarf(
+    clarf_(
         &side_, &m_, &n_,
         (lapack_complex_float*) v, &incv_, (lapack_complex_float*) &tau,
         (lapack_complex_float*) C, &ldc_,
@@ -188,7 +188,7 @@ void larf(
     // allocate workspace
     lapack::vector< std::complex<double> > work( lwork );
 
-    LAPACK_zlarf(
+    zlarf_(
         &side_, &m_, &n_,
         (lapack_complex_double*) v, &incv_, (lapack_complex_double*) &tau,
         (lapack_complex_double*) C, &ldc_,

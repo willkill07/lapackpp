@@ -550,6 +550,10 @@ add_library(
     src/stub/stub_heevd.cc
 )
 
+set( lapackpp_defs_accelerate_ "-DACCELERATE_NEW_LAPACK=1")
+set( lapackpp_use_accelerate true )
+target_link_libraries(lapackpp PUBLIC "-framework Accelerate")
+
 #-------------------------------------------------------------------------------
 # CUDA support.
 message( "" )
@@ -742,7 +746,7 @@ set( lapackpp_defs_ "${lapackpp_defs_}"
 
 # Concat defines.
 set( lapackpp_defines ${lapackpp_defs_} ${lapackpp_defs_cuda_}
-     ${lapackpp_defs_hip_} ${lapackpp_defs_sycl_}
+     ${lapackpp_defs_hip_} ${lapackpp_defs_sycl_} ${lapackpp_defs_accelerate_}
      CACHE INTERNAL "")
 
 if (true)

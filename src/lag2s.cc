@@ -33,7 +33,7 @@ int64_t lag2s(
     lapack_int ldsa_ = (lapack_int) ldsa;
     lapack_int info_ = 0;
 
-    LAPACK_dlag2s(
+    dlag2s_(
         &m_, &n_,
         A, &lda_,
         SA, &ldsa_, &info_ );

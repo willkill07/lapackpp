@@ -48,7 +48,7 @@ float lantr(
     // allocate workspace
     lapack::vector< float > work( max( 1, lwork ) );
 
-    return LAPACK_slantr(
+    return slantr_(
         &norm_, &uplo_, &diag_, &m_, &n_,
         A, &lda_,
         &work[0]
@@ -88,7 +88,7 @@ double lantr(
     // allocate workspace
     lapack::vector< double > work( max( 1, lwork ) );
 
-    return LAPACK_dlantr(
+    return dlantr_(
         &norm_, &uplo_, &diag_, &m_, &n_,
         A, &lda_,
         &work[0]
@@ -128,7 +128,7 @@ float lantr(
     // allocate workspace
     lapack::vector< float > work( max( 1, lwork ) );
 
-    return LAPACK_clantr(
+    return clantr_(
         &norm_, &uplo_, &diag_, &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         &work[0]
@@ -225,7 +225,7 @@ double lantr(
     // allocate workspace
     lapack::vector< double > work( max( 1, lwork ) );
 
-    return LAPACK_zlantr(
+    return zlantr_(
         &norm_, &uplo_, &diag_, &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         &work[0]

@@ -33,7 +33,7 @@ int64_t lag2z(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_clag2z(
+    clag2z_(
         &m_, &n_,
         (lapack_complex_float*) SA, &ldsa_,
         (lapack_complex_double*) A, &lda_, &info_ );

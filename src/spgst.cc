@@ -30,7 +30,7 @@ int64_t spgst(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_sspgst(
+    sspgst_(
         &itype_, &uplo_, &n_,
         AP,
         BP, &info_
@@ -57,7 +57,7 @@ int64_t spgst(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_dspgst(
+    dspgst_(
         &itype_, &uplo_, &n_,
         AP,
         BP, &info_

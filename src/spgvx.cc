@@ -55,7 +55,7 @@ int64_t spgvx(
     lapack::vector< float > work( (8*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_sspgvx(
+    sspgvx_(
         &itype_, &jobz_, &range_, &uplo_, &n_,
         AP,
         BP, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -117,7 +117,7 @@ int64_t spgvx(
     lapack::vector< double > work( (8*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_dspgvx(
+    dspgvx_(
         &itype_, &jobz_, &range_, &uplo_, &n_,
         AP,
         BP, &vl, &vu, &il_, &iu_, &abstol, &m_,

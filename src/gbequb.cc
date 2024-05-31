@@ -40,7 +40,7 @@ int64_t gbequb(
     lapack_int ldab_ = (lapack_int) ldab;
     lapack_int info_ = 0;
 
-    LAPACK_sgbequb(
+    sgbequb_(
         &m_, &n_, &kl_, &ku_,
         AB, &ldab_,
         R,
@@ -77,7 +77,7 @@ int64_t gbequb(
     lapack_int ldab_ = (lapack_int) ldab;
     lapack_int info_ = 0;
 
-    LAPACK_dgbequb(
+    dgbequb_(
         &m_, &n_, &kl_, &ku_,
         AB, &ldab_,
         R,
@@ -114,7 +114,7 @@ int64_t gbequb(
     lapack_int ldab_ = (lapack_int) ldab;
     lapack_int info_ = 0;
 
-    LAPACK_cgbequb(
+    cgbequb_(
         &m_, &n_, &kl_, &ku_,
         (lapack_complex_float*) AB, &ldab_,
         R,
@@ -223,7 +223,7 @@ int64_t gbequb(
     lapack_int ldab_ = (lapack_int) ldab;
     lapack_int info_ = 0;
 
-    LAPACK_zgbequb(
+    zgbequb_(
         &m_, &n_, &kl_, &ku_,
         (lapack_complex_double*) AB, &ldab_,
         R,

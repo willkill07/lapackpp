@@ -36,7 +36,7 @@ float lanhs(
     // allocate workspace
     lapack::vector< float > work( max(1,lwork) );
 
-    return LAPACK_slanhs(
+    return slanhs_(
         &norm_, &n_,
         A, &lda_,
         &work[0]
@@ -64,7 +64,7 @@ double lanhs(
     // allocate workspace
     lapack::vector< double > work( max(1,lwork) );
 
-    return LAPACK_dlanhs(
+    return dlanhs_(
         &norm_, &n_,
         A, &lda_,
         &work[0]
@@ -92,7 +92,7 @@ float lanhs(
     // allocate workspace
     lapack::vector< float > work( max(1,lwork) );
 
-    return LAPACK_clanhs(
+    return clanhs_(
         &norm_, &n_,
         (lapack_complex_float*) A, &lda_,
         &work[0]
@@ -146,7 +146,7 @@ double lanhs(
     // allocate workspace
     lapack::vector< double > work( max(1,lwork) );
 
-    return LAPACK_zlanhs(
+    return zlanhs_(
         &norm_, &n_,
         (lapack_complex_double*) A, &lda_,
         &work[0]

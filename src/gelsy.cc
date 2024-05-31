@@ -50,7 +50,7 @@ int64_t gelsy(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgelsy(
+    sgelsy_(
         &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -64,7 +64,7 @@ int64_t gelsy(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_sgelsy(
+    sgelsy_(
         &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -115,7 +115,7 @@ int64_t gelsy(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgelsy(
+    dgelsy_(
         &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -129,7 +129,7 @@ int64_t gelsy(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dgelsy(
+    dgelsy_(
         &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -181,7 +181,7 @@ int64_t gelsy(
     std::complex<float> qry_work[1];
     float qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgelsy(
+    cgelsy_(
         &m_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -197,7 +197,7 @@ int64_t gelsy(
     lapack::vector< std::complex<float> > work( lwork_ );
     lapack::vector< float > rwork( (2*n) );
 
-    LAPACK_cgelsy(
+    cgelsy_(
         &m_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -349,7 +349,7 @@ int64_t gelsy(
     std::complex<double> qry_work[1];
     double qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgelsy(
+    zgelsy_(
         &m_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,
@@ -365,7 +365,7 @@ int64_t gelsy(
     lapack::vector< std::complex<double> > work( lwork_ );
     lapack::vector< double > rwork( (2*n) );
 
-    LAPACK_zgelsy(
+    zgelsy_(
         &m_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,

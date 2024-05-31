@@ -48,7 +48,7 @@ int64_t tbrfs(
     lapack::vector< float > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_stbrfs(
+    stbrfs_(
         &uplo_, &trans_, &diag_, &n_, &kd_, &nrhs_,
         AB, &ldab_,
         B, &ldb_,
@@ -97,7 +97,7 @@ int64_t tbrfs(
     lapack::vector< double > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dtbrfs(
+    dtbrfs_(
         &uplo_, &trans_, &diag_, &n_, &kd_, &nrhs_,
         AB, &ldab_,
         B, &ldb_,
@@ -146,7 +146,7 @@ int64_t tbrfs(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (n) );
 
-    LAPACK_ctbrfs(
+    ctbrfs_(
         &uplo_, &trans_, &diag_, &n_, &kd_, &nrhs_,
         (lapack_complex_float*) AB, &ldab_,
         (lapack_complex_float*) B, &ldb_,
@@ -195,7 +195,7 @@ int64_t tbrfs(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_ztbrfs(
+    ztbrfs_(
         &uplo_, &trans_, &diag_, &n_, &kd_, &nrhs_,
         (lapack_complex_double*) AB, &ldab_,
         (lapack_complex_double*) B, &ldb_,

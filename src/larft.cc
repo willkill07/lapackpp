@@ -37,7 +37,7 @@ void larft(
     lapack_int ldv_ = (lapack_int) ldv;
     lapack_int ldt_ = (lapack_int) ldt;
 
-    LAPACK_slarft(
+    slarft_(
         &direction_, &storev_, &n_, &k_,
         V, &ldv_,
         tau,
@@ -68,7 +68,7 @@ void larft(
     lapack_int ldv_ = (lapack_int) ldv;
     lapack_int ldt_ = (lapack_int) ldt;
 
-    LAPACK_dlarft(
+    dlarft_(
         &direction_, &storev_, &n_, &k_,
         V, &ldv_,
         tau,
@@ -99,7 +99,7 @@ void larft(
     lapack_int ldv_ = (lapack_int) ldv;
     lapack_int ldt_ = (lapack_int) ldt;
 
-    LAPACK_clarft(
+    clarft_(
         &direction_, &storev_, &n_, &k_,
         (lapack_complex_float*) V, &ldv_,
         (lapack_complex_float*) tau,
@@ -222,7 +222,7 @@ void larft(
     lapack_int ldv_ = (lapack_int) ldv;
     lapack_int ldt_ = (lapack_int) ldt;
 
-    LAPACK_zlarft(
+    zlarft_(
         &direction_, &storev_, &n_, &k_,
         (lapack_complex_double*) V, &ldv_,
         (lapack_complex_double*) tau,

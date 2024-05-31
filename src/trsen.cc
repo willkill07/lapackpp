@@ -53,7 +53,7 @@ int64_t trsen(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_strsen(
+    strsen_(
         &sense_, &compq_,
         select_ptr, &n_,
         T, &ldt_,
@@ -74,7 +74,7 @@ int64_t trsen(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_strsen(
+    strsen_(
         &sense_, &compq_,
         select_ptr, &n_,
         T, &ldt_,
@@ -134,7 +134,7 @@ int64_t trsen(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dtrsen(
+    dtrsen_(
         &sense_, &compq_,
         select_ptr, &n_,
         T, &ldt_,
@@ -155,7 +155,7 @@ int64_t trsen(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_dtrsen(
+    dtrsen_(
         &sense_, &compq_,
         select_ptr, &n_,
         T, &ldt_,
@@ -210,7 +210,7 @@ int64_t trsen(
     // query for workspace size
     std::complex<float> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_ctrsen(
+    ctrsen_(
         &sense_, &compq_,
         select_ptr, &n_,
         (lapack_complex_float*) T, &ldt_,
@@ -226,7 +226,7 @@ int64_t trsen(
     // allocate workspace
     lapack::vector< std::complex<float> > work( lwork_ );
 
-    LAPACK_ctrsen(
+    ctrsen_(
         &sense_, &compq_,
         select_ptr, &n_,
         (lapack_complex_float*) T, &ldt_,
@@ -274,7 +274,7 @@ int64_t trsen(
     // query for workspace size
     std::complex<double> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_ztrsen(
+    ztrsen_(
         &sense_, &compq_,
         select_ptr, &n_,
         (lapack_complex_double*) T, &ldt_,
@@ -290,7 +290,7 @@ int64_t trsen(
     // allocate workspace
     lapack::vector< std::complex<double> > work( lwork_ );
 
-    LAPACK_ztrsen(
+    ztrsen_(
         &sense_, &compq_,
         select_ptr, &n_,
         (lapack_complex_double*) T, &ldt_,

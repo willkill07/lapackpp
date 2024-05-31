@@ -43,7 +43,7 @@ int64_t geqp3(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgeqp3(
+    sgeqp3_(
         &m_, &n_,
         A, &lda_,
         jpvt_ptr,
@@ -57,7 +57,7 @@ int64_t geqp3(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_sgeqp3(
+    sgeqp3_(
         &m_, &n_,
         A, &lda_,
         jpvt_ptr,
@@ -100,7 +100,7 @@ int64_t geqp3(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgeqp3(
+    dgeqp3_(
         &m_, &n_,
         A, &lda_,
         jpvt_ptr,
@@ -114,7 +114,7 @@ int64_t geqp3(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dgeqp3(
+    dgeqp3_(
         &m_, &n_,
         A, &lda_,
         jpvt_ptr,
@@ -158,7 +158,7 @@ int64_t geqp3(
     std::complex<float> qry_work[1];
     float qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgeqp3(
+    cgeqp3_(
         &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         jpvt_ptr,
@@ -174,7 +174,7 @@ int64_t geqp3(
     lapack::vector< std::complex<float> > work( lwork_ );
     lapack::vector< float > rwork( (2*n) );
 
-    LAPACK_cgeqp3(
+    cgeqp3_(
         &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         jpvt_ptr,
@@ -219,7 +219,7 @@ int64_t geqp3(
     std::complex<double> qry_work[1];
     double qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgeqp3(
+    zgeqp3_(
         &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         jpvt_ptr,
@@ -235,7 +235,7 @@ int64_t geqp3(
     lapack::vector< std::complex<double> > work( lwork_ );
     lapack::vector< double > rwork( (2*n) );
 
-    LAPACK_zgeqp3(
+    zgeqp3_(
         &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         jpvt_ptr,

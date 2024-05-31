@@ -59,7 +59,7 @@ int64_t sygvx(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_ssygvx(
+    ssygvx_(
         &itype_, &jobz_, &range_, &uplo_, &n_,
         A, &lda_,
         B, &ldb_, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -78,7 +78,7 @@ int64_t sygvx(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_ssygvx(
+    ssygvx_(
         &itype_, &jobz_, &range_, &uplo_, &n_,
         A, &lda_,
         B, &ldb_, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -144,7 +144,7 @@ int64_t sygvx(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dsygvx(
+    dsygvx_(
         &itype_, &jobz_, &range_, &uplo_, &n_,
         A, &lda_,
         B, &ldb_, &vl, &vu, &il_, &iu_, &abstol, &m_,
@@ -163,7 +163,7 @@ int64_t sygvx(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_dsygvx(
+    dsygvx_(
         &itype_, &jobz_, &range_, &uplo_, &n_,
         A, &lda_,
         B, &ldb_, &vl, &vu, &il_, &iu_, &abstol, &m_,

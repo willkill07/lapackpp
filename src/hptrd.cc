@@ -30,7 +30,7 @@ int64_t hptrd(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_chptrd(
+    chptrd_(
         &uplo_, &n_,
         (lapack_complex_float*) AP,
         D,
@@ -59,7 +59,7 @@ int64_t hptrd(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_zhptrd(
+    zhptrd_(
         &uplo_, &n_,
         (lapack_complex_double*) AP,
         D,

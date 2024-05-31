@@ -47,7 +47,7 @@ int64_t gbsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_sgbsv(
+    sgbsv_(
         &n_, &kl_, &ku_, &nrhs_,
         AB, &ldab_,
         ipiv_ptr,
@@ -93,7 +93,7 @@ int64_t gbsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_dgbsv(
+    dgbsv_(
         &n_, &kl_, &ku_, &nrhs_,
         AB, &ldab_,
         ipiv_ptr,
@@ -139,7 +139,7 @@ int64_t gbsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_cgbsv(
+    cgbsv_(
         &n_, &kl_, &ku_, &nrhs_,
         (lapack_complex_float*) AB, &ldab_,
         ipiv_ptr,
@@ -267,7 +267,7 @@ int64_t gbsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_zgbsv(
+    zgbsv_(
         &n_, &kl_, &ku_, &nrhs_,
         (lapack_complex_double*) AB, &ldab_,
         ipiv_ptr,

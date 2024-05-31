@@ -55,7 +55,7 @@ int64_t gemqrt(
     // allocate workspace
     std::vector< float > work( lwork_ );
 
-    LAPACK_sgemqrt(
+    sgemqrt_(
         &side_, &trans_, &m_, &n_, &k_, &nb_,
         V, &ldv_,
         T, &ldt_,
@@ -107,7 +107,7 @@ int64_t gemqrt(
     // allocate workspace
     std::vector< double > work( lwork_ );
 
-    LAPACK_dgemqrt(
+    dgemqrt_(
         &side_, &trans_, &m_, &n_, &k_, &nb_,
         V, &ldv_,
         T, &ldt_,
@@ -159,7 +159,7 @@ int64_t gemqrt(
     // allocate workspace
     std::vector< std::complex<float> > work( lwork_ );
 
-    LAPACK_cgemqrt(
+    cgemqrt_(
         &side_, &trans_, &m_, &n_, &k_, &nb_,
         (lapack_complex_float*) V, &ldv_,
         (lapack_complex_float*) T, &ldt_,
@@ -286,7 +286,7 @@ int64_t gemqrt(
     // allocate workspace
     std::vector< std::complex<double> > work( lwork_ );
 
-    LAPACK_zgemqrt(
+    zgemqrt_(
         &side_, &trans_, &m_, &n_, &k_, &nb_,
         (lapack_complex_double*) V, &ldv_,
         (lapack_complex_double*) T, &ldt_,

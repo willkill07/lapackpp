@@ -50,7 +50,7 @@ int64_t hetrs_aa(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (max(1,lwork_)) );
 
-    LAPACK_chetrs_aa(
+    chetrs_aa_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         ipiv_ptr,
@@ -139,7 +139,7 @@ int64_t hetrs_aa(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (max(1,lwork_)) );
 
-    LAPACK_zhetrs_aa(
+    zhetrs_aa_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         ipiv_ptr,

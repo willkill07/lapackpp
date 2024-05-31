@@ -47,7 +47,7 @@ int64_t tplqt(
     // allocate workspace
     lapack::vector< float > work( (mb*m) );
 
-    LAPACK_stplqt(
+    stplqt_(
         &m_, &n_, &l_, &mb_,
         A, &lda_,
         B, &ldb_,
@@ -89,7 +89,7 @@ int64_t tplqt(
     // allocate workspace
     lapack::vector< double > work( (mb*m) );
 
-    LAPACK_dtplqt(
+    dtplqt_(
         &m_, &n_, &l_, &mb_,
         A, &lda_,
         B, &ldb_,
@@ -131,7 +131,7 @@ int64_t tplqt(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (mb*m) );
 
-    LAPACK_ctplqt(
+    ctplqt_(
         &m_, &n_, &l_, &mb_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -269,7 +269,7 @@ int64_t tplqt(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (mb*m) );
 
-    LAPACK_ztplqt(
+    ztplqt_(
         &m_, &n_, &l_, &mb_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,

@@ -39,7 +39,7 @@ int64_t tbcon(
     lapack::vector< float > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_stbcon(
+    stbcon_(
         &norm_, &uplo_, &diag_, &n_, &kd_,
         AB, &ldab_, rcond,
         &work[0],
@@ -75,7 +75,7 @@ int64_t tbcon(
     lapack::vector< double > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dtbcon(
+    dtbcon_(
         &norm_, &uplo_, &diag_, &n_, &kd_,
         AB, &ldab_, rcond,
         &work[0],
@@ -111,7 +111,7 @@ int64_t tbcon(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (n) );
 
-    LAPACK_ctbcon(
+    ctbcon_(
         &norm_, &uplo_, &diag_, &n_, &kd_,
         (lapack_complex_float*) AB, &ldab_, rcond,
         (lapack_complex_float*) &work[0],
@@ -147,7 +147,7 @@ int64_t tbcon(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_ztbcon(
+    ztbcon_(
         &norm_, &uplo_, &diag_, &n_, &kd_,
         (lapack_complex_double*) AB, &ldab_, rcond,
         (lapack_complex_double*) &work[0],

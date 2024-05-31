@@ -33,7 +33,7 @@ int64_t ptsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_sptsv(
+    sptsv_(
         &n_, &nrhs_,
         D,
         E,
@@ -63,7 +63,7 @@ int64_t ptsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_dptsv(
+    dptsv_(
         &n_, &nrhs_,
         D,
         E,
@@ -93,7 +93,7 @@ int64_t ptsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_cptsv(
+    cptsv_(
         &n_, &nrhs_,
         D,
         (lapack_complex_float*) E,
@@ -168,7 +168,7 @@ int64_t ptsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_zptsv(
+    zptsv_(
         &n_, &nrhs_,
         D,
         (lapack_complex_double*) E,

@@ -44,7 +44,7 @@ int64_t hetri2(
     // query for workspace size
     std::complex<float> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_chetri2(
+    chetri2_(
         &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         ipiv_ptr,
@@ -58,7 +58,7 @@ int64_t hetri2(
     // allocate workspace
     lapack::vector< std::complex<float> > work( lwork_ );
 
-    LAPACK_chetri2(
+    chetri2_(
         &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         ipiv_ptr,
@@ -143,7 +143,7 @@ int64_t hetri2(
     // query for workspace size
     std::complex<double> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_zhetri2(
+    zhetri2_(
         &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         ipiv_ptr,
@@ -157,7 +157,7 @@ int64_t hetri2(
     // allocate workspace
     lapack::vector< std::complex<double> > work( lwork_ );
 
-    LAPACK_zhetri2(
+    zhetri2_(
         &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         ipiv_ptr,

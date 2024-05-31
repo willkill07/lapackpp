@@ -59,7 +59,7 @@ int64_t tgsja(
     // allocate workspace
     lapack::vector< float > work( (2*n) );
 
-    LAPACK_stgsja(
+    stgsja_(
         &jobu_, &jobv_, &jobq_, &m_, &p_, &n_, &k_, &l_,
         A, &lda_,
         B, &ldb_, &tola, &tolb,
@@ -121,7 +121,7 @@ int64_t tgsja(
     // allocate workspace
     lapack::vector< double > work( (2*n) );
 
-    LAPACK_dtgsja(
+    dtgsja_(
         &jobu_, &jobv_, &jobq_, &m_, &p_, &n_, &k_, &l_,
         A, &lda_,
         B, &ldb_, &tola, &tolb,
@@ -183,7 +183,7 @@ int64_t tgsja(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (2*n) );
 
-    LAPACK_ctgsja(
+    ctgsja_(
         &jobu_, &jobv_, &jobq_, &m_, &p_, &n_, &k_, &l_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_, &tola, &tolb,
@@ -245,7 +245,7 @@ int64_t tgsja(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (2*n) );
 
-    LAPACK_ztgsja(
+    ztgsja_(
         &jobu_, &jobv_, &jobq_, &m_, &p_, &n_, &k_, &l_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_, &tola, &tolb,

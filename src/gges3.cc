@@ -56,7 +56,7 @@ int64_t gges3(
     float qry_work[1];
     lapack_int qry_bwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgges3(
+    sgges3_(
         &jobvsl_, &jobvsr_, &sort_,
         select, &n_,
         A, &lda_,
@@ -78,7 +78,7 @@ int64_t gges3(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > bwork( (n) );
 
-    LAPACK_sgges3(
+    sgges3_(
         &jobvsl_, &jobvsr_, &sort_,
         select, &n_,
         A, &lda_,
@@ -141,7 +141,7 @@ int64_t gges3(
     double qry_work[1];
     lapack_int qry_bwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgges3(
+    dgges3_(
         &jobvsl_, &jobvsr_, &sort_,
         select, &n_,
         A, &lda_,
@@ -163,7 +163,7 @@ int64_t gges3(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > bwork( (n) );
 
-    LAPACK_dgges3(
+    dgges3_(
         &jobvsl_, &jobvsr_, &sort_,
         select, &n_,
         A, &lda_,
@@ -223,7 +223,7 @@ int64_t gges3(
     float qry_rwork[1];
     lapack_int qry_bwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgges3(
+    cgges3_(
         &jobvsl_, &jobvsr_, &sort_,
         (LAPACK_C_SELECT2) select, &n_,
         (lapack_complex_float*) A, &lda_,
@@ -246,7 +246,7 @@ int64_t gges3(
     lapack::vector< float > rwork( (8*n) );
     lapack::vector< lapack_int > bwork( (n) );
 
-    LAPACK_cgges3(
+    cgges3_(
         &jobvsl_, &jobvsr_, &sort_,
         (LAPACK_C_SELECT2) select, &n_,
         (lapack_complex_float*) A, &lda_,
@@ -302,7 +302,7 @@ int64_t gges3(
     double qry_rwork[1];
     lapack_int qry_bwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgges3(
+    zgges3_(
         &jobvsl_, &jobvsr_, &sort_,
         (LAPACK_Z_SELECT2) select, &n_,
         (lapack_complex_double*) A, &lda_,
@@ -325,7 +325,7 @@ int64_t gges3(
     lapack::vector< double > rwork( (8*n) );
     lapack::vector< lapack_int > bwork( (n) );
 
-    LAPACK_zgges3(
+    zgges3_(
         &jobvsl_, &jobvsr_, &sort_,
         (LAPACK_Z_SELECT2) select, &n_,
         (lapack_complex_double*) A, &lda_,

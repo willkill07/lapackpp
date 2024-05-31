@@ -28,7 +28,7 @@ int64_t pptri(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_spptri(
+    spptri_(
         &uplo_, &n_,
         AP, &info_
     );
@@ -52,7 +52,7 @@ int64_t pptri(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_dpptri(
+    dpptri_(
         &uplo_, &n_,
         AP, &info_
     );
@@ -76,7 +76,7 @@ int64_t pptri(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_cpptri(
+    cpptri_(
         &uplo_, &n_,
         (lapack_complex_float*) AP, &info_
     );
@@ -130,7 +130,7 @@ int64_t pptri(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_zpptri(
+    zpptri_(
         &uplo_, &n_,
         (lapack_complex_double*) AP, &info_
     );

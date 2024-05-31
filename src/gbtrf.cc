@@ -44,7 +44,7 @@ int64_t gbtrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_sgbtrf(
+    sgbtrf_(
         &m_, &n_, &kl_, &ku_,
         AB, &ldab_,
         ipiv_ptr, &info_ );
@@ -86,7 +86,7 @@ int64_t gbtrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_dgbtrf(
+    dgbtrf_(
         &m_, &n_, &kl_, &ku_,
         AB, &ldab_,
         ipiv_ptr, &info_ );
@@ -128,7 +128,7 @@ int64_t gbtrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_cgbtrf(
+    cgbtrf_(
         &m_, &n_, &kl_, &ku_,
         (lapack_complex_float*) AB, &ldab_,
         ipiv_ptr, &info_ );
@@ -238,7 +238,7 @@ int64_t gbtrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_zgbtrf(
+    zgbtrf_(
         &m_, &n_, &kl_, &ku_,
         (lapack_complex_double*) AB, &ldab_,
         ipiv_ptr, &info_ );

@@ -39,7 +39,7 @@ float lansb(
     // allocate workspace
     lapack::vector< float > work( max(1,lwork) );
 
-    return LAPACK_slansb(
+    return slansb_(
         &norm_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         &work[0]
@@ -70,7 +70,7 @@ double lansb(
     // allocate workspace
     lapack::vector< double > work( max(1,lwork) );
 
-    return LAPACK_dlansb(
+    return dlansb_(
         &norm_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         &work[0]
@@ -101,7 +101,7 @@ float lansb(
     // allocate workspace
     lapack::vector< float > work( max(1,lwork) );
 
-    return LAPACK_clansb(
+    return clansb_(
         &norm_, &uplo_, &n_, &kd_,
         (lapack_complex_float*) AB, &ldab_,
         &work[0]
@@ -173,7 +173,7 @@ double lansb(
     // allocate workspace
     lapack::vector< double > work( max(1,lwork) );
 
-    return LAPACK_zlansb(
+    return zlansb_(
         &norm_, &uplo_, &n_, &kd_,
         (lapack_complex_double*) AB, &ldab_,
         &work[0]

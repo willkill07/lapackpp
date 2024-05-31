@@ -31,7 +31,7 @@ void laset(
     lapack_int n_ = (lapack_int) n;
     lapack_int lda_ = (lapack_int) lda;
 
-    LAPACK_slaset(
+    slaset_(
         &matrixtype_, &m_, &n_, &offdiag, &diag,
         A, &lda_
     );
@@ -54,7 +54,7 @@ void laset(
     lapack_int n_ = (lapack_int) n;
     lapack_int lda_ = (lapack_int) lda;
 
-    LAPACK_dlaset(
+    dlaset_(
         &matrixtype_, &m_, &n_, &offdiag, &diag,
         A, &lda_
     );
@@ -77,7 +77,7 @@ void laset(
     lapack_int n_ = (lapack_int) n;
     lapack_int lda_ = (lapack_int) lda;
 
-    LAPACK_claset(
+    claset_(
         &matrixtype_, &m_, &n_, (lapack_complex_float*) &offdiag, (lapack_complex_float*) &diag,
         (lapack_complex_float*) A, &lda_
     );
@@ -139,7 +139,7 @@ void laset(
     lapack_int n_ = (lapack_int) n;
     lapack_int lda_ = (lapack_int) lda;
 
-    LAPACK_zlaset(
+    zlaset_(
         &matrixtype_, &m_, &n_, (lapack_complex_double*) &offdiag, (lapack_complex_double*) &diag,
         (lapack_complex_double*) A, &lda_
     );

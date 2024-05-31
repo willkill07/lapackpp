@@ -59,7 +59,7 @@ int64_t gtsvx(
     lapack::vector< float > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_sgtsvx(
+    sgtsvx_(
         &fact_, &trans_, &n_, &nrhs_,
         DL,
         D,
@@ -129,7 +129,7 @@ int64_t gtsvx(
     lapack::vector< double > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dgtsvx(
+    dgtsvx_(
         &fact_, &trans_, &n_, &nrhs_,
         DL,
         D,
@@ -199,7 +199,7 @@ int64_t gtsvx(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (n) );
 
-    LAPACK_cgtsvx(
+    cgtsvx_(
         &fact_, &trans_, &n_, &nrhs_,
         (lapack_complex_float*) DL,
         (lapack_complex_float*) D,
@@ -425,7 +425,7 @@ int64_t gtsvx(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_zgtsvx(
+    zgtsvx_(
         &fact_, &trans_, &n_, &nrhs_,
         (lapack_complex_double*) DL,
         (lapack_complex_double*) D,

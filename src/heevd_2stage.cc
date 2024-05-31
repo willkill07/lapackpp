@@ -40,7 +40,7 @@ int64_t heevd_2stage(
     float qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cheevd_2stage(
+    cheevd_2stage_(
         &jobz_, &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         W,
@@ -60,7 +60,7 @@ int64_t heevd_2stage(
     lapack::vector< float > rwork( lrwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_cheevd_2stage(
+    cheevd_2stage_(
         &jobz_, &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         W,
@@ -186,7 +186,7 @@ int64_t heevd_2stage(
     double qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zheevd_2stage(
+    zheevd_2stage_(
         &jobz_, &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         W,
@@ -206,7 +206,7 @@ int64_t heevd_2stage(
     lapack::vector< double > rwork( lrwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_zheevd_2stage(
+    zheevd_2stage_(
         &jobz_, &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         W,

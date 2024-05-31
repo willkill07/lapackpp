@@ -36,7 +36,7 @@ int64_t pocon(
     lapack::vector< float > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_spocon(
+    spocon_(
         &uplo_, &n_,
         A, &lda_, &anorm, rcond,
         &work[0],
@@ -69,7 +69,7 @@ int64_t pocon(
     lapack::vector< double > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dpocon(
+    dpocon_(
         &uplo_, &n_,
         A, &lda_, &anorm, rcond,
         &work[0],
@@ -102,7 +102,7 @@ int64_t pocon(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (n) );
 
-    LAPACK_cpocon(
+    cpocon_(
         &uplo_, &n_,
         (lapack_complex_float*) A, &lda_, &anorm, rcond,
         (lapack_complex_float*) &work[0],
@@ -170,7 +170,7 @@ int64_t pocon(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_zpocon(
+    zpocon_(
         &uplo_, &n_,
         (lapack_complex_double*) A, &lda_, &anorm, rcond,
         (lapack_complex_double*) &work[0],

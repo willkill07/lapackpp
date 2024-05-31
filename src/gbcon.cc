@@ -48,7 +48,7 @@ int64_t gbcon(
     lapack::vector< float > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_sgbcon(
+    sgbcon_(
         &norm_, &n_, &kl_, &ku_,
         AB, &ldab_,
         ipiv_ptr, &anorm, rcond,
@@ -94,7 +94,7 @@ int64_t gbcon(
     lapack::vector< double > work( (3*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dgbcon(
+    dgbcon_(
         &norm_, &n_, &kl_, &ku_,
         AB, &ldab_,
         ipiv_ptr, &anorm, rcond,
@@ -140,7 +140,7 @@ int64_t gbcon(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (n) );
 
-    LAPACK_cgbcon(
+    cgbcon_(
         &norm_, &n_, &kl_, &ku_,
         (lapack_complex_float*) AB, &ldab_,
         ipiv_ptr, &anorm, rcond,
@@ -238,7 +238,7 @@ int64_t gbcon(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_zgbcon(
+    zgbcon_(
         &norm_, &n_, &kl_, &ku_,
         (lapack_complex_double*) AB, &ldab_,
         ipiv_ptr, &anorm, rcond,

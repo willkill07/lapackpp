@@ -19,7 +19,7 @@ using blas::real;
 float lapy3(
     float x, float y, float z )
 {
-    return LAPACK_slapy3( &x, &y, &z );
+    return slapy3_( &x, &y, &z );
 }
 
 // -----------------------------------------------------------------------------
@@ -40,7 +40,7 @@ float lapy3(
 double lapy3(
     double x, double y, double z )
 {
-    return LAPACK_dlapy3( &x, &y, &z );
+    return dlapy3_( &x, &y, &z );
 }
 
 }  // namespace lapack

@@ -36,7 +36,7 @@ int64_t gecon(
     lapack::vector< float > work( (4*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_sgecon(
+    sgecon_(
         &norm_, &n_,
         A, &lda_, &anorm, rcond,
         &work[0],
@@ -69,7 +69,7 @@ int64_t gecon(
     lapack::vector< double > work( (4*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dgecon(
+    dgecon_(
         &norm_, &n_,
         A, &lda_, &anorm, rcond,
         &work[0],
@@ -102,7 +102,7 @@ int64_t gecon(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (2*n) );
 
-    LAPACK_cgecon(
+    cgecon_(
         &norm_, &n_,
         (lapack_complex_float*) A, &lda_, &anorm, rcond,
         (lapack_complex_float*) &work[0],
@@ -173,7 +173,7 @@ int64_t gecon(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (2*n) );
 
-    LAPACK_zgecon(
+    zgecon_(
         &norm_, &n_,
         (lapack_complex_double*) A, &lda_, &anorm, rcond,
         (lapack_complex_double*) &work[0],

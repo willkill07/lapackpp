@@ -43,7 +43,7 @@ int64_t pstrf(
     // allocate workspace
     lapack::vector< float > work( (2*n) );
 
-    LAPACK_spstrf(
+    spstrf_(
         &uplo_, &n_,
         A, &lda_,
         piv_ptr, &rank_, &tol,
@@ -87,7 +87,7 @@ int64_t pstrf(
     // allocate workspace
     lapack::vector< double > work( (2*n) );
 
-    LAPACK_dpstrf(
+    dpstrf_(
         &uplo_, &n_,
         A, &lda_,
         piv_ptr, &rank_, &tol,
@@ -131,7 +131,7 @@ int64_t pstrf(
     // allocate workspace
     lapack::vector< float > work( (2*n) );
 
-    LAPACK_cpstrf(
+    cpstrf_(
         &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         piv_ptr, &rank_, &tol,
@@ -175,7 +175,7 @@ int64_t pstrf(
     // allocate workspace
     lapack::vector< double > work( (2*n) );
 
-    LAPACK_zpstrf(
+    zpstrf_(
         &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         piv_ptr, &rank_, &tol,

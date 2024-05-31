@@ -37,7 +37,7 @@ int64_t orghr(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_sorghr(
+    sorghr_(
         &n_, &ilo_, &ihi_,
         A, &lda_,
         tau,
@@ -50,7 +50,7 @@ int64_t orghr(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_sorghr(
+    sorghr_(
         &n_, &ilo_, &ihi_,
         A, &lda_,
         tau,
@@ -83,7 +83,7 @@ int64_t orghr(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dorghr(
+    dorghr_(
         &n_, &ilo_, &ihi_,
         A, &lda_,
         tau,
@@ -96,7 +96,7 @@ int64_t orghr(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dorghr(
+    dorghr_(
         &n_, &ilo_, &ihi_,
         A, &lda_,
         tau,

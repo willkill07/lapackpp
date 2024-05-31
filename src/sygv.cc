@@ -40,7 +40,7 @@ int64_t sygv(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_ssygv(
+    ssygv_(
         &itype_, &jobz_, &uplo_, &n_,
         A, &lda_,
         B, &ldb_,
@@ -55,7 +55,7 @@ int64_t sygv(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_ssygv(
+    ssygv_(
         &itype_, &jobz_, &uplo_, &n_,
         A, &lda_,
         B, &ldb_,
@@ -93,7 +93,7 @@ int64_t sygv(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dsygv(
+    dsygv_(
         &itype_, &jobz_, &uplo_, &n_,
         A, &lda_,
         B, &ldb_,
@@ -108,7 +108,7 @@ int64_t sygv(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dsygv(
+    dsygv_(
         &itype_, &jobz_, &uplo_, &n_,
         A, &lda_,
         B, &ldb_,

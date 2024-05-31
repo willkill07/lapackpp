@@ -45,7 +45,7 @@ int64_t gels(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgels(
+    sgels_(
         &trans_, &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -59,7 +59,7 @@ int64_t gels(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_sgels(
+    sgels_(
         &trans_, &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -101,7 +101,7 @@ int64_t gels(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgels(
+    dgels_(
         &trans_, &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -115,7 +115,7 @@ int64_t gels(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dgels(
+    dgels_(
         &trans_, &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -153,7 +153,7 @@ int64_t gels(
     // query for workspace size
     std::complex<float> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgels(
+    cgels_(
         &trans_, &m_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -167,7 +167,7 @@ int64_t gels(
     // allocate workspace
     lapack::vector< std::complex<float> > work( lwork_ );
 
-    LAPACK_cgels(
+    cgels_(
         &trans_, &m_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -295,7 +295,7 @@ int64_t gels(
     // query for workspace size
     std::complex<double> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgels(
+    zgels_(
         &trans_, &m_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,
@@ -309,7 +309,7 @@ int64_t gels(
     // allocate workspace
     lapack::vector< std::complex<double> > work( lwork_ );
 
-    LAPACK_zgels(
+    zgels_(
         &trans_, &m_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,

@@ -28,7 +28,7 @@ int64_t pftrf(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_spftrf(
+    spftrf_(
         &transr_, &uplo_, &n_,
         A, &info_
     );
@@ -52,7 +52,7 @@ int64_t pftrf(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_dpftrf(
+    dpftrf_(
         &transr_, &uplo_, &n_,
         A, &info_
     );
@@ -76,7 +76,7 @@ int64_t pftrf(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_cpftrf(
+    cpftrf_(
         &transr_, &uplo_, &n_,
         (lapack_complex_float*) A, &info_
     );
@@ -100,7 +100,7 @@ int64_t pftrf(
     lapack_int n_ = (lapack_int) n;
     lapack_int info_ = 0;
 
-    LAPACK_zpftrf(
+    zpftrf_(
         &transr_, &uplo_, &n_,
         (lapack_complex_double*) A, &info_
     );

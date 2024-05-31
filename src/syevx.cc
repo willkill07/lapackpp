@@ -55,7 +55,7 @@ int64_t syevx(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_ssyevx(
+    ssyevx_(
         &jobz_, &range_, &uplo_, &n_,
         A, &lda_, &vl, &vu, &il_, &iu_, &abstol, &nfound_,
         W,
@@ -73,7 +73,7 @@ int64_t syevx(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_ssyevx(
+    ssyevx_(
         &jobz_, &range_, &uplo_, &n_,
         A, &lda_, &vl, &vu, &il_, &iu_, &abstol, &nfound_,
         W,
@@ -135,7 +135,7 @@ int64_t syevx(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dsyevx(
+    dsyevx_(
         &jobz_, &range_, &uplo_, &n_,
         A, &lda_, &vl, &vu, &il_, &iu_, &abstol, &nfound_,
         W,
@@ -153,7 +153,7 @@ int64_t syevx(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_dsyevx(
+    dsyevx_(
         &jobz_, &range_, &uplo_, &n_,
         A, &lda_, &vl, &vu, &il_, &iu_, &abstol, &nfound_,
         W,

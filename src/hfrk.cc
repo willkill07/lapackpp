@@ -33,7 +33,7 @@ void hfrk(
     lapack_int k_ = (lapack_int) k;
     lapack_int lda_ = (lapack_int) lda;
 
-    LAPACK_chfrk(
+    chfrk_(
         &transr_, &uplo_, &trans_, &n_, &k_, &alpha,
         (lapack_complex_float*) A, &lda_, &beta,
         (lapack_complex_float*) C
@@ -59,7 +59,7 @@ void hfrk(
     lapack_int k_ = (lapack_int) k;
     lapack_int lda_ = (lapack_int) lda;
 
-    LAPACK_zhfrk(
+    zhfrk_(
         &transr_, &uplo_, &trans_, &n_, &k_, &alpha,
         (lapack_complex_double*) A, &lda_, &beta,
         (lapack_complex_double*) C

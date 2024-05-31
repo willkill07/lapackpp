@@ -45,7 +45,7 @@ int64_t gees(
     float qry_work[1];
     lapack_int qry_bwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgees(
+    sgees_(
         &jobvs_, &sort_,
         select, &n_,
         A, &lda_, &sdim_,
@@ -64,7 +64,7 @@ int64_t gees(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > bwork( (n) );
 
-    LAPACK_sgees(
+    sgees_(
         &jobvs_, &sort_,
         select, &n_,
         A, &lda_, &sdim_,
@@ -115,7 +115,7 @@ int64_t gees(
     double qry_work[1];
     lapack_int qry_bwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgees(
+    dgees_(
         &jobvs_, &sort_,
         select, &n_,
         A, &lda_, &sdim_,
@@ -134,7 +134,7 @@ int64_t gees(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > bwork( (n) );
 
-    LAPACK_dgees(
+    dgees_(
         &jobvs_, &sort_,
         select, &n_,
         A, &lda_, &sdim_,
@@ -182,7 +182,7 @@ int64_t gees(
     float qry_rwork[1];
     lapack_int qry_bwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgees(
+    cgees_(
         &jobvs_, &sort_,
         (LAPACK_C_SELECT1) select, &n_,
         (lapack_complex_float*) A, &lda_, &sdim_,
@@ -202,7 +202,7 @@ int64_t gees(
     lapack::vector< float > rwork( (n) );
     lapack::vector< lapack_int > bwork( (n) );
 
-    LAPACK_cgees(
+    cgees_(
         &jobvs_, &sort_,
         (LAPACK_C_SELECT1) select, &n_,
         (lapack_complex_float*) A, &lda_, &sdim_,
@@ -246,7 +246,7 @@ int64_t gees(
     double qry_rwork[1];
     lapack_int qry_bwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgees(
+    zgees_(
         &jobvs_, &sort_,
         (LAPACK_Z_SELECT1) select, &n_,
         (lapack_complex_double*) A, &lda_, &sdim_,
@@ -266,7 +266,7 @@ int64_t gees(
     lapack::vector< double > rwork( (n) );
     lapack::vector< lapack_int > bwork( (n) );
 
-    LAPACK_zgees(
+    zgees_(
         &jobvs_, &sort_,
         (LAPACK_Z_SELECT1) select, &n_,
         (lapack_complex_double*) A, &lda_, &sdim_,

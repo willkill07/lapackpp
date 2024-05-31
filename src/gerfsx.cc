@@ -68,7 +68,7 @@ int64_t gerfsx(
     lapack::vector< float > work( (4*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_sgerfsx(
+    sgerfsx_(
         &trans_, &equed_, &n_, &nrhs_,
         A, &lda_,
         AF, &ldaf_,
@@ -141,7 +141,7 @@ int64_t gerfsx(
     lapack::vector< double > work( (4*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dgerfsx(
+    dgerfsx_(
         &trans_, &equed_, &n_, &nrhs_,
         A, &lda_,
         AF, &ldaf_,
@@ -214,7 +214,7 @@ int64_t gerfsx(
     lapack::vector< std::complex<float> > work( (2*n) );
     lapack::vector< float > rwork( (2*n) );
 
-    LAPACK_cgerfsx(
+    cgerfsx_(
         &trans_, &equed_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) AF, &ldaf_,
@@ -559,7 +559,7 @@ int64_t gerfsx(
     lapack::vector< std::complex<double> > work( (2*n) );
     lapack::vector< double > rwork( (2*n) );
 
-    LAPACK_zgerfsx(
+    zgerfsx_(
         &trans_, &equed_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) AF, &ldaf_,

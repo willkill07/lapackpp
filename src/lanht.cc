@@ -28,7 +28,7 @@ float lanht(
     char norm_ = to_char( norm );
     lapack_int n_ = (lapack_int) n;
 
-    return LAPACK_clanht(
+    return clanht_(
         &norm_, &n_,
         D,
         (lapack_complex_float*) E
@@ -77,7 +77,7 @@ double lanht(
     char norm_ = to_char( norm );
     lapack_int n_ = (lapack_int) n;
 
-    return LAPACK_zlanht(
+    return zlanht_(
         &norm_, &n_,
         D,
         (lapack_complex_double*) E

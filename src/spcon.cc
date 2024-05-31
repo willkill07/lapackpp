@@ -41,7 +41,7 @@ int64_t spcon(
     lapack::vector< float > work( (2*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_sspcon(
+    sspcon_(
         &uplo_, &n_,
         AP,
         ipiv_ptr, &anorm, rcond,
@@ -80,7 +80,7 @@ int64_t spcon(
     lapack::vector< double > work( (2*n) );
     lapack::vector< lapack_int > iwork( (n) );
 
-    LAPACK_dspcon(
+    dspcon_(
         &uplo_, &n_,
         AP,
         ipiv_ptr, &anorm, rcond,
@@ -118,7 +118,7 @@ int64_t spcon(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (2*n) );
 
-    LAPACK_cspcon(
+    cspcon_(
         &uplo_, &n_,
         (lapack_complex_float*) AP,
         ipiv_ptr, &anorm, rcond,
@@ -155,7 +155,7 @@ int64_t spcon(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (2*n) );
 
-    LAPACK_zspcon(
+    zspcon_(
         &uplo_, &n_,
         (lapack_complex_double*) AP,
         ipiv_ptr, &anorm, rcond,

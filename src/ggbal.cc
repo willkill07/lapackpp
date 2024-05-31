@@ -45,7 +45,7 @@ int64_t ggbal(
     // allocate workspace
     lapack::vector< float > work( (lwork) );
 
-    LAPACK_sggbal(
+    sggbal_(
         &balance_, &n_,
         A, &lda_,
         B, &ldb_, &ilo_, &ihi_,
@@ -91,7 +91,7 @@ int64_t ggbal(
     // allocate workspace
     lapack::vector< double > work( (lwork) );
 
-    LAPACK_dggbal(
+    dggbal_(
         &balance_, &n_,
         A, &lda_,
         B, &ldb_, &ilo_, &ihi_,
@@ -137,7 +137,7 @@ int64_t ggbal(
     // allocate workspace
     lapack::vector< float > work( (lwork) );
 
-    LAPACK_cggbal(
+    cggbal_(
         &balance_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_, &ilo_, &ihi_,
@@ -183,7 +183,7 @@ int64_t ggbal(
     // allocate workspace
     lapack::vector< double > work( (lwork) );
 
-    LAPACK_zggbal(
+    zggbal_(
         &balance_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_, &ilo_, &ihi_,

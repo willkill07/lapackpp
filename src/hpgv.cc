@@ -40,7 +40,7 @@ int64_t hpgv(
     lapack::vector< std::complex<float> > work( (max( 1, 2*n-1 )) );
     lapack::vector< float > rwork( (max( 1, 3*n-2 )) );
 
-    LAPACK_chpgv(
+    chpgv_(
         &itype_, &jobz_, &uplo_, &n_,
         (lapack_complex_float*) AP,
         (lapack_complex_float*) BP,
@@ -80,7 +80,7 @@ int64_t hpgv(
     lapack::vector< std::complex<double> > work( (max( 1, 2*n-1 )) );
     lapack::vector< double > rwork( (max( 1, 3*n-2 )) );
 
-    LAPACK_zhpgv(
+    zhpgv_(
         &itype_, &jobz_, &uplo_, &n_,
         (lapack_complex_double*) AP,
         (lapack_complex_double*) BP,

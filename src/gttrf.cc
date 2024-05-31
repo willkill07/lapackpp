@@ -39,7 +39,7 @@ int64_t gttrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_sgttrf(
+    sgttrf_(
         &n_,
         DL,
         D,
@@ -79,7 +79,7 @@ int64_t gttrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_dgttrf(
+    dgttrf_(
         &n_,
         DL,
         D,
@@ -119,7 +119,7 @@ int64_t gttrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_cgttrf(
+    cgttrf_(
         &n_,
         (lapack_complex_float*) DL,
         (lapack_complex_float*) D,
@@ -215,7 +215,7 @@ int64_t gttrf(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_zgttrf(
+    zgttrf_(
         &n_,
         (lapack_complex_double*) DL,
         (lapack_complex_double*) D,

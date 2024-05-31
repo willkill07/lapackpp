@@ -38,7 +38,7 @@ float lange(
     // allocate workspace
     lapack::vector< float > work( max( 1, lwork ) );
 
-    return LAPACK_slange(
+    return slange_(
         &norm_, &m_, &n_,
         A, &lda_,
         &work[0]
@@ -68,7 +68,7 @@ double lange(
     // allocate workspace
     lapack::vector< double > work( max( 1, lwork ) );
 
-    return LAPACK_dlange(
+    return dlange_(
         &norm_, &m_, &n_,
         A, &lda_,
         &work[0]
@@ -98,7 +98,7 @@ float lange(
     // allocate workspace
     lapack::vector< float > work( max( 1, lwork ) );
 
-    return LAPACK_clange(
+    return clange_(
         &norm_, &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         &work[0]
@@ -155,7 +155,7 @@ double lange(
     // allocate workspace
     lapack::vector< double > work( max( 1, lwork ) );
 
-    return LAPACK_zlange(
+    return zlange_(
         &norm_, &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         &work[0]

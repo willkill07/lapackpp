@@ -36,7 +36,7 @@ int64_t spev(
     // allocate workspace
     lapack::vector< float > work( (3*n) );
 
-    LAPACK_sspev(
+    sspev_(
         &jobz_, &uplo_, &n_,
         AP,
         W,
@@ -70,7 +70,7 @@ int64_t spev(
     // allocate workspace
     lapack::vector< double > work( (3*n) );
 
-    LAPACK_dspev(
+    dspev_(
         &jobz_, &uplo_, &n_,
         AP,
         W,

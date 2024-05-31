@@ -41,7 +41,7 @@ int64_t spsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_sspsv(
+    sspsv_(
         &uplo_, &n_, &nrhs_,
         AP,
         ipiv_ptr,
@@ -82,7 +82,7 @@ int64_t spsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_dspsv(
+    dspsv_(
         &uplo_, &n_, &nrhs_,
         AP,
         ipiv_ptr,
@@ -123,7 +123,7 @@ int64_t spsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_cspsv(
+    cspsv_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) AP,
         ipiv_ptr,
@@ -164,7 +164,7 @@ int64_t spsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_zspsv(
+    zspsv_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) AP,
         ipiv_ptr,

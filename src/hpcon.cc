@@ -40,7 +40,7 @@ int64_t hpcon(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (2*n) );
 
-    LAPACK_chpcon(
+    chpcon_(
         &uplo_, &n_,
         (lapack_complex_float*) AP,
         ipiv_ptr, &anorm, rcond,
@@ -77,7 +77,7 @@ int64_t hpcon(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (2*n) );
 
-    LAPACK_zhpcon(
+    zhpcon_(
         &uplo_, &n_,
         (lapack_complex_double*) AP,
         ipiv_ptr, &anorm, rcond,

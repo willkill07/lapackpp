@@ -44,7 +44,7 @@ int64_t gelsd(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgelsd(
+    sgelsd_(
         &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -61,7 +61,7 @@ int64_t gelsd(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_sgelsd(
+    sgelsd_(
         &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -104,7 +104,7 @@ int64_t gelsd(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgelsd(
+    dgelsd_(
         &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -121,7 +121,7 @@ int64_t gelsd(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_dgelsd(
+    dgelsd_(
         &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -165,7 +165,7 @@ int64_t gelsd(
     float qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgelsd(
+    cgelsd_(
         &m_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -185,7 +185,7 @@ int64_t gelsd(
     lapack::vector< float > rwork( lrwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_cgelsd(
+    cgelsd_(
         &m_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -311,7 +311,7 @@ int64_t gelsd(
     double qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgelsd(
+    zgelsd_(
         &m_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,
@@ -331,7 +331,7 @@ int64_t gelsd(
     lapack::vector< double > rwork( lrwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_zgelsd(
+    zgelsd_(
         &m_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,

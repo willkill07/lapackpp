@@ -4759,7 +4759,7 @@ extern "C" {
 /* ----- matrix norm - general banded */
 #ifndef LAPACK_slaed4
 #define LAPACK_slaed4 LAPACK_GLOBAL(slaed4,SLAED4)
-void LAPACK_slaed4(
+void slaed4_(
     lapack_int const* n, lapack_int const* i,
     float const* d, float const* z,
     float* delta, float const* rho, float* lambda, lapack_int* info );
@@ -4767,7 +4767,7 @@ void LAPACK_slaed4(
 
 #ifndef LAPACK_dlaed4
 #define LAPACK_dlaed4 LAPACK_GLOBAL(dlaed4,DLAED4)
-void LAPACK_dlaed4(
+void dlaed4_(
     lapack_int const* n, lapack_int const* i,
     double const* d, double const* z,
     double* delta, double const* rho, double* lambda, lapack_int* info );
@@ -4783,7 +4783,7 @@ inline lapack_int LAPACKE_laed4(
 {
     i += 1;  // change to 1-based
     lapack_int info = 0;
-    LAPACK_slaed4( &n, &i, d, z, delta, &rho, lambda, &info );
+    slaed4_( &n, &i, d, z, delta, &rho, lambda, &info );
     return info;
 
     //return LAPACKE_slaed4( n, i, d, z, delta, rho, lambda );
@@ -4796,7 +4796,7 @@ inline lapack_int LAPACKE_laed4(
 {
     i += 1;  // change to 1-based
     lapack_int info = 0;
-    LAPACK_dlaed4( &n, &i, d, z, delta, &rho, lambda, &info );
+    dlaed4_( &n, &i, d, z, delta, &rho, lambda, &info );
     return info;
 
     //return LAPACKE_dlaed4( n, i, d, z, delta, rho, lambda );
@@ -4809,7 +4809,7 @@ extern "C" {
 /* ----- matrix norm - general banded */
 #ifndef LAPACK_slangb
 #define LAPACK_slangb LAPACK_GLOBAL(slangb,SLANGB)
-lapack_float_return LAPACK_slangb(
+lapack_float_return slangb_(
     char const* norm, lapack_int const* n,
     lapack_int const* kl, lapack_int const* ku,
     float const* AB, lapack_int const* ldab,
@@ -4818,7 +4818,7 @@ lapack_float_return LAPACK_slangb(
 
 #ifndef LAPACK_dlangb
 #define LAPACK_dlangb LAPACK_GLOBAL(dlangb,DLANGB)
-double LAPACK_dlangb(
+double dlangb_(
     char const* norm, lapack_int const* n,
     lapack_int const* kl, lapack_int const* ku,
     double const* AB, lapack_int const* ldab,
@@ -4827,7 +4827,7 @@ double LAPACK_dlangb(
 
 #ifndef LAPACK_clangb
 #define LAPACK_clangb LAPACK_GLOBAL(clangb,CLANGB)
-lapack_float_return LAPACK_clangb(
+lapack_float_return clangb_(
     char const* norm, lapack_int const* n,
     lapack_int const* kl, lapack_int const* ku,
     lapack_complex_float const* AB, lapack_int const* ldab,
@@ -4836,7 +4836,7 @@ lapack_float_return LAPACK_clangb(
 
 #ifndef LAPACK_zlangb
 #define LAPACK_zlangb LAPACK_GLOBAL(zlangb,ZLANGB)
-double LAPACK_zlangb(
+double zlangb_(
     char const* norm, lapack_int const* n,
     lapack_int const* kl, lapack_int const* ku,
     lapack_complex_double const* AB, lapack_int const* ldab,
@@ -4852,7 +4852,7 @@ inline float LAPACKE_langb(
     float* AB, lapack_int ldab )
 {
     std::vector< float > work( n );
-    return LAPACK_slangb(
+    return slangb_(
         &norm, &n, &kl, &ku,
         AB, &ldab, &work[0] );
 }
@@ -4862,7 +4862,7 @@ inline double LAPACKE_langb(
     double* AB, lapack_int ldab )
 {
     std::vector< double > work( n );
-    return LAPACK_dlangb(
+    return dlangb_(
         &norm, &n, &kl, &ku,
         AB, &ldab, &work[0] );
 }
@@ -4872,7 +4872,7 @@ inline float LAPACKE_langb(
     std::complex<float>* AB, lapack_int ldab )
 {
     std::vector< float > work( n );
-    return LAPACK_clangb(
+    return clangb_(
         &norm, &n, &kl, &ku,
         (lapack_complex_float*) AB, &ldab, &work[0] );
 }
@@ -4882,7 +4882,7 @@ inline double LAPACKE_langb(
     std::complex<double>* AB, lapack_int ldab )
 {
     std::vector< double > work( n );
-    return LAPACK_zlangb(
+    return zlangb_(
         &norm, &n, &kl, &ku,
         (lapack_complex_double*) AB, &ldab, &work[0] );
 }
@@ -4931,7 +4931,7 @@ extern "C" {
 /* ----- matrix norm - general tridiagonal */
 #ifndef LAPACK_slangt
 #define LAPACK_slangt LAPACK_GLOBAL(slangt,SLANGT)
-lapack_float_return LAPACK_slangt(
+lapack_float_return slangt_(
     char const* norm, lapack_int const* n,
     float const* DL,
     float const* D,
@@ -4940,7 +4940,7 @@ lapack_float_return LAPACK_slangt(
 
 #ifndef LAPACK_dlangt
 #define LAPACK_dlangt LAPACK_GLOBAL(dlangt,DLANGT)
-double LAPACK_dlangt(
+double dlangt_(
     char const* norm, lapack_int const* n,
     double const* DL,
     double const* D,
@@ -4949,7 +4949,7 @@ double LAPACK_dlangt(
 
 #ifndef LAPACK_clangt
 #define LAPACK_clangt LAPACK_GLOBAL(clangt,CLANGT)
-lapack_float_return LAPACK_clangt(
+lapack_float_return clangt_(
     char const* norm, lapack_int const* n,
     lapack_complex_float const* DL,
     lapack_complex_float const* D,
@@ -4958,7 +4958,7 @@ lapack_float_return LAPACK_clangt(
 
 #ifndef LAPACK_zlangt
 #define LAPACK_zlangt LAPACK_GLOBAL(zlangt,ZLANGT)
-double LAPACK_zlangt(
+double zlangt_(
     char const* norm, lapack_int const* n,
     lapack_complex_double const* DL,
     lapack_complex_double const* D,
@@ -4975,7 +4975,7 @@ inline float LAPACKE_langt(
     float* D,
     float* DU )
 {
-    return LAPACK_slangt(
+    return slangt_(
         &norm, &n,
         DL,
         D,
@@ -4988,7 +4988,7 @@ inline double LAPACKE_langt(
     double* D,
     double* DU )
 {
-    return LAPACK_dlangt(
+    return dlangt_(
         &norm, &n,
         DL,
         D,
@@ -5001,7 +5001,7 @@ inline float LAPACKE_langt(
     std::complex<float>* D,
     std::complex<float>* DU )
 {
-    return LAPACK_clangt(
+    return clangt_(
         &norm, &n,
         (lapack_complex_float*) DL,
         (lapack_complex_float*) D,
@@ -5014,7 +5014,7 @@ inline double LAPACKE_langt(
     std::complex<double>* D,
     std::complex<double>* DU )
 {
-    return LAPACK_zlangt(
+    return zlangt_(
         &norm, &n,
         (lapack_complex_double*) DL,
         (lapack_complex_double*) D,
@@ -5028,7 +5028,7 @@ extern "C" {
 /* ----- matrix norm - symmetric banded */
 #ifndef LAPACK_slansb
 #define LAPACK_slansb LAPACK_GLOBAL(slansb,SLANSB)
-lapack_float_return LAPACK_slansb(
+lapack_float_return slansb_(
     char const* norm, char const* uplo,
     lapack_int const* n, lapack_int const* kd,
     float const* AB, lapack_int const* ldab,
@@ -5037,7 +5037,7 @@ lapack_float_return LAPACK_slansb(
 
 #ifndef LAPACK_dlansb
 #define LAPACK_dlansb LAPACK_GLOBAL(dlansb,DLANSB)
-double LAPACK_dlansb(
+double dlansb_(
     char const* norm, char const* uplo,
     lapack_int const* n, lapack_int const* kd,
     double const* AB, lapack_int const* ldab,
@@ -5046,7 +5046,7 @@ double LAPACK_dlansb(
 
 #ifndef LAPACK_clanhb
 #define LAPACK_clanhb LAPACK_GLOBAL(clanhb,CLANHB)
-lapack_float_return LAPACK_clanhb(
+lapack_float_return clanhb_(
     char const* norm, char const* uplo,
     lapack_int const* n, lapack_int const* kd,
     lapack_complex_float const* AB, lapack_int const* ldab,
@@ -5055,7 +5055,7 @@ lapack_float_return LAPACK_clanhb(
 
 #ifndef LAPACK_zlanhb
 #define LAPACK_zlanhb LAPACK_GLOBAL(zlanhb,ZLANHB)
-double LAPACK_zlanhb(
+double zlanhb_(
     char const* norm, char const* uplo,
     lapack_int const* n, lapack_int const* kd,
     lapack_complex_double const* AB, lapack_int const* ldab,
@@ -5071,7 +5071,7 @@ inline float LAPACKE_lanhb(
     float* AB, lapack_int ldab )
 {
     std::vector< float > work( n );
-    return LAPACK_slansb(
+    return slansb_(
         &norm, &uplo, &n, &kd,
         AB, &ldab, &work[0] );
 }
@@ -5081,7 +5081,7 @@ inline double LAPACKE_lanhb(
     double* AB, lapack_int ldab )
 {
     std::vector< double > work( n );
-    return LAPACK_dlansb(
+    return dlansb_(
         &norm, &uplo, &n, &kd,
         AB, &ldab, &work[0] );
 }
@@ -5091,7 +5091,7 @@ inline float LAPACKE_lanhb(
     std::complex<float>* AB, lapack_int ldab )
 {
     std::vector< float > work( n );
-    return LAPACK_clanhb(
+    return clanhb_(
         &norm, &uplo, &n, &kd,
         (lapack_complex_float*) AB, &ldab, &work[0] );
 }
@@ -5101,7 +5101,7 @@ inline double LAPACKE_lanhb(
     std::complex<double>* AB, lapack_int ldab )
 {
     std::vector< double > work( n );
-    return LAPACK_zlanhb(
+    return zlanhb_(
         &norm, &uplo, &n, &kd,
         (lapack_complex_double*) AB, &ldab, &work[0] );
 }
@@ -5150,7 +5150,7 @@ extern "C" {
 /* ----- matrix norm - symmetric packed */
 #ifndef LAPACK_slansp
 #define LAPACK_slansp LAPACK_GLOBAL(slansp,SLANSP)
-lapack_float_return LAPACK_slansp(
+lapack_float_return slansp_(
     char const* norm, char const* uplo,
     lapack_int const* n,
     float const* AP, float* work );
@@ -5158,7 +5158,7 @@ lapack_float_return LAPACK_slansp(
 
 #ifndef LAPACK_dlansp
 #define LAPACK_dlansp LAPACK_GLOBAL(dlansp,DLANSP)
-double LAPACK_dlansp(
+double dlansp_(
     char const* norm, char const* uplo,
     lapack_int const* n,
     double const* AP, double* work );
@@ -5166,7 +5166,7 @@ double LAPACK_dlansp(
 
 #ifndef LAPACK_clanhp
 #define LAPACK_clanhp LAPACK_GLOBAL(clanhp,CLANHP)
-lapack_float_return LAPACK_clanhp(
+lapack_float_return clanhp_(
     char const* norm, char const* uplo,
     lapack_int const* n,
     lapack_complex_float const* AP, float* work );
@@ -5174,7 +5174,7 @@ lapack_float_return LAPACK_clanhp(
 
 #ifndef LAPACK_zlanhp
 #define LAPACK_zlanhp LAPACK_GLOBAL(zlanhp,ZLANHP)
-double LAPACK_zlanhp(
+double zlanhp_(
     char const* norm, char const* uplo,
     lapack_int const* n,
     lapack_complex_double const* AP, double* work );
@@ -5189,7 +5189,7 @@ inline float LAPACKE_lanhp(
     float* AP )
 {
     std::vector< float > work( n );
-    return LAPACK_slansp(
+    return slansp_(
         &norm, &uplo, &n,
         AP, &work[0] );
 }
@@ -5199,7 +5199,7 @@ inline double LAPACKE_lanhp(
     double* AP )
 {
     std::vector< double > work( n );
-    return LAPACK_dlansp(
+    return dlansp_(
         &norm, &uplo, &n,
         AP, &work[0] );
 }
@@ -5209,7 +5209,7 @@ inline float LAPACKE_lanhp(
     std::complex<float>* AP )
 {
     std::vector< float > work( n );
-    return LAPACK_clanhp(
+    return clanhp_(
         &norm, &uplo, &n,
         (lapack_complex_float*) AP, &work[0] );
 }
@@ -5219,7 +5219,7 @@ inline double LAPACKE_lanhp(
     std::complex<double>* AP )
 {
     std::vector< double > work( n );
-    return LAPACK_zlanhp(
+    return zlanhp_(
         &norm, &uplo, &n,
         (lapack_complex_double*) AP, &work[0] );
 }
@@ -5231,7 +5231,7 @@ extern "C" {
 /* ----- matrix norm - symmetric packed */
 #ifndef LAPACK_slanhs
 #define LAPACK_slanhs LAPACK_GLOBAL(slanhs,SLANHS)
-lapack_float_return LAPACK_slanhs(
+lapack_float_return slanhs_(
     char const* norm,
     lapack_int const* n,
     float const* A, lapack_int const* lda, float* work );
@@ -5239,7 +5239,7 @@ lapack_float_return LAPACK_slanhs(
 
 #ifndef LAPACK_dlanhs
 #define LAPACK_dlanhs LAPACK_GLOBAL(dlanhs,DLANHS)
-double LAPACK_dlanhs(
+double dlanhs_(
     char const* norm,
     lapack_int const* n,
     double const* A, lapack_int const* lda, double* work );
@@ -5247,7 +5247,7 @@ double LAPACK_dlanhs(
 
 #ifndef LAPACK_clanhs
 #define LAPACK_clanhs LAPACK_GLOBAL(clanhs,CLANHS)
-lapack_float_return LAPACK_clanhs(
+lapack_float_return clanhs_(
     char const* norm,
     lapack_int const* n,
     lapack_complex_float const* A, lapack_int const* lda, float* work );
@@ -5255,7 +5255,7 @@ lapack_float_return LAPACK_clanhs(
 
 #ifndef LAPACK_zlanhs
 #define LAPACK_zlanhs LAPACK_GLOBAL(zlanhs,ZLANHS)
-double LAPACK_zlanhs(
+double zlanhs_(
     char const* norm,
     lapack_int const* n,
     lapack_complex_double const* A, lapack_int const* lda, double* work );
@@ -5270,7 +5270,7 @@ static float LAPACKE_lanhs(
     float* A, lapack_int lda )
 {
     std::vector< float > work( n );
-    return LAPACK_slanhs(
+    return slanhs_(
         &norm, &n,
         A, &lda, &work[0] );
 }
@@ -5280,7 +5280,7 @@ static double LAPACKE_lanhs(
     double* A, lapack_int lda )
 {
     std::vector< double > work( n );
-    return LAPACK_dlanhs(
+    return dlanhs_(
         &norm, &n,
         A, &lda, &work[0] );
 }
@@ -5290,7 +5290,7 @@ static float LAPACKE_lanhs(
     std::complex<float>* A, lapack_int lda )
 {
     std::vector< float > work( n );
-    return LAPACK_clanhs(
+    return clanhs_(
         &norm, &n,
         (lapack_complex_float*) A, &lda, &work[0] );
 }
@@ -5300,7 +5300,7 @@ static double LAPACKE_lanhs(
     std::complex<double>* A, lapack_int lda )
 {
     std::vector< double > work( n );
-    return LAPACK_zlanhs(
+    return zlanhs_(
         &norm, &n,
         (lapack_complex_double*) A, &lda, &work[0] );
 }
@@ -5312,7 +5312,7 @@ extern "C" {
 /* ----- matrix norm - symmetric tridiagonal */
 #ifndef LAPACK_slanst
 #define LAPACK_slanst LAPACK_GLOBAL(slanst,SLANST)
-lapack_float_return LAPACK_slanst(
+lapack_float_return slanst_(
     char const* norm, lapack_int const* n,
     float const* D,
     float const* E );
@@ -5320,7 +5320,7 @@ lapack_float_return LAPACK_slanst(
 
 #ifndef LAPACK_dlanst
 #define LAPACK_dlanst LAPACK_GLOBAL(dlanst,DLANST)
-double LAPACK_dlanst(
+double dlanst_(
     char const* norm, lapack_int const* n,
     double const* D,
     double const* E );
@@ -5328,7 +5328,7 @@ double LAPACK_dlanst(
 
 #ifndef LAPACK_clanht
 #define LAPACK_clanht LAPACK_GLOBAL(clanht,CLANHT)
-lapack_float_return LAPACK_clanht(
+lapack_float_return clanht_(
     char const* norm, lapack_int const* n,
     float const* D,
     lapack_complex_float const* E );
@@ -5336,7 +5336,7 @@ lapack_float_return LAPACK_clanht(
 
 #ifndef LAPACK_zlanht
 #define LAPACK_zlanht LAPACK_GLOBAL(zlanht,ZLANHT)
-double LAPACK_zlanht(
+double zlanht_(
     char const* norm, lapack_int const* n,
     double const* D,
     lapack_complex_double const* E );
@@ -5351,7 +5351,7 @@ inline float LAPACKE_lanst(
     float* D,
     float* E )
 {
-    return LAPACK_slanst(
+    return slanst_(
         &norm, &n,
         D,
         E );
@@ -5362,7 +5362,7 @@ inline double LAPACKE_lanst(
     double* D,
     double* E )
 {
-    return LAPACK_dlanst(
+    return dlanst_(
         &norm, &n,
         D,
         E );
@@ -5373,7 +5373,7 @@ inline float LAPACKE_lanht(
     float* D,
     float* E )
 {
-    return LAPACK_slanst(
+    return slanst_(
         &norm, &n,
         D,
         E );
@@ -5384,7 +5384,7 @@ inline double LAPACKE_lanht(
     double* D,
     double* E )
 {
-    return LAPACK_dlanst(
+    return dlanst_(
         &norm, &n,
         D,
         E );
@@ -5395,7 +5395,7 @@ inline float LAPACKE_lanht(
     float* D,
     std::complex<float>* E )
 {
-    return LAPACK_clanht(
+    return clanht_(
         &norm, &n,
         D,
         (lapack_complex_float*) E );
@@ -5406,7 +5406,7 @@ inline double LAPACKE_lanht(
     double* D,
     std::complex<double>* E )
 {
-    return LAPACK_zlanht(
+    return zlanht_(
         &norm, &n,
         D,
         (lapack_complex_double*) E );
@@ -5419,7 +5419,7 @@ extern "C" {
 /* ----- matrix norm - symmetric banded */
 #ifndef LAPACK_slansb
 #define LAPACK_slansb LAPACK_GLOBAL(slansb,SLANSB)
-lapack_float_return LAPACK_slansb(
+lapack_float_return slansb_(
     char const* norm, char const* uplo,
     lapack_int const* n, lapack_int const* kd,
     float const* AB, lapack_int const* ldab,
@@ -5428,7 +5428,7 @@ lapack_float_return LAPACK_slansb(
 
 #ifndef LAPACK_dlansb
 #define LAPACK_dlansb LAPACK_GLOBAL(dlansb,DLANSB)
-double LAPACK_dlansb(
+double dlansb_(
     char const* norm, char const* uplo,
     lapack_int const* n, lapack_int const* kd,
     double const* AB, lapack_int const* ldab,
@@ -5437,7 +5437,7 @@ double LAPACK_dlansb(
 
 #ifndef LAPACK_clansb
 #define LAPACK_clansb LAPACK_GLOBAL(clansb,CLANSB)
-lapack_float_return LAPACK_clansb(
+lapack_float_return clansb_(
     char const* norm, char const* uplo,
     lapack_int const* n, lapack_int const* kd,
     lapack_complex_float const* AB, lapack_int const* ldab,
@@ -5446,7 +5446,7 @@ lapack_float_return LAPACK_clansb(
 
 #ifndef LAPACK_zlansb
 #define LAPACK_zlansb LAPACK_GLOBAL(zlansb,ZLANSB)
-double LAPACK_zlansb(
+double zlansb_(
     char const* norm, char const* uplo,
     lapack_int const* n, lapack_int const* kd,
     lapack_complex_double const* AB, lapack_int const* ldab,
@@ -5462,7 +5462,7 @@ inline float LAPACKE_lansb(
     float* AB, lapack_int ldab )
 {
     std::vector< float > work( n );
-    return LAPACK_slansb(
+    return slansb_(
         &norm, &uplo, &n, &kd,
         AB, &ldab, &work[0] );
 }
@@ -5472,7 +5472,7 @@ inline double LAPACKE_lansb(
     double* AB, lapack_int ldab )
 {
     std::vector< double > work( n );
-    return LAPACK_dlansb(
+    return dlansb_(
         &norm, &uplo, &n, &kd,
         AB, &ldab, &work[0] );
 }
@@ -5482,7 +5482,7 @@ inline float LAPACKE_lansb(
     std::complex<float>* AB, lapack_int ldab )
 {
     std::vector< float > work( n );
-    return LAPACK_clansb(
+    return clansb_(
         &norm, &uplo, &n, &kd,
         (lapack_complex_float*) AB, &ldab, &work[0] );
 }
@@ -5492,7 +5492,7 @@ inline double LAPACKE_lansb(
     std::complex<double>* AB, lapack_int ldab )
 {
     std::vector< double > work( n );
-    return LAPACK_zlansb(
+    return zlansb_(
         &norm, &uplo, &n, &kd,
         (lapack_complex_double*) AB, &ldab, &work[0] );
 }
@@ -5504,7 +5504,7 @@ extern "C" {
 /* ----- matrix norm - symmetric packed */
 #ifndef LAPACK_slansp
 #define LAPACK_slansp LAPACK_GLOBAL(slansp,SLANSP)
-lapack_float_return LAPACK_slansp(
+lapack_float_return slansp_(
     char const* norm, char const* uplo,
     lapack_int const* n,
     float const* AP, float* work );
@@ -5512,7 +5512,7 @@ lapack_float_return LAPACK_slansp(
 
 #ifndef LAPACK_dlansp
 #define LAPACK_dlansp LAPACK_GLOBAL(dlansp,DLANSP)
-double LAPACK_dlansp(
+double dlansp_(
     char const* norm, char const* uplo,
     lapack_int const* n,
     double const* AP, double* work );
@@ -5520,7 +5520,7 @@ double LAPACK_dlansp(
 
 #ifndef LAPACK_clansp
 #define LAPACK_clansp LAPACK_GLOBAL(clansp,CLANSP)
-lapack_float_return LAPACK_clansp(
+lapack_float_return clansp_(
     char const* norm, char const* uplo,
     lapack_int const* n,
     lapack_complex_float const* AP, float* work );
@@ -5528,7 +5528,7 @@ lapack_float_return LAPACK_clansp(
 
 #ifndef LAPACK_zlansp
 #define LAPACK_zlansp LAPACK_GLOBAL(zlansp,ZLANSP)
-double LAPACK_zlansp(
+double zlansp_(
     char const* norm, char const* uplo,
     lapack_int const* n,
     lapack_complex_double const* AP, double* work );
@@ -5543,7 +5543,7 @@ inline float LAPACKE_lansp(
     float* AP )
 {
     std::vector< float > work( n );
-    return LAPACK_slansp(
+    return slansp_(
         &norm, &uplo, &n,
         AP, &work[0] );
 }
@@ -5553,7 +5553,7 @@ inline double LAPACKE_lansp(
     double* AP )
 {
     std::vector< double > work( n );
-    return LAPACK_dlansp(
+    return dlansp_(
         &norm, &uplo, &n,
         AP, &work[0] );
 }
@@ -5563,7 +5563,7 @@ inline float LAPACKE_lansp(
     std::complex<float>* AP )
 {
     std::vector< float > work( n );
-    return LAPACK_clansp(
+    return clansp_(
         &norm, &uplo, &n,
         (lapack_complex_float*) AP, &work[0] );
 }
@@ -5573,7 +5573,7 @@ inline double LAPACKE_lansp(
     std::complex<double>* AP )
 {
     std::vector< double > work( n );
-    return LAPACK_zlansp(
+    return zlansp_(
         &norm, &uplo, &n,
         (lapack_complex_double*) AP, &work[0] );
 }
@@ -5622,7 +5622,7 @@ extern "C" {
 /* ----- matrix norm - triangular banded */
 #ifndef LAPACK_slantb
 #define LAPACK_slantb LAPACK_GLOBAL(slantb,SLANTB)
-lapack_float_return LAPACK_slantb(
+lapack_float_return slantb_(
     char const* norm, char const* uplo, char const* diag,
     lapack_int const* n, lapack_int const* k,
     float const* AB, lapack_int const* ldab,
@@ -5631,7 +5631,7 @@ lapack_float_return LAPACK_slantb(
 
 #ifndef LAPACK_dlantb
 #define LAPACK_dlantb LAPACK_GLOBAL(dlantb,DLANTB)
-double LAPACK_dlantb(
+double dlantb_(
     char const* norm, char const* uplo, char const* diag,
     lapack_int const* n, lapack_int const* k,
     double const* AB, lapack_int const* ldab,
@@ -5640,7 +5640,7 @@ double LAPACK_dlantb(
 
 #ifndef LAPACK_clantb
 #define LAPACK_clantb LAPACK_GLOBAL(clantb,CLANTB)
-lapack_float_return LAPACK_clantb(
+lapack_float_return clantb_(
     char const* norm, char const* uplo, char const* diag,
     lapack_int const* n, lapack_int const* k,
     lapack_complex_float const* AB, lapack_int const* ldab,
@@ -5649,7 +5649,7 @@ lapack_float_return LAPACK_clantb(
 
 #ifndef LAPACK_zlantb
 #define LAPACK_zlantb LAPACK_GLOBAL(zlantb,ZLANTB)
-double LAPACK_zlantb(
+double zlantb_(
     char const* norm, char const* uplo, char const* diag,
     lapack_int const* n, lapack_int const* k,
     lapack_complex_double const* AB, lapack_int const* ldab,
@@ -5665,7 +5665,7 @@ inline float LAPACKE_lantb(
     float* AB, lapack_int ldab )
 {
     std::vector< float > work( n );
-    return LAPACK_slantb(
+    return slantb_(
         &norm, &uplo, &diag, &n, &k,
         AB, &ldab, &work[0] );
 }
@@ -5675,7 +5675,7 @@ inline double LAPACKE_lantb(
     double* AB, lapack_int ldab )
 {
     std::vector< double > work( n );
-    return LAPACK_dlantb(
+    return dlantb_(
         &norm, &uplo, &diag, &n, &k,
         AB, &ldab, &work[0] );
 }
@@ -5685,7 +5685,7 @@ inline float LAPACKE_lantb(
     std::complex<float>* AB, lapack_int ldab )
 {
     std::vector< float > work( n );
-    return LAPACK_clantb(
+    return clantb_(
         &norm, &uplo, &diag, &n, &k,
         (lapack_complex_float*) AB, &ldab, &work[0] );
 }
@@ -5695,7 +5695,7 @@ inline double LAPACKE_lantb(
     std::complex<double>* AB, lapack_int ldab )
 {
     std::vector< double > work( n );
-    return LAPACK_zlantb(
+    return zlantb_(
         &norm, &uplo, &diag, &n, &k,
         (lapack_complex_double*) AB, &ldab, &work[0] );
 }
@@ -5707,7 +5707,7 @@ extern "C" {
 /* ----- matrix norm - triangular packed */
 #ifndef LAPACK_slantp
 #define LAPACK_slantp LAPACK_GLOBAL(slantp,SLANTP)
-lapack_float_return LAPACK_slantp(
+lapack_float_return slantp_(
     char const* norm, char const* uplo, char const* diag,
     lapack_int const* n,
     float const* AP,
@@ -5716,7 +5716,7 @@ lapack_float_return LAPACK_slantp(
 
 #ifndef LAPACK_dlantp
 #define LAPACK_dlantp LAPACK_GLOBAL(dlantp,DLANTP)
-double LAPACK_dlantp(
+double dlantp_(
     char const* norm, char const* uplo, char const* diag,
     lapack_int const* n,
     double const* AP,
@@ -5725,7 +5725,7 @@ double LAPACK_dlantp(
 
 #ifndef LAPACK_clantp
 #define LAPACK_clantp LAPACK_GLOBAL(clantp,CLANTP)
-lapack_float_return LAPACK_clantp(
+lapack_float_return clantp_(
     char const* norm, char const* uplo, char const* diag,
     lapack_int const* n,
     lapack_complex_float const* AP,
@@ -5734,7 +5734,7 @@ lapack_float_return LAPACK_clantp(
 
 #ifndef LAPACK_zlantp
 #define LAPACK_zlantp LAPACK_GLOBAL(zlantp,ZLANTP)
-double LAPACK_zlantp(
+double zlantp_(
     char const* norm, char const* uplo, char const* diag,
     lapack_int const* n,
     lapack_complex_double const* AP,
@@ -5750,7 +5750,7 @@ inline float LAPACKE_lantp(
     float* AP )
 {
     std::vector< float > work( n );
-    return LAPACK_slantp(
+    return slantp_(
         &norm, &uplo, &diag, &n,
         AP, &work[0] );
 }
@@ -5760,7 +5760,7 @@ inline double LAPACKE_lantp(
     double* AP )
 {
     std::vector< double > work( n );
-    return LAPACK_dlantp(
+    return dlantp_(
         &norm, &uplo, &diag, &n,
         AP, &work[0] );
 }
@@ -5770,7 +5770,7 @@ inline float LAPACKE_lantp(
     std::complex<float>* AP )
 {
     std::vector< float > work( n );
-    return LAPACK_clantp(
+    return clantp_(
         &norm, &uplo, &diag, &n,
         (lapack_complex_float*) AP, &work[0] );
 }
@@ -5780,7 +5780,7 @@ inline double LAPACKE_lantp(
     std::complex<double>* AP )
 {
     std::vector< double > work( n );
-    return LAPACK_zlantp(
+    return zlantp_(
         &norm, &uplo, &diag, &n,
         (lapack_complex_double*) AP, &work[0] );
 }
@@ -5830,7 +5830,7 @@ extern "C" {
 /* ----- apply Householder reflector */
 #ifndef LAPACK_slarf
 #define LAPACK_slarf LAPACK_GLOBAL(slarf,SLARF)
-void LAPACK_slarf(
+void slarf_(
     char const* side,
     lapack_int const* m, lapack_int const* n,
     float const* v, lapack_int const* incv,
@@ -5841,7 +5841,7 @@ void LAPACK_slarf(
 
 #ifndef LAPACK_dlarf
 #define LAPACK_dlarf LAPACK_GLOBAL(dlarf,DLARF)
-void LAPACK_dlarf(
+void dlarf_(
     char const* side,
     lapack_int const* m, lapack_int const* n,
     double const* v, lapack_int const* incv,
@@ -5852,7 +5852,7 @@ void LAPACK_dlarf(
 
 #ifndef LAPACK_clarf
 #define LAPACK_clarf LAPACK_GLOBAL(clarf,CLARF)
-void LAPACK_clarf(
+void clarf_(
     char const* side,
     lapack_int const* m, lapack_int const* n,
     lapack_complex_float const* v, lapack_int const* incv,
@@ -5863,7 +5863,7 @@ void LAPACK_clarf(
 
 #ifndef LAPACK_zlarf
 #define LAPACK_zlarf LAPACK_GLOBAL(zlarf,ZLARF)
-void LAPACK_zlarf(
+void zlarf_(
     char const* side,
     lapack_int const* m, lapack_int const* n,
     lapack_complex_double const* v, lapack_int const* incv,
@@ -5883,7 +5883,7 @@ inline lapack_int LAPACKE_larf(
     float* C, lapack_int ldc )
 {
     std::vector< float > work( side == 'l' || side == 'L' ? n : m );
-    LAPACK_slarf(
+    slarf_(
         &side, &m, &n,
         V, &incv,
         &tau,
@@ -5897,7 +5897,7 @@ inline lapack_int LAPACKE_larf(
     double* C, lapack_int ldc )
 {
     std::vector< double > work( side == 'l' || side == 'L' ? n : m );
-    LAPACK_dlarf(
+    dlarf_(
         &side, &m, &n,
         V, &incv,
         &tau,
@@ -5911,7 +5911,7 @@ inline lapack_int LAPACKE_larf(
     std::complex<float>* C, lapack_int ldc )
 {
     std::vector< lapack_complex_float > work( side == 'l' || side == 'L' ? n : m );
-    LAPACK_clarf(
+    clarf_(
         &side, &m, &n,
         (lapack_complex_float*) V, &incv,
         (lapack_complex_float*) &tau,
@@ -5925,7 +5925,7 @@ inline lapack_int LAPACKE_larf(
     std::complex<double>* C, lapack_int ldc )
 {
     std::vector< lapack_complex_double > work( side == 'l' || side == 'L' ? n : m );
-    LAPACK_zlarf(
+    zlarf_(
         &side, &m, &n,
         (lapack_complex_double*) V, &incv,
         (lapack_complex_double*) &tau,
@@ -6151,7 +6151,7 @@ extern "C" {
 
 #ifndef LAPACK_slarfy
 #define LAPACK_slarfy LAPACK_GLOBAL(slarfy,SLARFY)
-void LAPACK_slarfy(
+void slarfy_(
     char const* uplo,
     lapack_int const* n,
     float const* V, lapack_int const* incv,
@@ -6162,7 +6162,7 @@ void LAPACK_slarfy(
 
 #ifndef LAPACK_dlarfy
 #define LAPACK_dlarfy LAPACK_GLOBAL(dlarfy,DLARFY)
-void LAPACK_dlarfy(
+void dlarfy_(
     char const* uplo,
     lapack_int const* n,
     double const* V, lapack_int const* incv,
@@ -6173,7 +6173,7 @@ void LAPACK_dlarfy(
 
 #ifndef LAPACK_clarfy
 #define LAPACK_clarfy LAPACK_GLOBAL(clarfy,CLARFY)
-void LAPACK_clarfy(
+void clarfy_(
     char const* uplo,
     lapack_int const* n,
     lapack_complex_float const* V, lapack_int const* incv,
@@ -6184,7 +6184,7 @@ void LAPACK_clarfy(
 
 #ifndef LAPACK_zlarfy
 #define LAPACK_zlarfy LAPACK_GLOBAL(zlarfy,ZLARFY)
-void LAPACK_zlarfy(
+void zlarfy_(
     char const* uplo,
     lapack_int const* n,
     lapack_complex_double const* V, lapack_int const* incv,
@@ -6203,7 +6203,7 @@ inline lapack_int LAPACKE_larfy(
     float* C, lapack_int ldc )
 {
     std::vector<float> work( n );
-    LAPACK_slarfy(
+    slarfy_(
         &uplo, &n,
         v, &incv, &tau,
         C, &ldc, &work[0] );
@@ -6216,7 +6216,7 @@ inline lapack_int LAPACKE_larfy(
     double* C, lapack_int ldc )
 {
     std::vector<double> work( n );
-    LAPACK_dlarfy(
+    dlarfy_(
         &uplo, &n,
         v, &incv, &tau,
         C, &ldc, &work[0] );
@@ -6229,7 +6229,7 @@ inline lapack_int LAPACKE_larfy(
     std::complex<float>* C, lapack_int ldc )
 {
     std::vector<lapack_complex_float> work( n );
-    LAPACK_clarfy(
+    clarfy_(
         &uplo, &n,
         (lapack_complex_float*) v, &incv, (lapack_complex_float*) &tau,
         (lapack_complex_float*) C, &ldc, &work[0] );
@@ -6242,7 +6242,7 @@ inline lapack_int LAPACKE_larfy(
     std::complex<double>* C, lapack_int ldc )
 {
     std::vector<lapack_complex_double> work( n );
-    LAPACK_zlarfy(
+    zlarfy_(
         &uplo, &n,
         (lapack_complex_double*) v, &incv, (lapack_complex_double*) &tau,
         (lapack_complex_double*) C, &ldc, &work[0] );
@@ -8381,7 +8381,7 @@ extern "C" {
 /* ----- symmetric indefinite factorization, Aasen's */
 #ifndef LAPACK_ssytrf_aa
 #define LAPACK_ssytrf_aa LAPACK_GLOBAL(ssytrf_aa,SSYTRF_AA)
-void LAPACK_ssytrf_aa(
+void ssytrf_aa_(
     char const* uplo,
     lapack_int const* n,
     float* a, lapack_int const* lda,
@@ -8392,7 +8392,7 @@ void LAPACK_ssytrf_aa(
 
 #ifndef LAPACK_dsytrf_aa
 #define LAPACK_dsytrf_aa LAPACK_GLOBAL(dsytrf_aa,DSYTRF_AA)
-void LAPACK_dsytrf_aa(
+void dsytrf_aa_(
     char const* uplo,
     lapack_int const* n,
     double* a, lapack_int const* lda,
@@ -8403,7 +8403,7 @@ void LAPACK_dsytrf_aa(
 
 #ifndef LAPACK_csytrf_aa
 #define LAPACK_csytrf_aa LAPACK_GLOBAL(csytrf_aa,CSYTRF_AA)
-void LAPACK_csytrf_aa(
+void csytrf_aa_(
     char const* uplo,
     lapack_int const* n,
     lapack_complex_float* a, lapack_int const* lda,
@@ -8414,7 +8414,7 @@ void LAPACK_csytrf_aa(
 
 #ifndef LAPACK_zsytrf_aa
 #define LAPACK_zsytrf_aa LAPACK_GLOBAL(zsytrf_aa,ZSYTRF_AA)
-void LAPACK_zsytrf_aa(
+void zsytrf_aa_(
     char const* uplo,
     lapack_int const* n,
     lapack_complex_double* a, lapack_int const* lda,
@@ -8425,7 +8425,7 @@ void LAPACK_zsytrf_aa(
 
 #ifndef LAPACK_chetrf_aa
 #define LAPACK_chetrf_aa LAPACK_GLOBAL(chetrf_aa,CHETRF_AA)
-void LAPACK_chetrf_aa(
+void chetrf_aa_(
     char const* uplo,
     lapack_int const* n,
     lapack_complex_float* a, lapack_int const* lda,
@@ -8436,7 +8436,7 @@ void LAPACK_chetrf_aa(
 
 #ifndef LAPACK_zhetrf_aa
 #define LAPACK_zhetrf_aa LAPACK_GLOBAL(zhetrf_aa,ZHETRF_AA)
-void LAPACK_zhetrf_aa(
+void zhetrf_aa_(
     char const* uplo,
     lapack_int const* n,
     lapack_complex_double* a, lapack_int const* lda,
@@ -8460,7 +8460,7 @@ inline lapack_int LAPACKE_sytrf_aa(
     lapack_int info_ = 0;
     lapack_int lwork_ = n*128;
     std::vector< float > work( lwork_ );
-    LAPACK_ssytrf_aa(
+    ssytrf_aa_(
         &uplo, &n,
         A, &lda,
         ipiv,
@@ -8478,7 +8478,7 @@ inline lapack_int LAPACKE_sytrf_aa(
     lapack_int info_ = 0;
     lapack_int lwork_ = n*128;
     std::vector< double > work( lwork_ );
-    LAPACK_dsytrf_aa(
+    dsytrf_aa_(
         &uplo, &n,
         A, &lda,
         ipiv,
@@ -8496,7 +8496,7 @@ inline lapack_int LAPACKE_sytrf_aa(
     lapack_int info_ = 0;
     lapack_int lwork_ = n*128;
     std::vector< std::complex<float> > work( lwork_ );
-    LAPACK_csytrf_aa(
+    csytrf_aa_(
         &uplo, &n,
         (lapack_complex_float*) A, &lda,
         ipiv,
@@ -8514,7 +8514,7 @@ inline lapack_int LAPACKE_sytrf_aa(
     lapack_int info_ = 0;
     lapack_int lwork_ = n*128;
     std::vector< std::complex<double> > work( lwork_ );
-    LAPACK_zsytrf_aa(
+    zsytrf_aa_(
         &uplo, &n,
         (lapack_complex_double*) A, &lda,
         ipiv,
@@ -9104,7 +9104,7 @@ extern "C" {
 /* ----- LQ factorization of triangular A and pentagonal B */
 #ifndef LAPACK_stplqt
 #define LAPACK_stplqt LAPACK_GLOBAL(stplqt,STPLQT)
-void LAPACK_stplqt(
+void stplqt_(
     lapack_int const* m, lapack_int const* n, lapack_int const* l,
     lapack_int const* mb,
     float* A, lapack_int const* lda,
@@ -9116,7 +9116,7 @@ void LAPACK_stplqt(
 
 #ifndef LAPACK_dtplqt
 #define LAPACK_dtplqt LAPACK_GLOBAL(dtplqt,DTPLQT)
-void LAPACK_dtplqt(
+void dtplqt_(
     lapack_int const* m, lapack_int const* n, lapack_int const* l,
     lapack_int const* mb,
     double* A, lapack_int const* lda,
@@ -9128,7 +9128,7 @@ void LAPACK_dtplqt(
 
 #ifndef LAPACK_ctplqt
 #define LAPACK_ctplqt LAPACK_GLOBAL(ctplqt,CTPLQT)
-void LAPACK_ctplqt(
+void ctplqt_(
     lapack_int const* m, lapack_int const* n, lapack_int const* l,
     lapack_int const* mb,
     lapack_complex_float* A, lapack_int const* lda,
@@ -9140,7 +9140,7 @@ void LAPACK_ctplqt(
 
 #ifndef LAPACK_ztplqt
 #define LAPACK_ztplqt LAPACK_GLOBAL(ztplqt,ZTPLQT)
-void LAPACK_ztplqt(
+void ztplqt_(
     lapack_int const* m, lapack_int const* n, lapack_int const* l,
     lapack_int const* mb,
     lapack_complex_double* A, lapack_int const* lda,
@@ -9162,7 +9162,7 @@ inline lapack_int LAPACKE_tplqt(
 {
     std::vector<float> work( mb*m );
     lapack_int info = 0;
-    LAPACK_stplqt(
+    stplqt_(
         &m, &n, &l, &mb,
         A, &lda,
         B, &ldb,
@@ -9180,7 +9180,7 @@ inline lapack_int LAPACKE_tplqt(
 {
     std::vector<double> work( mb*m );
     lapack_int info = 0;
-    LAPACK_dtplqt(
+    dtplqt_(
         &m, &n, &l, &mb,
         A, &lda,
         B, &ldb,
@@ -9198,7 +9198,7 @@ inline lapack_int LAPACKE_tplqt(
 {
     std::vector<lapack_complex_float> work( mb*m );
     lapack_int info = 0;
-    LAPACK_ctplqt(
+    ctplqt_(
         &m, &n, &l, &mb,
         (lapack_complex_float*) A, &lda,
         (lapack_complex_float*) B, &ldb,
@@ -9216,7 +9216,7 @@ inline lapack_int LAPACKE_tplqt(
 {
     std::vector<lapack_complex_double> work( mb*m );
     lapack_int info = 0;
-    LAPACK_ztplqt(
+    ztplqt_(
         &m, &n, &l, &mb,
         (lapack_complex_double*) A, &lda,
         (lapack_complex_double*) B, &ldb,
@@ -9234,7 +9234,7 @@ extern "C" {
 /* ----- LQ factorization of triangular A and pentagonal B */
 #ifndef LAPACK_stplqt2
 #define LAPACK_stplqt2 LAPACK_GLOBAL(stplqt2,STPLQT2)
-void LAPACK_stplqt2(
+void stplqt2_(
     lapack_int const* m, lapack_int const* n, lapack_int const* l,
     float* A, lapack_int const* lda,
     float* B, lapack_int const* ldb,
@@ -9244,7 +9244,7 @@ void LAPACK_stplqt2(
 
 #ifndef LAPACK_dtplqt2
 #define LAPACK_dtplqt2 LAPACK_GLOBAL(dtplqt2,DTPLQT2)
-void LAPACK_dtplqt2(
+void dtplqt2_(
     lapack_int const* m, lapack_int const* n, lapack_int const* l,
     double* A, lapack_int const* lda,
     double* B, lapack_int const* ldb,
@@ -9254,7 +9254,7 @@ void LAPACK_dtplqt2(
 
 #ifndef LAPACK_ctplqt2
 #define LAPACK_ctplqt2 LAPACK_GLOBAL(ctplqt2,CTPLQT2)
-void LAPACK_ctplqt2(
+void ctplqt2_(
     lapack_int const* m, lapack_int const* n, lapack_int const* l,
     lapack_complex_float* A, lapack_int const* lda,
     lapack_complex_float* B, lapack_int const* ldb,
@@ -9264,7 +9264,7 @@ void LAPACK_ctplqt2(
 
 #ifndef LAPACK_ztplqt2
 #define LAPACK_ztplqt2 LAPACK_GLOBAL(ztplqt2,ZTPLQT2)
-void LAPACK_ztplqt2(
+void ztplqt2_(
     lapack_int const* m, lapack_int const* n, lapack_int const* l,
     lapack_complex_double* A, lapack_int const* lda,
     lapack_complex_double* B, lapack_int const* ldb,
@@ -9284,7 +9284,7 @@ inline lapack_int LAPACKE_tplqt2(
     float* T, lapack_int ldt )
 {
     lapack_int info = 0;
-    LAPACK_stplqt2(
+    stplqt2_(
         &m, &n, &l,
         A, &lda,
         B, &ldb,
@@ -9300,7 +9300,7 @@ inline lapack_int LAPACKE_tplqt2(
     double* T, lapack_int ldt )
 {
     lapack_int info = 0;
-    LAPACK_dtplqt2(
+    dtplqt2_(
         &m, &n, &l,
         A, &lda,
         B, &ldb,
@@ -9316,7 +9316,7 @@ inline lapack_int LAPACKE_tplqt2(
     std::complex<float>* T, lapack_int ldt )
 {
     lapack_int info = 0;
-    LAPACK_ctplqt2(
+    ctplqt2_(
         &m, &n, &l,
         (lapack_complex_float*) A, &lda,
         (lapack_complex_float*) B, &ldb,
@@ -9332,7 +9332,7 @@ inline lapack_int LAPACKE_tplqt2(
     std::complex<double>* T, lapack_int ldt )
 {
     lapack_int info = 0;
-    LAPACK_ztplqt2(
+    ztplqt2_(
         &m, &n, &l,
         (lapack_complex_double*) A, &lda,
         (lapack_complex_double*) B, &ldb,
@@ -9349,7 +9349,7 @@ extern "C" {
 /* ----- multiply by Q from tplqt */
 #ifndef LAPACK_stpmlqt
 #define LAPACK_stpmlqt LAPACK_GLOBAL(stpmlqt,STPMLQT)
-void LAPACK_stpmlqt(
+void stpmlqt_(
     char const* side, char const* trans,
     lapack_int const* m, lapack_int const* n, lapack_int const* k,
     lapack_int const* l, lapack_int const* mb,
@@ -9363,7 +9363,7 @@ void LAPACK_stpmlqt(
 
 #ifndef LAPACK_dtpmlqt
 #define LAPACK_dtpmlqt LAPACK_GLOBAL(dtpmlqt,DTPMLQT)
-void LAPACK_dtpmlqt(
+void dtpmlqt_(
     char const* side, char const* trans,
     lapack_int const* m, lapack_int const* n, lapack_int const* k,
     lapack_int const* l, lapack_int const* mb,
@@ -9377,7 +9377,7 @@ void LAPACK_dtpmlqt(
 
 #ifndef LAPACK_ctpmlqt
 #define LAPACK_ctpmlqt LAPACK_GLOBAL(ctpmlqt,CTPMLQT)
-void LAPACK_ctpmlqt(
+void ctpmlqt_(
     char const* side, char const* trans,
     lapack_int const* m, lapack_int const* n, lapack_int const* k,
     lapack_int const* l, lapack_int const* mb,
@@ -9391,7 +9391,7 @@ void LAPACK_ctpmlqt(
 
 #ifndef LAPACK_ztpmlqt
 #define LAPACK_ztpmlqt LAPACK_GLOBAL(ztpmlqt,ZTPMLQT)
-void LAPACK_ztpmlqt(
+void ztpmlqt_(
     char const* side, char const* trans,
     lapack_int const* m, lapack_int const* n, lapack_int const* k,
     lapack_int const* l, lapack_int const* mb,
@@ -9420,7 +9420,7 @@ inline lapack_int LAPACKE_tpmlqt(
         trans = 'T';
     std::vector<float> work( side == 'L' ? n*mb : m*mb );
     lapack_int info = 0;
-    LAPACK_stpmlqt(
+    stpmlqt_(
         &side, &trans, &m, &n, &k, &l, &mb,
         V, &ldv,
         T, &ldt,
@@ -9443,7 +9443,7 @@ inline lapack_int LAPACKE_tpmlqt(
         trans = 'T';
     std::vector<double> work( side == 'L' ? n*mb : m*mb );
     lapack_int info = 0;
-    LAPACK_dtpmlqt(
+    dtpmlqt_(
         &side, &trans, &m, &n, &k, &l, &mb,
         V, &ldv,
         T, &ldt,
@@ -9464,7 +9464,7 @@ inline lapack_int LAPACKE_tpmlqt(
 {
     std::vector<lapack_complex_float> work( side == 'L' ? n*mb : m*mb );
     lapack_int info = 0;
-    LAPACK_ctpmlqt(
+    ctpmlqt_(
         &side, &trans, &m, &n, &k, &l, &mb,
         (lapack_complex_float*) V, &ldv,
         (lapack_complex_float*) T, &ldt,
@@ -9485,7 +9485,7 @@ inline lapack_int LAPACKE_tpmlqt(
 {
     std::vector<lapack_complex_double> work( side == 'L' ? n*mb : m*mb );
     lapack_int info = 0;
-    LAPACK_ztpmlqt(
+    ztpmlqt_(
         &side, &trans, &m, &n, &k, &l, &mb,
         (lapack_complex_double*) V, &ldv,
         (lapack_complex_double*) T, &ldt,

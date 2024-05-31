@@ -44,7 +44,7 @@ int64_t sbgst(
     // allocate workspace
     lapack::vector< float > work( (2*n) );
 
-    LAPACK_ssbgst(
+    ssbgst_(
         &jobz_, &uplo_, &n_, &ka_, &kb_,
         AB, &ldab_,
         BB, &ldbb_,
@@ -86,7 +86,7 @@ int64_t sbgst(
     // allocate workspace
     lapack::vector< double > work( (2*n) );
 
-    LAPACK_dsbgst(
+    dsbgst_(
         &jobz_, &uplo_, &n_, &ka_, &kb_,
         AB, &ldab_,
         BB, &ldbb_,

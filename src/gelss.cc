@@ -43,7 +43,7 @@ int64_t gelss(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgelss(
+    sgelss_(
         &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -57,7 +57,7 @@ int64_t gelss(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_sgelss(
+    sgelss_(
         &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -98,7 +98,7 @@ int64_t gelss(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgelss(
+    dgelss_(
         &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -112,7 +112,7 @@ int64_t gelss(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dgelss(
+    dgelss_(
         &m_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -154,7 +154,7 @@ int64_t gelss(
     std::complex<float> qry_work[1];
     float qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgelss(
+    cgelss_(
         &m_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -170,7 +170,7 @@ int64_t gelss(
     lapack::vector< std::complex<float> > work( lwork_ );
     lapack::vector< float > rwork( (5*min(m,n)) );
 
-    LAPACK_cgelss(
+    cgelss_(
         &m_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_,
@@ -280,7 +280,7 @@ int64_t gelss(
     std::complex<double> qry_work[1];
     double qry_rwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgelss(
+    zgelss_(
         &m_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,
@@ -296,7 +296,7 @@ int64_t gelss(
     lapack::vector< std::complex<double> > work( lwork_ );
     lapack::vector< double > rwork( (5*min(m,n)) );
 
-    LAPACK_zgelss(
+    zgelss_(
         &m_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,

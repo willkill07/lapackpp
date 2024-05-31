@@ -36,7 +36,7 @@ int64_t gerq2(
     // allocate workspace
     lapack::vector< float > work( (m) );
 
-    LAPACK_sgerq2(
+    sgerq2_(
         &m_, &n_,
         A, &lda_,
         tau,
@@ -68,7 +68,7 @@ int64_t gerq2(
     // allocate workspace
     lapack::vector< double > work( (m) );
 
-    LAPACK_dgerq2(
+    dgerq2_(
         &m_, &n_,
         A, &lda_,
         tau,
@@ -100,7 +100,7 @@ int64_t gerq2(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (m) );
 
-    LAPACK_cgerq2(
+    cgerq2_(
         &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) tau,
@@ -187,7 +187,7 @@ int64_t gerq2(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (m) );
 
-    LAPACK_zgerq2(
+    zgerq2_(
         &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) tau,

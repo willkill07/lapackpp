@@ -40,7 +40,7 @@ int64_t spgvd(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_sspgvd(
+    sspgvd_(
         &itype_, &jobz_, &uplo_, &n_,
         AP,
         BP,
@@ -59,7 +59,7 @@ int64_t spgvd(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_sspgvd(
+    sspgvd_(
         &itype_, &jobz_, &uplo_, &n_,
         AP,
         BP,
@@ -99,7 +99,7 @@ int64_t spgvd(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dspgvd(
+    dspgvd_(
         &itype_, &jobz_, &uplo_, &n_,
         AP,
         BP,
@@ -118,7 +118,7 @@ int64_t spgvd(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_dspgvd(
+    dspgvd_(
         &itype_, &jobz_, &uplo_, &n_,
         AP,
         BP,

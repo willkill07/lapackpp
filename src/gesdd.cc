@@ -44,7 +44,7 @@ int64_t gesdd(
     float qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgesdd(
+    sgesdd_(
         &jobz_, &m_, &n_,
         A, &lda_,
         S,
@@ -62,7 +62,7 @@ int64_t gesdd(
     lapack::vector< float > work( lwork_ );
     lapack::vector< lapack_int > iwork( (8*min(m,n)) );
 
-    LAPACK_sgesdd(
+    sgesdd_(
         &jobz_, &m_, &n_,
         A, &lda_,
         S,
@@ -106,7 +106,7 @@ int64_t gesdd(
     double qry_work[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgesdd(
+    dgesdd_(
         &jobz_, &m_, &n_,
         A, &lda_,
         S,
@@ -124,7 +124,7 @@ int64_t gesdd(
     lapack::vector< double > work( lwork_ );
     lapack::vector< lapack_int > iwork( (8*min(m,n)) );
 
-    LAPACK_dgesdd(
+    dgesdd_(
         &jobz_, &m_, &n_,
         A, &lda_,
         S,
@@ -169,7 +169,7 @@ int64_t gesdd(
     float qry_rwork[1] = { 0 };
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgesdd(
+    cgesdd_(
         &jobz_, &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         S,
@@ -202,7 +202,7 @@ int64_t gesdd(
     lapack::vector< float > rwork( lrwork_ );
     lapack::vector< lapack_int > iwork( (8*min(m,n)) );
 
-    LAPACK_cgesdd(
+    cgesdd_(
         &jobz_, &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         S,
@@ -354,7 +354,7 @@ int64_t gesdd(
     double qry_rwork[1] = { 0 };
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgesdd(
+    zgesdd_(
         &jobz_, &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         S,
@@ -387,7 +387,7 @@ int64_t gesdd(
     lapack::vector< double > rwork( lrwork_ );
     lapack::vector< lapack_int > iwork( (8*min(m,n)) );
 
-    LAPACK_zgesdd(
+    zgesdd_(
         &jobz_, &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         S,

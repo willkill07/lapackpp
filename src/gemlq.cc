@@ -46,7 +46,7 @@ int64_t gemlq(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgemlq(
+    sgemlq_(
         &side_, &trans_, &m_, &n_, &k_,
         A, &lda_,
         T, &tsize_,
@@ -61,7 +61,7 @@ int64_t gemlq(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_sgemlq(
+    sgemlq_(
         &side_, &trans_, &m_, &n_, &k_,
         A, &lda_,
         T, &tsize_,
@@ -103,7 +103,7 @@ int64_t gemlq(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgemlq(
+    dgemlq_(
         &side_, &trans_, &m_, &n_, &k_,
         A, &lda_,
         T, &tsize_,
@@ -118,7 +118,7 @@ int64_t gemlq(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dgemlq(
+    dgemlq_(
         &side_, &trans_, &m_, &n_, &k_,
         A, &lda_,
         T, &tsize_,
@@ -160,7 +160,7 @@ int64_t gemlq(
     // query for workspace size
     std::complex<float> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgemlq(
+    cgemlq_(
         &side_, &trans_, &m_, &n_, &k_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) T, &tsize_,
@@ -175,7 +175,7 @@ int64_t gemlq(
     // allocate workspace
     lapack::vector< std::complex<float> > work( lwork_ );
 
-    LAPACK_cgemlq(
+    cgemlq_(
         &side_, &trans_, &m_, &n_, &k_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) T, &tsize_,
@@ -217,7 +217,7 @@ int64_t gemlq(
     // query for workspace size
     std::complex<double> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgemlq(
+    zgemlq_(
         &side_, &trans_, &m_, &n_, &k_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) T, &tsize_,
@@ -232,7 +232,7 @@ int64_t gemlq(
     // allocate workspace
     lapack::vector< std::complex<double> > work( lwork_ );
 
-    LAPACK_zgemlq(
+    zgemlq_(
         &side_, &trans_, &m_, &n_, &k_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) T, &tsize_,

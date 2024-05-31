@@ -36,7 +36,7 @@ int64_t posv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_sposv(
+    sposv_(
         &uplo_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_, &info_
@@ -68,7 +68,7 @@ int64_t posv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_dposv(
+    dposv_(
         &uplo_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_, &info_
@@ -100,7 +100,7 @@ int64_t posv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_cposv(
+    cposv_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_, &info_
@@ -191,7 +191,7 @@ int64_t posv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_zposv(
+    zposv_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_, &info_
@@ -231,7 +231,7 @@ int64_t posv(
     lapack::vector< double > work( (n)*(nrhs) );
     lapack::vector< float > swork( (n*(n+nrhs)) );
 
-    LAPACK_dsposv(
+    dsposv_(
         &uplo_, &n_, &nrhs_,
         A, &lda_,
         B, &ldb_,
@@ -276,7 +276,7 @@ int64_t posv(
     lapack::vector< std::complex<float> > swork( (n*(n+nrhs)) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_zcposv(
+    zcposv_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_,

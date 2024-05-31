@@ -31,11 +31,8 @@
 
 /* f2c, hence MacOS Accelerate, returns double instead of float
  * for sdot, slange, clange, etc. */
-#if defined(BLAS_HAVE_ACCELERATE) || defined(BLAS_HAVE_F2C)
-    typedef double lapack_float_return;
-#else
-    typedef float lapack_float_return;
-#endif
+typedef float lapack_float_return;
+
 
 /* --------------------------------------------------------------------------
  * Complex types */
@@ -61,7 +58,7 @@
     #define lapack_complex_double_real(z) ((z).real)
     #define lapack_complex_double_imag(z) ((z).imag)
 
-#elif defined(LAPACK_COMPLEX_CPP) && defined(__cplusplus)
+#elif (defined(LAPACK_COMPLEX_CPP) || defined(ACCELERATE_NEW_LAPACK)) && defined(__cplusplus)
     /* If user defines LAPACK_COMPLEX_CPP, then use C++ std::complex.
      * This isn't compatible as a return type from extern C functions,
      * so it may generate compiler warnings or errors. */
@@ -90,16 +87,9 @@
 #define lapack_complex_float  lapack_complex_float
 #define lapack_complex_double lapack_complex_double
 
-#ifdef __cplusplus
-extern "C" {
-#endif /* __cplusplus */
-
 lapack_complex_float  lapack_make_complex_float( float re, float im );
 lapack_complex_double lapack_make_complex_double( double re, double im );
 
-#ifdef __cplusplus
-}
-#endif /* __cplusplus */
 
 #ifndef LAPACK_malloc
 #define LAPACK_malloc( size )   malloc( size )

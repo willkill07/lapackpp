@@ -43,7 +43,7 @@ int64_t hecon(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (2*n) );
 
-    LAPACK_checon(
+    checon_(
         &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         ipiv_ptr, &anorm, rcond,
@@ -127,7 +127,7 @@ int64_t hecon(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (2*n) );
 
-    LAPACK_zhecon(
+    zhecon_(
         &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         ipiv_ptr, &anorm, rcond,

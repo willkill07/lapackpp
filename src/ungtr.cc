@@ -35,7 +35,7 @@ int64_t ungtr(
     // query for workspace size
     std::complex<float> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_cungtr(
+    cungtr_(
         &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) tau,
@@ -49,7 +49,7 @@ int64_t ungtr(
     // allocate workspace
     lapack::vector< std::complex<float> > work( lwork_ );
 
-    LAPACK_cungtr(
+    cungtr_(
         &uplo_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) tau,
@@ -117,7 +117,7 @@ int64_t ungtr(
     // query for workspace size
     std::complex<double> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_zungtr(
+    zungtr_(
         &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) tau,
@@ -131,7 +131,7 @@ int64_t ungtr(
     // allocate workspace
     lapack::vector< std::complex<double> > work( lwork_ );
 
-    LAPACK_zungtr(
+    zungtr_(
         &uplo_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) tau,

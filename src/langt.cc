@@ -29,7 +29,7 @@ float langt(
     char norm_ = to_char( norm );
     lapack_int n_ = (lapack_int) n;
 
-    return LAPACK_slangt(
+    return slangt_(
         &norm_, &n_,
         DL,
         D,
@@ -52,7 +52,7 @@ double langt(
     char norm_ = to_char( norm );
     lapack_int n_ = (lapack_int) n;
 
-    return LAPACK_dlangt(
+    return dlangt_(
         &norm_, &n_,
         DL,
         D,
@@ -75,7 +75,7 @@ float langt(
     char norm_ = to_char( norm );
     lapack_int n_ = (lapack_int) n;
 
-    return LAPACK_clangt(
+    return clangt_(
         &norm_, &n_,
         (lapack_complex_float*) DL,
         (lapack_complex_float*) D,
@@ -128,7 +128,7 @@ double langt(
     char norm_ = to_char( norm );
     lapack_int n_ = (lapack_int) n;
 
-    return LAPACK_zlangt(
+    return zlangt_(
         &norm_, &n_,
         (lapack_complex_double*) DL,
         (lapack_complex_double*) D,

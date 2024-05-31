@@ -36,7 +36,7 @@ int64_t geequ(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_sgeequ(
+    sgeequ_(
         &m_, &n_,
         A, &lda_,
         R,
@@ -69,7 +69,7 @@ int64_t geequ(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_dgeequ(
+    dgeequ_(
         &m_, &n_,
         A, &lda_,
         R,
@@ -102,7 +102,7 @@ int64_t geequ(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_cgeequ(
+    cgeequ_(
         &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         R,
@@ -192,7 +192,7 @@ int64_t geequ(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_zgeequ(
+    zgeequ_(
         &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         R,

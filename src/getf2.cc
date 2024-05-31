@@ -40,7 +40,7 @@ int64_t getf2(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_sgetf2(
+    sgetf2_(
         &m_, &n_,
         A, &lda_,
         ipiv_ptr, &info_ );
@@ -78,7 +78,7 @@ int64_t getf2(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_dgetf2(
+    dgetf2_(
         &m_, &n_,
         A, &lda_,
         ipiv_ptr, &info_ );
@@ -116,7 +116,7 @@ int64_t getf2(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_cgetf2(
+    cgetf2_(
         &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         ipiv_ptr, &info_ );
@@ -196,7 +196,7 @@ int64_t getf2(
     #endif
     lapack_int info_ = 0;
 
-    LAPACK_zgetf2(
+    zgetf2_(
         &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         ipiv_ptr, &info_ );

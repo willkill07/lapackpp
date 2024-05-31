@@ -43,7 +43,7 @@ int64_t gesv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_sgesv(
+    sgesv_(
         &n_, &nrhs_,
         A, &lda_,
         ipiv_ptr,
@@ -85,7 +85,7 @@ int64_t gesv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_dgesv(
+    dgesv_(
         &n_, &nrhs_,
         A, &lda_,
         ipiv_ptr,
@@ -127,7 +127,7 @@ int64_t gesv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_cgesv(
+    cgesv_(
         &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         ipiv_ptr,
@@ -218,7 +218,7 @@ int64_t gesv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_zgesv(
+    zgesv_(
         &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         ipiv_ptr,
@@ -268,7 +268,7 @@ int64_t gesv(
     lapack::vector< double > work( (n)*(nrhs) );
     lapack::vector< float > swork( (n*(n+nrhs)) );
 
-    LAPACK_dsgesv(
+    dsgesv_(
         &n_, &nrhs_,
         A, &lda_,
         ipiv_ptr,
@@ -323,7 +323,7 @@ int64_t gesv(
     lapack::vector< std::complex<float> > swork( (n*(n+nrhs)) );
     lapack::vector< double > rwork( (n) );
 
-    LAPACK_zcgesv(
+    zcgesv_(
         &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         ipiv_ptr,

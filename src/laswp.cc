@@ -43,7 +43,7 @@ void laswp(
     #endif
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_slaswp(
+    slaswp_(
         &n_,
         A, &lda_, &k1_, &k2_,
         ipiv_ptr, &incx_ );
@@ -77,7 +77,7 @@ void laswp(
     #endif
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_dlaswp(
+    dlaswp_(
         &n_,
         A, &lda_, &k1_, &k2_,
         ipiv_ptr, &incx_ );
@@ -111,7 +111,7 @@ void laswp(
     #endif
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_claswp(
+    claswp_(
         &n_,
         (lapack_complex_float*) A, &lda_, &k1_, &k2_,
         ipiv_ptr, &incx_ );
@@ -183,7 +183,7 @@ void laswp(
     #endif
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_zlaswp(
+    zlaswp_(
         &n_,
         (lapack_complex_double*) A, &lda_, &k1_, &k2_,
         ipiv_ptr, &incx_ );

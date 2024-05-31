@@ -35,7 +35,7 @@ int64_t stev(
     // allocate workspace
     lapack::vector< float > work( (max( 1, 2*n-2 )) );
 
-    LAPACK_sstev(
+    sstev_(
         &jobz_, &n_,
         D,
         E,
@@ -68,7 +68,7 @@ int64_t stev(
     // allocate workspace
     lapack::vector< double > work( (max( 1, 2*n-2 )) );
 
-    LAPACK_dstev(
+    dstev_(
         &jobz_, &n_,
         D,
         E,

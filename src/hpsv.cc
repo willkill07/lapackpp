@@ -41,7 +41,7 @@ int64_t hpsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_chpsv(
+    chpsv_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) AP,
         ipiv_ptr,
@@ -82,7 +82,7 @@ int64_t hpsv(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_zhpsv(
+    zhpsv_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) AP,
         ipiv_ptr,

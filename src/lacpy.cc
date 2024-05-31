@@ -34,7 +34,7 @@ void lacpy(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int ldb_ = (lapack_int) ldb;
 
-    LAPACK_slacpy(
+    slacpy_(
         &matrixtype_, &m_, &n_,
         A, &lda_,
         B, &ldb_
@@ -61,7 +61,7 @@ void lacpy(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int ldb_ = (lapack_int) ldb;
 
-    LAPACK_dlacpy(
+    dlacpy_(
         &matrixtype_, &m_, &n_,
         A, &lda_,
         B, &ldb_
@@ -88,7 +88,7 @@ void lacpy(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int ldb_ = (lapack_int) ldb;
 
-    LAPACK_clacpy(
+    clacpy_(
         &matrixtype_, &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) B, &ldb_
@@ -149,7 +149,7 @@ void lacpy(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int ldb_ = (lapack_int) ldb;
 
-    LAPACK_zlacpy(
+    zlacpy_(
         &matrixtype_, &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) B, &ldb_

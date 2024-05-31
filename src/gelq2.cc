@@ -36,7 +36,7 @@ int64_t gelq2(
     // allocate workspace
     lapack::vector< float > work( (m) );
 
-    LAPACK_sgelq2(
+    sgelq2_(
         &m_, &n_,
         A, &lda_,
         tau,
@@ -68,7 +68,7 @@ int64_t gelq2(
     // allocate workspace
     lapack::vector< double > work( (m) );
 
-    LAPACK_dgelq2(
+    dgelq2_(
         &m_, &n_,
         A, &lda_,
         tau,
@@ -100,7 +100,7 @@ int64_t gelq2(
     // allocate workspace
     lapack::vector< std::complex<float> > work( (m) );
 
-    LAPACK_cgelq2(
+    cgelq2_(
         &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) tau,
@@ -181,7 +181,7 @@ int64_t gelq2(
     // allocate workspace
     lapack::vector< std::complex<double> > work( (m) );
 
-    LAPACK_zgelq2(
+    zgelq2_(
         &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) tau,

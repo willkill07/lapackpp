@@ -30,7 +30,7 @@ int64_t tpttr(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_stpttr(
+    stpttr_(
         &uplo_, &n_,
         AP,
         A, &lda_, &info_
@@ -57,7 +57,7 @@ int64_t tpttr(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_dtpttr(
+    dtpttr_(
         &uplo_, &n_,
         AP,
         A, &lda_, &info_
@@ -84,7 +84,7 @@ int64_t tpttr(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_ctpttr(
+    ctpttr_(
         &uplo_, &n_,
         (lapack_complex_float*) AP,
         (lapack_complex_float*) A, &lda_, &info_
@@ -111,7 +111,7 @@ int64_t tpttr(
     lapack_int lda_ = (lapack_int) lda;
     lapack_int info_ = 0;
 
-    LAPACK_ztpttr(
+    ztpttr_(
         &uplo_, &n_,
         (lapack_complex_double*) AP,
         (lapack_complex_double*) A, &lda_, &info_

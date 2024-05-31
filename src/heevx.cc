@@ -56,7 +56,7 @@ int64_t heevx(
     float qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cheevx(
+    cheevx_(
         &jobz_, &range_, &uplo_, &n_,
         (lapack_complex_float*) A, &lda_, &vl, &vu, &il_, &iu_, &abstol, &nfound_,
         W,
@@ -76,7 +76,7 @@ int64_t heevx(
     lapack::vector< float > rwork( (7*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_cheevx(
+    cheevx_(
         &jobz_, &range_, &uplo_, &n_,
         (lapack_complex_float*) A, &lda_, &vl, &vu, &il_, &iu_, &abstol, &nfound_,
         W,
@@ -267,7 +267,7 @@ int64_t heevx(
     double qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zheevx(
+    zheevx_(
         &jobz_, &range_, &uplo_, &n_,
         (lapack_complex_double*) A, &lda_, &vl, &vu, &il_, &iu_, &abstol, &nfound_,
         W,
@@ -287,7 +287,7 @@ int64_t heevx(
     lapack::vector< double > rwork( (7*n) );
     lapack::vector< lapack_int > iwork( (5*n) );
 
-    LAPACK_zheevx(
+    zheevx_(
         &jobz_, &range_, &uplo_, &n_,
         (lapack_complex_double*) A, &lda_, &vl, &vu, &il_, &iu_, &abstol, &nfound_,
         W,

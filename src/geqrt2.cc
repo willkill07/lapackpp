@@ -35,7 +35,7 @@ int64_t geqrt2(
     lapack_int ldt_ = (lapack_int) ldt;
     lapack_int info_ = 0;
 
-    LAPACK_sgeqrt2(
+    sgeqrt2_(
         &m_, &n_,
         A, &lda_,
         T, &ldt_, &info_ );
@@ -64,7 +64,7 @@ int64_t geqrt2(
     lapack_int ldt_ = (lapack_int) ldt;
     lapack_int info_ = 0;
 
-    LAPACK_dgeqrt2(
+    dgeqrt2_(
         &m_, &n_,
         A, &lda_,
         T, &ldt_, &info_ );
@@ -93,7 +93,7 @@ int64_t geqrt2(
     lapack_int ldt_ = (lapack_int) ldt;
     lapack_int info_ = 0;
 
-    LAPACK_cgeqrt2(
+    cgeqrt2_(
         &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) T, &ldt_, &info_ );
@@ -122,7 +122,7 @@ int64_t geqrt2(
     lapack_int ldt_ = (lapack_int) ldt;
     lapack_int info_ = 0;
 
-    LAPACK_zgeqrt2(
+    zgeqrt2_(
         &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) T, &ldt_, &info_ );

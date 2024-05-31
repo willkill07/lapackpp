@@ -35,7 +35,7 @@ inline void tgsen(
     lapack_int* iwork, lapack_int liwork,
     lapack_int* info )
 {
-    LAPACK_stgsen(
+    stgsen_(
         &ijob, &wantq, &wantz, select, &n,
         A, &lda, B, &ldb, alphar, alphai, beta,
         Q, &ldq, Z, &ldz, sdim, pl, pr, dif,
@@ -59,7 +59,7 @@ inline void tgsen(
     lapack_int* iwork, lapack_int liwork,
     lapack_int* info )
 {
-    LAPACK_dtgsen(
+    dtgsen_(
         &ijob, &wantq, &wantz, select, &n,
         A, &lda, B, &ldb, alphar, alphai, beta,
         Q, &ldq, Z, &ldz, sdim, pl, pr, dif,
@@ -83,7 +83,7 @@ inline void tgsen(
     lapack_int* iwork, lapack_int liwork,
     lapack_int* info )
 {
-    LAPACK_ctgsen(
+    ctgsen_(
         &ijob, &wantq, &wantz,
         select, &n,
         (lapack_complex_float*) A, &lda,
@@ -115,7 +115,7 @@ inline void tgsen(
     lapack_int* iwork, lapack_int liwork,
     lapack_int* info )
 {
-    LAPACK_ztgsen(
+    ztgsen_(
         &ijob, &wantq, &wantz, select, &n,
         (lapack_complex_double*) A, &lda,
         (lapack_complex_double*) B, &ldb,

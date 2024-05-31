@@ -24,7 +24,7 @@ void lartgp(
     float* r )
 {
 
-    LAPACK_slartgp(
+    slartgp_(
         &f, &g, cs, sn, r );
 }
 
@@ -36,7 +36,7 @@ void lartgp(
     double* r )
 {
 
-    LAPACK_dlartgp(
+    dlartgp_(
         &f, &g, cs, sn, r );
 }
 

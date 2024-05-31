@@ -46,7 +46,7 @@ int64_t sytrs_rook(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_ssytrs_rook(
+    ssytrs_rook_(
         &uplo_, &n_, &nrhs_,
         A, &lda_,
         ipiv_ptr,
@@ -87,7 +87,7 @@ int64_t sytrs_rook(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_dsytrs_rook(
+    dsytrs_rook_(
         &uplo_, &n_, &nrhs_,
         A, &lda_,
         ipiv_ptr,
@@ -128,7 +128,7 @@ int64_t sytrs_rook(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_csytrs_rook(
+    csytrs_rook_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_float*) A, &lda_,
         ipiv_ptr,
@@ -171,7 +171,7 @@ int64_t sytrs_rook(
     lapack_int ldb_ = (lapack_int) ldb;
     lapack_int info_ = 0;
 
-    LAPACK_zsytrs_rook(
+    zsytrs_rook_(
         &uplo_, &n_, &nrhs_,
         (lapack_complex_double*) A, &lda_,
         ipiv_ptr,

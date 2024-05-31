@@ -32,7 +32,7 @@ void larfgp(
     lapack_int n_ = (lapack_int) n;
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_slarfgp(
+    slarfgp_(
         &n_, alpha,
         X, &incx_, tau );
 }
@@ -53,7 +53,7 @@ void larfgp(
     lapack_int n_ = (lapack_int) n;
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_dlarfgp(
+    dlarfgp_(
         &n_, alpha,
         X, &incx_, tau );
 }
@@ -74,7 +74,7 @@ void larfgp(
     lapack_int n_ = (lapack_int) n;
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_clarfgp(
+    clarfgp_(
         &n_, (lapack_complex_float*) alpha,
         (lapack_complex_float*) X, &incx_, (lapack_complex_float*) tau );
 }
@@ -151,7 +151,7 @@ void larfgp(
     lapack_int n_ = (lapack_int) n;
     lapack_int incx_ = (lapack_int) incx;
 
-    LAPACK_zlarfgp(
+    zlarfgp_(
         &n_, (lapack_complex_double*) alpha,
         (lapack_complex_double*) X, &incx_, (lapack_complex_double*) tau );
 }

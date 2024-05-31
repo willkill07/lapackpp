@@ -35,7 +35,7 @@ float lanhp(
     // allocate workspace
     lapack::vector< float > work( max(1,lwork) );
 
-    return LAPACK_clanhp(
+    return clanhp_(
         &norm_, &uplo_, &n_,
         (lapack_complex_float*) AP,
         &work[0]
@@ -98,7 +98,7 @@ double lanhp(
     // allocate workspace
     lapack::vector< double > work( max(1,lwork) );
 
-    return LAPACK_zlanhp(
+    return zlanhp_(
         &norm_, &uplo_, &n_,
         (lapack_complex_double*) AP,
         &work[0]

@@ -48,10 +48,10 @@ int64_t bdsvdx(
     lapack::vector< float > work( (14*n) );
     lapack::vector< lapack_int > iwork( (12*n) );
 
-    LAPACK_sbdsvdx(
+    sbdsvdx_(
         &uplo_, &jobz_, &range_, &n_,
-        D,
-        E, &vl, &vu, &il_, &iu_, &nfound_,
+        (float*)D,
+        (float*)E, &vl, &vu, &il_, &iu_, &nfound_,
         S,
         Z, &ldz_,
         &work[0],
@@ -223,10 +223,10 @@ int64_t bdsvdx(
     lapack::vector< double > work( (14*n) );
     lapack::vector< lapack_int > iwork( (12*n) );
 
-    LAPACK_dbdsvdx(
+    dbdsvdx_(
         &uplo_, &jobz_, &range_, &n_,
-        D,
-        E, &vl, &vu, &il_, &iu_, &nfound_,
+        (double*)D,
+        (double*)E, &vl, &vu, &il_, &iu_, &nfound_,
         S,
         Z, &ldz_,
         &work[0],

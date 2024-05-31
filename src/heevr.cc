@@ -56,7 +56,7 @@ int64_t heevr(
     float qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_cheevr(
+    cheevr_(
         &jobz_, &range_, &uplo_, &n_,
         (lapack_complex_float*) A, &lda_, &vl, &vu, &il_, &iu_, &abstol, &nfound_,
         W,
@@ -78,7 +78,7 @@ int64_t heevr(
     lapack::vector< float > rwork( lrwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_cheevr(
+    cheevr_(
         &jobz_, &range_, &uplo_, &n_,
         (lapack_complex_float*) A, &lda_, &vl, &vu, &il_, &iu_, &abstol, &nfound_,
         W,
@@ -332,7 +332,7 @@ int64_t heevr(
     double qry_rwork[1];
     lapack_int qry_iwork[1];
     lapack_int ineg_one = -1;
-    LAPACK_zheevr(
+    zheevr_(
         &jobz_, &range_, &uplo_, &n_,
         (lapack_complex_double*) A, &lda_, &vl, &vu, &il_, &iu_, &abstol, &nfound_,
         W,
@@ -354,7 +354,7 @@ int64_t heevr(
     lapack::vector< double > rwork( lrwork_ );
     lapack::vector< lapack_int > iwork( liwork_ );
 
-    LAPACK_zheevr(
+    zheevr_(
         &jobz_, &range_, &uplo_, &n_,
         (lapack_complex_double*) A, &lda_, &vl, &vu, &il_, &iu_, &abstol, &nfound_,
         W,

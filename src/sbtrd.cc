@@ -41,7 +41,7 @@ int64_t sbtrd(
     // allocate workspace
     lapack::vector< float > work( (n) );
 
-    LAPACK_ssbtrd(
+    ssbtrd_(
         &jobz_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         D,
@@ -81,7 +81,7 @@ int64_t sbtrd(
     // allocate workspace
     lapack::vector< double > work( (n) );
 
-    LAPACK_dsbtrd(
+    dsbtrd_(
         &jobz_, &uplo_, &n_, &kd_,
         AB, &ldab_,
         D,

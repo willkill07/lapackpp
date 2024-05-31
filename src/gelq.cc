@@ -39,7 +39,7 @@ int64_t gelq(
     // query for workspace size
     float qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_sgelq(
+    sgelq_(
         &m_, &n_,
         A, &lda_,
         T, &tsize_,
@@ -52,7 +52,7 @@ int64_t gelq(
     // allocate workspace
     lapack::vector< float > work( lwork_ );
 
-    LAPACK_sgelq(
+    sgelq_(
         &m_, &n_,
         A, &lda_,
         T, &tsize_,
@@ -85,7 +85,7 @@ int64_t gelq(
     // query for workspace size
     double qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_dgelq(
+    dgelq_(
         &m_, &n_,
         A, &lda_,
         T, &tsize_,
@@ -98,7 +98,7 @@ int64_t gelq(
     // allocate workspace
     lapack::vector< double > work( lwork_ );
 
-    LAPACK_dgelq(
+    dgelq_(
         &m_, &n_,
         A, &lda_,
         T, &tsize_,
@@ -131,7 +131,7 @@ int64_t gelq(
     // query for workspace size
     std::complex<float> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_cgelq(
+    cgelq_(
         &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) T, &tsize_,
@@ -144,7 +144,7 @@ int64_t gelq(
     // allocate workspace
     lapack::vector< std::complex<float> > work( lwork_ );
 
-    LAPACK_cgelq(
+    cgelq_(
         &m_, &n_,
         (lapack_complex_float*) A, &lda_,
         (lapack_complex_float*) T, &tsize_,
@@ -177,7 +177,7 @@ int64_t gelq(
     // query for workspace size
     std::complex<double> qry_work[1];
     lapack_int ineg_one = -1;
-    LAPACK_zgelq(
+    zgelq_(
         &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) T, &tsize_,
@@ -190,7 +190,7 @@ int64_t gelq(
     // allocate workspace
     lapack::vector< std::complex<double> > work( lwork_ );
 
-    LAPACK_zgelq(
+    zgelq_(
         &m_, &n_,
         (lapack_complex_double*) A, &lda_,
         (lapack_complex_double*) T, &tsize_,
