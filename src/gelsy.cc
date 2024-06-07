@@ -42,7 +42,7 @@ int64_t gelsy(
         std::vector< lapack_int > jpvt_( &jpvt[0], &jpvt[(n)] );
         lapack_int* jpvt_ptr = &jpvt_[0];
     #else
-        lapack_int* jpvt_ptr = jpvt;
+        lapack_int* jpvt_ptr = (lapack_int*) jpvt;
     #endif
     lapack_int rank_ = (lapack_int) *rank;
     lapack_int info_ = 0;
@@ -107,7 +107,7 @@ int64_t gelsy(
         std::vector< lapack_int > jpvt_( &jpvt[0], &jpvt[(n)] );
         lapack_int* jpvt_ptr = &jpvt_[0];
     #else
-        lapack_int* jpvt_ptr = jpvt;
+        lapack_int* jpvt_ptr = (lapack_int*) jpvt;
     #endif
     lapack_int rank_ = (lapack_int) *rank;
     lapack_int info_ = 0;
@@ -172,7 +172,7 @@ int64_t gelsy(
         std::vector< lapack_int > jpvt_( &jpvt[0], &jpvt[(n)] );
         lapack_int* jpvt_ptr = &jpvt_[0];
     #else
-        lapack_int* jpvt_ptr = jpvt;
+        lapack_int* jpvt_ptr = (lapack_int*) jpvt;
     #endif
     lapack_int rank_ = (lapack_int) *rank;
     lapack_int info_ = 0;
@@ -340,7 +340,7 @@ int64_t gelsy(
         std::vector< lapack_int > jpvt_( &jpvt[0], &jpvt[(n)] );
         lapack_int* jpvt_ptr = &jpvt_[0];
     #else
-        lapack_int* jpvt_ptr = jpvt;
+        lapack_int* jpvt_ptr = (lapack_int*) jpvt;
     #endif
     lapack_int rank_ = (lapack_int) *rank;
     lapack_int info_ = 0;

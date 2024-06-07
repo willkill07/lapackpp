@@ -42,7 +42,7 @@ int64_t lagge(
         std::vector< lapack_int > iseed_( &iseed[0], &iseed[(4)] );
         lapack_int* iseed_ptr = &iseed_[0];
     #else
-        lapack_int* iseed_ptr = iseed;
+        lapack_int* iseed_ptr = (lapack_int*) iseed;
     #endif
     lapack_int info_ = 0;
 
@@ -89,7 +89,7 @@ int64_t lagge(
         std::vector< lapack_int > iseed_( &iseed[0], &iseed[(4)] );
         lapack_int* iseed_ptr = &iseed_[0];
     #else
-        lapack_int* iseed_ptr = iseed;
+        lapack_int* iseed_ptr = (lapack_int*) iseed;
     #endif
     lapack_int info_ = 0;
 
@@ -136,7 +136,7 @@ int64_t lagge(
         std::vector< lapack_int > iseed_( &iseed[0], &iseed[(4)] );
         lapack_int* iseed_ptr = &iseed_[0];
     #else
-        lapack_int* iseed_ptr = iseed;
+        lapack_int* iseed_ptr = (lapack_int*) iseed;
     #endif
     lapack_int info_ = 0;
 
@@ -183,7 +183,7 @@ int64_t lagge(
         std::vector< lapack_int > iseed_( &iseed[0], &iseed[(4)] );
         lapack_int* iseed_ptr = &iseed_[0];
     #else
-        lapack_int* iseed_ptr = iseed;
+        lapack_int* iseed_ptr = (lapack_int*) iseed;
     #endif
     lapack_int info_ = 0;
 

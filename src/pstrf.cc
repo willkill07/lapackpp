@@ -35,7 +35,7 @@ int64_t pstrf(
         lapack::vector< lapack_int > piv_( (n) );
         lapack_int* piv_ptr = &piv_[0];
     #else
-        lapack_int* piv_ptr = piv;
+        lapack_int* piv_ptr = (lapack_int*) piv;
     #endif
     lapack_int rank_ = (lapack_int) *rank;
     lapack_int info_ = 0;
@@ -79,7 +79,7 @@ int64_t pstrf(
         lapack::vector< lapack_int > piv_( (n) );
         lapack_int* piv_ptr = &piv_[0];
     #else
-        lapack_int* piv_ptr = piv;
+        lapack_int* piv_ptr = (lapack_int*) piv;
     #endif
     lapack_int rank_ = (lapack_int) *rank;
     lapack_int info_ = 0;
@@ -123,7 +123,7 @@ int64_t pstrf(
         lapack::vector< lapack_int > piv_( (n) );
         lapack_int* piv_ptr = &piv_[0];
     #else
-        lapack_int* piv_ptr = piv;
+        lapack_int* piv_ptr = (lapack_int*) piv;
     #endif
     lapack_int rank_ = (lapack_int) *rank;
     lapack_int info_ = 0;
@@ -167,7 +167,7 @@ int64_t pstrf(
         lapack::vector< lapack_int > piv_( (n) );
         lapack_int* piv_ptr = &piv_[0];
     #else
-        lapack_int* piv_ptr = piv;
+        lapack_int* piv_ptr = (lapack_int*) piv;
     #endif
     lapack_int rank_ = (lapack_int) *rank;
     lapack_int info_ = 0;

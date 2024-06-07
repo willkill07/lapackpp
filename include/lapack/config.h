@@ -17,7 +17,7 @@
 
 #ifndef lapack_int
     #ifdef LAPACK_ILP64
-        typedef int64_t lapack_int;
+        typedef long lapack_int;
     #else
         typedef int lapack_int;
     #endif
